@@ -1,0 +1,847 @@
+# AXIOM quantum machine: canonical Pauli bank, bounded native guests,
+# capability-attenuated code views, exclusive bank ownership, full history.
+code
+label start
+imm 12 0
+label read_more
+imm 0 0
+imm 7 0
+addr 6 input
+add 6 12
+imm 2 36929
+sub 2 12
+syscall
+imm 3 -4
+cmp 0 3
+jz read_more
+imm 3 0
+cmp 0 3
+jl refuse
+jz read_done
+add 12 0
+imm 3 36928
+cmp 12 3
+ja refuse
+jmp read_more
+label read_done
+imm 3 4160
+cmp 12 3
+jbe refuse
+addr 6 packet_bytes
+store 6 12
+addr 6 input
+imm 3 0
+add 6 3
+load 0 6
+imm 3 13846482089236545
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 8
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 16
+add 6 3
+load 0 6
+imm 3 32
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 48
+add 6 3
+load 0 6
+imm 3 0
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 56
+add 6 3
+load 0 6
+imm 3 0
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 24
+add 6 3
+load 13 6
+imm 3 1
+cmp 13 3
+jb refuse
+imm 3 1024
+cmp 13 3
+ja refuse
+mov 0 13
+shl 0 5
+imm 3 4160
+add 0 3
+cmp 0 12
+jnz refuse
+addr 6 input
+imm 3 32
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+jb refuse
+imm 3 1024
+cmp 0 3
+ja refuse
+addr 6 input
+imm 3 64
+add 6 3
+mov 1 12
+sub 1 3
+call hash_start
+mov 8 0
+addr 6 input
+imm 3 40
+add 6 3
+load 0 6
+cmp 0 8
+jnz refuse
+addr 6 input
+imm 3 64
+add 6 3
+addr 7 state
+imm 1 4096
+call copy_bytes
+# Initial metadata is canonical. Seed input provides only the Pauli bank.
+addr 6 state
+imm 1 1024
+label check_initial_metadata
+# Prior hardware-entropy word is a legitimate part of an admitted new seed.
+imm 3 992
+cmp 1 3
+jnz metadata_byte
+imm 3 8
+add 6 3
+sub 1 3
+label metadata_byte
+load8 0 6
+test 0 0
+jnz refuse
+inc 6
+dec 1
+jnz check_initial_metadata
+addr 6 state
+imm 3 2560
+add 6 3
+imm 1 1536
+label check_initial_padding
+load8 0 6
+test 0 0
+jnz refuse
+inc 6
+dec 1
+jnz check_initial_padding
+addr 6 state
+imm 2 72
+add 6 2
+store 6 13
+addr 6 input
+imm 3 32
+add 6 3
+load 0 6
+addr 6 state
+imm 2 80
+add 6 2
+store 6 0
+# Validate all row bounds and Hermiticity before any guest transition.
+imm 8 0
+label validate_row
+mov 6 8
+imm 3 24
+mul 6 3
+addr 7 state
+imm 3 1024
+add 7 3
+add 6 7
+load 9 6
+imm 3 8
+add 6 3
+load 10 6
+add 6 3
+load 11 6
+imm 3 4294967295
+cmp 9 3
+ja refuse
+cmp 10 3
+ja refuse
+imm 3 3
+cmp 11 3
+ja refuse
+mov 0 9
+and 0 10
+call parity32
+mov 3 11
+imm 2 1
+and 3 2
+cmp 0 3
+jnz refuse
+inc 8
+imm 3 64
+cmp 8 3
+jb validate_row
+# Full canonical symplectic basis, all 2,016 distinct row pairs.
+imm 8 0
+label pair_i
+mov 9 8
+inc 9
+label pair_j
+imm 3 64
+cmp 9 3
+jae pair_next_i
+mov 6 8
+imm 3 24
+mul 6 3
+addr 7 state
+imm 3 1024
+add 7 3
+add 6 7
+load 10 6
+imm 3 8
+add 6 3
+load 11 6
+mov 6 9
+imm 3 24
+mul 6 3
+add 6 7
+load 0 6
+and 11 0
+imm 3 8
+add 6 3
+load 0 6
+and 10 0
+xor 11 10
+mov 0 11
+call parity32
+imm 2 0
+imm 3 32
+cmp 8 3
+jae pair_expected
+mov 3 8
+imm 2 32
+add 3 2
+imm 2 0
+cmp 9 3
+jnz pair_expected
+imm 2 1
+label pair_expected
+cmp 0 2
+jnz refuse
+inc 9
+jmp pair_j
+label pair_next_i
+inc 8
+imm 3 63
+cmp 8 3
+jb pair_i
+# Admit every instruction before any guest can execute.
+imm 12 0
+label admit_instruction
+mov 15 12
+shl 15 5
+addr 6 input
+imm 3 4160
+add 15 6
+add 15 3
+load 8 15
+mov 6 15
+imm 3 8
+add 6 3
+load 9 6
+add 6 3
+load 10 6
+add 6 3
+load 11 6
+imm 3 0
+cmp 8 3
+jz admit_zero_operands
+imm 3 8
+cmp 8 3
+jz admit_zero_operands
+imm 3 17
+cmp 8 3
+jz admit_zero_operands
+imm 3 16
+cmp 8 3
+jz admit_call
+imm 3 1
+cmp 8 3
+jb refuse
+imm 3 9
+cmp 8 3
+ja refuse
+imm 3 31
+cmp 9 3
+ja refuse
+test 11 11
+jnz refuse
+imm 3 4
+cmp 8 3
+jz admit_cx
+test 10 10
+jnz refuse
+jmp admitted_instruction
+label admit_cx
+imm 3 31
+cmp 10 3
+ja refuse
+cmp 9 10
+jz refuse
+jmp admitted_instruction
+label admit_zero_operands
+or 9 10
+or 9 11
+test 9 9
+jnz refuse
+jmp admitted_instruction
+label admit_call
+imm 3 1
+cmp 9 3
+jb refuse
+imm 3 255
+cmp 9 3
+ja refuse
+test 11 11
+jz refuse
+cmp 10 13
+jae refuse
+mov 0 10
+add 0 11
+jb refuse
+cmp 0 13
+ja refuse
+label admitted_instruction
+inc 12
+cmp 12 13
+jb admit_instruction
+# Snapshot zero is the fully admitted initial machine state.
+addr 6 state
+addr 7 history
+imm 1 4096
+call copy_bytes
+imm 14 0
+label execute_next
+addr 6 state
+imm 3 80
+add 6 3
+load 0 6
+test 0 0
+jz refuse
+dec 0
+addr 6 state
+imm 2 80
+add 6 2
+store 6 0
+addr 6 state
+imm 3 8
+add 6 3
+load 8 6
+addr 6 state
+imm 3 64
+add 6 3
+load 9 6
+addr 6 state
+imm 3 72
+add 6 3
+load 10 6
+cmp 8 9
+jb refuse
+cmp 8 10
+jae refuse
+cmp 8 13
+jae refuse
+mov 15 8
+shl 15 5
+addr 6 input
+imm 3 4160
+add 15 6
+add 15 3
+load 8 15
+mov 6 15
+imm 3 8
+add 6 3
+load 9 6
+add 6 3
+load 10 6
+add 6 3
+load 11 6
+addr 6 state
+imm 2 40
+add 6 2
+store 6 8
+addr 6 state
+imm 2 48
+add 6 2
+store 6 9
+addr 6 state
+imm 2 56
+add 6 2
+store 6 10
+addr 6 state
+imm 3 8
+add 6 3
+load 0 6
+inc 0
+addr 6 state
+imm 2 8
+add 6 2
+store 6 0
+imm 3 0
+cmp 8 3
+jz halt
+imm 3 8
+cmp 8 3
+jz entropy
+imm 3 16
+cmp 8 3
+jz enter_vm
+imm 3 17
+cmp 8 3
+jz leave_vm
+imm 3 1
+cmp 8 3
+jb refuse
+imm 3 9
+cmp 8 3
+ja refuse
+imm 3 32
+cmp 9 3
+jae refuse
+imm 3 0
+cmp 11 3
+jnz refuse
+imm 3 4
+cmp 8 3
+jz validate_cx
+test 10 10
+jnz refuse
+jmp apply_dispatch
+label validate_cx
+imm 3 32
+cmp 10 3
+jae refuse
+cmp 9 10
+jz refuse
+label apply_dispatch
+imm 3 9
+cmp 8 3
+jnz apply_plain
+mov 0 9
+call bit_mask
+addr 6 state
+imm 3 32
+add 6 3
+load 11 6
+and 0 11
+test 0 0
+jz entropy_phase_sdg
+imm 8 2
+jmp apply_plain
+label entropy_phase_sdg
+imm 8 3
+label apply_plain
+call quantum_apply
+jmp transition_done
+label entropy
+or 9 10
+or 9 11
+test 9 9
+jnz refuse
+imm 0 0
+cpuid
+imm 3 7
+cmp 0 3
+jb entropy_unavailable
+imm 0 7
+imm 1 0
+cpuid
+imm 2 262144
+and 3 2
+test 3 3
+jz entropy_unavailable
+imm 8 64
+label entropy_retry
+rdseed 0
+jb entropy_ready
+dec 8
+jnz entropy_retry
+jmp entropy_unavailable
+label entropy_ready
+addr 6 state
+imm 2 32
+add 6 2
+store 6 0
+jmp transition_done
+label enter_vm
+imm 3 1
+cmp 9 3
+jb refuse
+imm 3 255
+cmp 9 3
+ja refuse
+test 11 11
+jz refuse
+mov 0 10
+add 0 11
+jb refuse
+cmp 0 13
+ja refuse
+addr 6 state
+imm 3 64
+add 6 3
+load 1 6
+cmp 10 1
+jb refuse
+addr 6 state
+imm 3 72
+add 6 3
+load 1 6
+cmp 0 1
+ja refuse
+addr 6 state
+imm 3 24
+add 6 3
+load 12 6
+imm 3 16
+cmp 12 3
+jae refuse
+addr 6 state
+imm 3 16
+add 6 3
+load 1 6
+cmp 9 1
+jz refuse
+imm 8 0
+label check_active_owner
+cmp 8 12
+jae push_frame
+mov 6 8
+imm 3 32
+mul 6 3
+addr 7 state
+imm 3 128
+add 7 3
+add 6 7
+load 1 6
+cmp 9 1
+jz refuse
+inc 8
+jmp check_active_owner
+label push_frame
+mov 15 12
+shl 15 5
+addr 6 state
+imm 3 128
+add 15 6
+add 15 3
+addr 6 state
+imm 3 16
+add 6 3
+load 0 6
+store 15 0
+imm 3 8
+add 15 3
+addr 6 state
+imm 3 8
+add 6 3
+load 0 6
+store 15 0
+imm 3 8
+add 15 3
+addr 6 state
+imm 3 64
+add 6 3
+load 0 6
+store 15 0
+imm 3 8
+add 15 3
+addr 6 state
+imm 3 72
+add 6 3
+load 0 6
+store 15 0
+imm 3 8
+add 15 3
+addr 6 state
+imm 3 24
+add 6 3
+load 0 6
+inc 0
+addr 6 state
+imm 2 24
+add 6 2
+store 6 0
+addr 6 state
+imm 2 16
+add 6 2
+store 6 9
+addr 6 state
+imm 2 8
+add 6 2
+store 6 10
+addr 6 state
+imm 2 64
+add 6 2
+store 6 10
+mov 0 10
+add 0 11
+addr 6 state
+imm 2 72
+add 6 2
+store 6 0
+jmp transition_done
+label leave_vm
+or 9 10
+or 9 11
+test 9 9
+jnz refuse
+addr 6 state
+imm 3 24
+add 6 3
+load 0 6
+test 0 0
+jz refuse
+dec 0
+addr 6 state
+imm 2 24
+add 6 2
+store 6 0
+mov 15 0
+shl 15 5
+addr 6 state
+imm 3 128
+add 15 6
+add 15 3
+load 0 15
+addr 6 state
+imm 2 16
+add 6 2
+store 6 0
+imm 0 0
+store 15 0
+imm 3 8
+add 15 3
+load 0 15
+addr 6 state
+imm 2 8
+add 6 2
+store 6 0
+imm 0 0
+store 15 0
+imm 3 8
+add 15 3
+load 0 15
+addr 6 state
+imm 2 64
+add 6 2
+store 6 0
+imm 0 0
+store 15 0
+imm 3 8
+add 15 3
+load 0 15
+addr 6 state
+imm 2 72
+add 6 2
+store 6 0
+imm 0 0
+store 15 0
+imm 3 8
+add 15 3
+jmp transition_done
+label halt
+or 9 10
+or 9 11
+test 9 9
+jnz refuse
+addr 6 state
+imm 3 24
+add 6 3
+load 0 6
+test 0 0
+jnz refuse
+addr 6 state
+imm 3 16
+add 6 3
+load 0 6
+test 0 0
+jnz refuse
+imm 0 1
+addr 6 state
+imm 2 88
+add 6 2
+store 6 0
+label transition_done
+addr 6 state
+imm 3 0
+add 6 3
+load 0 6
+inc 0
+addr 6 state
+imm 2 0
+add 6 2
+store 6 0
+inc 14
+imm 3 1024
+cmp 14 3
+ja refuse
+addr 7 history
+mov 0 14
+shl 0 12
+add 7 0
+addr 6 state
+imm 1 4096
+call copy_bytes
+addr 6 state
+imm 3 88
+add 6 3
+load 0 6
+test 0 0
+jz execute_next
+jmp output_journal
+label parity32
+mov 3 0
+shr 3 16
+xor 0 3
+mov 3 0
+shr 3 8
+xor 0 3
+mov 3 0
+shr 3 4
+xor 0 3
+mov 3 0
+shr 3 2
+xor 0 3
+mov 3 0
+shr 3 1
+xor 0 3
+imm 3 1
+and 0 3
+ret
+label copy_bytes
+load8 0 6
+store8 7 0
+inc 6
+inc 7
+dec 1
+jnz copy_bytes
+ret
+label hash_start
+imm 0 14695981039346656037
+label hash_continue
+imm 3 1099511628211
+label hash_loop
+load8 2 6
+xor 0 2
+mul 0 3
+inc 6
+dec 1
+jnz hash_loop
+ret
+label write_bytes
+imm 0 1
+imm 7 1
+syscall
+imm 3 -4
+cmp 0 3
+jz write_bytes
+imm 3 0
+cmp 0 3
+jle refuse
+add 6 0
+sub 2 0
+jnz write_bytes
+ret
+label output_journal
+addr 6 journal_header
+imm 3 0
+add 6 3
+imm 0 13846512103086145
+store 6 0
+addr 6 journal_header
+imm 3 8
+add 6 3
+imm 0 1
+store 6 0
+addr 6 journal_header
+imm 3 24
+add 6 3
+imm 0 4096
+store 6 0
+addr 6 journal_header
+imm 3 48
+add 6 3
+imm 0 0
+store 6 0
+addr 6 journal_header
+imm 3 56
+add 6 3
+imm 0 0
+store 6 0
+mov 0 14
+inc 0
+addr 6 journal_header
+imm 3 16
+add 6 3
+store 6 0
+addr 6 packet_bytes
+load 12 6
+addr 6 journal_header
+imm 3 32
+add 6 3
+store 6 12
+addr 6 input
+mov 1 12
+call hash_start
+addr 6 history
+mov 1 14
+inc 1
+shl 1 12
+call hash_continue
+addr 6 journal_header
+imm 3 40
+add 6 3
+store 6 0
+addr 6 journal_header
+imm 2 64
+call write_bytes
+addr 6 input
+mov 2 12
+call write_bytes
+addr 6 history
+mov 2 14
+inc 2
+shl 2 12
+call write_bytes
+imm 0 60
+imm 7 0
+syscall
+label entropy_unavailable
+imm 7 66
+jmp exit_error
+label refuse
+imm 7 74
+label exit_error
+imm 0 60
+syscall
+bss
+label packet_bytes
+space 8
+label mask_a
+space 8
+label mask_b
+space 8
+label journal_header
+space 64
+label input
+space 36929
+label state
+space 4096
+label history
+space 4198400

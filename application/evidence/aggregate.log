@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "release": "AXIOM Native Fabric G11 native quantum machine",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "execution_suites": {
+    "clifford32_native": {
+      "status": "PASS",
+      "path": "evidence/native_clifford_validation.json",
+      "sha256": "b75defc95ac9a3b102eefa71a49f73759fd59222c3271a032763756e8b689cbc"
+    },
+    "dense_algorithmic_programs": {
+      "status": "PASS",
+      "path": "evidence/quantum_algorithms_acceptance.json",
+      "sha256": "153d56306444cb6841a5d513518acdfe30919cd2d00d5dbfb6c764db553be7fd"
+    },
+    "dense_program_replays": {
+      "status": "PASS",
+      "path": "evidence/dense_program_validation.json",
+      "sha256": "0d123f8776a88dd06e39f3ca388e1b2d36e97928f49feb6f09623f6fa17ae37d"
+    },
+    "exhaustive_tableau_faults": {
+      "status": "PASS",
+      "path": "evidence/full_memory_fault_matrix.json",
+      "sha256": "b770888d89ed3e48e541e81917dadafebf95c174df80a00b6c85a18b86feb742"
+    },
+    "state_fault_campaign": {
+      "status": "PASS",
+      "path": "evidence/fault_campaign.json",
+      "sha256": "a4ebb657e169736353c4c8150dc619e430940f9001b66b5ccf8556f36d7045ee"
+    },
+    "basis_repetition": {
+      "status": "PASS",
+      "path": "evidence/basis_repetition_validation.json",
+      "sha256": "114108f282abb179e3dfd20e41d6b15ae1611141f9a27c3667ee2cb085643119"
+    },
+    "native_source_self_hosting": {
+      "status": "PASS",
+      "path": "evidence/native_self_hosting.json",
+      "sha256": "d9cc7a5748da9afbac9be787f98ac532b7684aa95482c7bda7a60aac0043b6f8"
+    },
+    "native_quantum_machine": {
+      "status": "PASS",
+      "path": "evidence/native_machine_acceptance.json",
+      "sha256": "de0e13d2e320be0342ccff5999cae07b92ad6481216fcc8a058a741a5bc77b50"
+    },
+    "kernel_sandbox": {
+      "status": "PASS",
+      "path": "evidence/security_platform_assurance.json",
+      "sha256": "b5f0a5632a8c0ae7dd2485a1eebcbc246422d4e49616b41da0210aad30de8655"
+    },
+    "source_only_rebuild": {
+      "status": "PASS",
+      "path": "evidence/source_only_rebuild.json",
+      "sha256": "a892581c3724cf51c33068ad70b1052f339451d510ec30c6beb2447fa391fbe3"
+    },
+    "seed_generations": {
+      "status": "PASS",
+      "path": "evidence/native_seed_generations.json",
+      "sha256": "a27841a8e27af447c336537d306cacc34e2e685109391a0d24f767eafd77e3ff"
+    },
+    "mathematical_laws": {
+      "status": "PASS",
+      "path": "evidence/mathematical_laws.json",
+      "sha256": "9500ccee1f05f0eb562e97da06de6cb5bac2d6167b5159caa67b1602000611e2"
+    },
+    "closed_routine_state_lineage": {
+      "status": "PASS",
+      "path": "evidence/closed_routine_lineage.json",
+      "sha256": "40f8ce35fce50397cc13def5d9c3e751366f89df9fcee83edb60281a9d1cf3b5"
+    },
+    "native_benchmark": {
+      "status": "PASS",
+      "path": "evidence/native_benchmark.json",
+      "sha256": "f3d0548572a784c49ab621cb96e912ce9b03fb093b14c0477305813f68f0976a"
+    }
+  },
+  "tools": {
+    "python": "Python 3.12.14",
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "binutils": "GNU ld (GNU Binutils for Debian) 2.44",
+    "openssl": "OpenSSL 3.5.7 9 Jun 2026 (Library: OpenSSL 3.5.7 9 Jun 2026)",
+    "libc": "glibc 2.41"
+  },
+  "counts": {
+    "dense_random_programs": 110,
+    "dense_random_operations": 2123,
+    "dense_measurement_events": 235,
+    "release_regression_tests": 13,
+    "direct_random_programs": 35,
+    "direct_inverse_checks": 6,
+    "single_bit_repairs": 18432,
+    "two_lane_refusals": 768,
+    "payload_bit_refusals": 1408,
+    "example_source_compiles": 13,
+    "basis_cases": 16,
+    "clean_rebuilt_outputs": 61,
+    "seed_generations": 24,
+    "complex_oracle_programs": 48,
+    "dense_inverse_programs": 48,
+    "native_compiler_generations": 3,
+    "native_machine_quantum_programs": 51,
+    "native_machine_frames_compared": 728,
+    "maximum_native_guest_depth": 16,
+    "native_journal_roundtrips": 51,
+    "native_seed_generation_restorations": 12
+  },
+  "limits": {
+    "physical_coherent_qubits_demonstrated": 0,
+    "native_source_self_hosting": true,
+    "compiler_source_language": "ANF64 native/quantum assembly",
+    "dense_site_limit": 20,
+    "clifford_sites": 32,
+    "windows_arm64_tested": false,
+    "machine_level_nesting_tested": true,
+    "uses_os_guest_virtualization": false,
+    "history_requirement": "complete retained journal including original seed and every canonical preimage",
+    "machine_gas_limit": 1024,
+    "machine_nested_guest_limit": 16
+  },
+  "release_readiness": {
+    "requested_compiler_history_nesting_additions_implemented": true,
+    "classification": "VERIFIED_NATIVE_QUANTUM_MACHINE",
+    "remaining_research_boundaries": [
+      "physical coherent-qubit behavior not demonstrated",
+      "bootstrap from exact latest previously saved trained/live SNN checkpoint not established",
+      "cross-platform backends not executed",
+      "dense Q30 engine remains a separate mathematical execution profile"
+    ],
+    "reference_sanitizer_result": {
+      "status": "BLOCKED_LEAKSANITIZER_HOST_PTRACE",
+      "exit_code": 1,
+      "cases": 195,
+      "real_snn_feedback_spikes": 195,
+      "transactional_refusals": 195,
+      "exported_state_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0",
+      "stderr": "CLOSED_ROUTINE_PASS cases=195 feedback_spikes=195 transactional_refusals=195\n==23680==LeakSanitizer has encountered a fatal error.\n==23680==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==23680==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n",
+      "sanitizers_disabled": false,
+      "sanitizer_validation_complete": false
+    }
+  }
+}

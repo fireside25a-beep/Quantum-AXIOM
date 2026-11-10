@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "independent_dense_program_verification": {
+    "bell_measure": {
+      "qubits": 2,
+      "operations": 4,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "c1626c859c20ac44b819fa75bd65cb5b298987da7cc79d64e91a520b03f41781",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "bernstein_vazirani_4": {
+      "qubits": 5,
+      "operations": 16,
+      "measurement_events": 4,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "009b1cc7d25bb41ebd64d33c8d6985d2bbcad9496c066bfb0e9ba651e8202e9f",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "comptime_unroll": {
+      "qubits": 7,
+      "operations": 10,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "fa1b4451bfcf23fd0d9f09b6aa13b36e1c211f0f756f3dad3ae9dd858b547b3d",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "ghz_12": {
+      "qubits": 12,
+      "operations": 13,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "654b76ca7e7dffe99edf10c63a96efb12cdaeb70cee704d1acfb20f7353fd1ca",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "ghz_16": {
+      "qubits": 16,
+      "operations": 18,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "a4262bb8254c7a519b993213cc816c1cb3b923b3840b1330a025cb68b3edca97",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "grover_2": {
+      "qubits": 2,
+      "operations": 14,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "2f0015cb9ff8849c562e3c3fa29dfdd7dcb6e8266b8698792f18e4d36081d357",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "inverse_12": {
+      "qubits": 12,
+      "operations": 16,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "ac2922af1c17fc518e7da2cfe078f03f9b7b26da1d215de15f71ea975d0ecd72",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "phase_kickback": {
+      "qubits": 6,
+      "operations": 8,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "6c3d0123b4698a0d49d1ddabd1186c3807ba166fa3848d6c827c43317665dda7",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "reversible_echo": {
+      "qubits": 8,
+      "operations": 9,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "38a3230d3967905042543a41ded14f404d42a28bd8b5c61e407b230434c65b9a",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "t_interference": {
+      "qubits": 5,
+      "operations": 10,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "90c3a7431df41bd408ee763865db951e689d8a15f73af204d9e712f798df974c",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "teleport_plus": {
+      "qubits": 3,
+      "operations": 9,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "38343f6134e6ea961dbf274338962bdaa3384e992c19cad3f758d350d27630d4",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true,
+      "teleport_plus_infidelity_upper_bound": 1e-10,
+      "teleport_plus_actual_numerator": 25,
+      "teleport_plus_actual_denominator": 2305843006213062026,
+      "teleport_plus_feedforward_verified": true
+    },
+    "teleport_verified": {
+      "qubits": 3,
+      "operations": 11,
+      "measurement_events": 3,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "9ec477d99f907124a476a1d056dcf9ff3aadfbb6d5fa74ebc592d12c79e95439",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "wide20": {
+      "qubits": 20,
+      "operations": 5,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "native_source_recompiled_byte_exact": true,
+      "packet_sha256": "c0c2cd423220c34cb5ddbdec637b9d72300b9d2c460cea51cf9c15b4d56a6eab",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": false,
+      "analytic_sparse_20_site_check": true
+    }
+  },
+  "physical_qubits_demonstrated": 0,
+  "measured_programs": 13,
+  "native_programs": 13,
+  "exact_replays": 13,
+  "native_compiler_machine_isa": "x86-64",
+  "note": "Q30 fixed-point mathematical statevector; not physical coherence",
+  "elapsed_seconds": 4.497
+}

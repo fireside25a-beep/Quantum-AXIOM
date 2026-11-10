@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "platform": "Linux x86_64",
+  "reference_image_sha256": "4e5cf6764c2d79aa8877ba91fe638b8bc04d804b6166315f7e976a73fb364127",
+  "reference_after_execution_tableau_sha256": "31e66852ade4a3ae2c6afc717723ca4e50a40dd19e72242d496da07e6b971579",
+  "single_bit_native_execution_repairs": 18432,
+  "all_3_x_768_x_8_positions_covered": true,
+  "two_lane_same_bit_native_refusals": 768,
+  "whole_lane_repairs": 3,
+  "multi_bit_one_lane_repairs": 120,
+  "model": "triplicated lane-majority ECC plus 32-bit unkeyed tableau digest; not malicious-code authenticity",
+  "elapsed_seconds": 22.919
+}

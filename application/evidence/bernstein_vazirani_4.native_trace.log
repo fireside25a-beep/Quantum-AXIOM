@@ -1,0 +1,23 @@
+QVU_STEP step=0 op=2 q0=4 q1=0 c0=0 hash=0373be43d5cb4be5 classical=0
+QVU_STEP step=1 op=1 q0=4 q1=0 c0=0 hash=9166aa9785e0b488 classical=0
+QVU_STEP step=2 op=1 q0=0 q1=0 c0=0 hash=7c96900dd08fe155 classical=0
+QVU_STEP step=3 op=1 q0=1 q1=0 c0=0 hash=f6195aa64e6315a5 classical=0
+QVU_STEP step=4 op=1 q0=2 q1=0 c0=0 hash=529fa03278e2a045 classical=0
+QVU_STEP step=5 op=1 q0=3 q1=0 c0=0 hash=42528d25642e7265 classical=0
+QVU_STEP step=6 op=9 q0=1 q1=4 c0=0 hash=7ec88ee255cc6365 classical=0
+QVU_STEP step=7 op=9 q0=3 q1=4 c0=0 hash=a31e4c432c1926e5 classical=0
+QVU_STEP step=8 op=1 q0=0 q1=0 c0=0 hash=1830a58175e45105 classical=0
+QVU_STEP step=9 op=1 q0=1 q1=0 c0=0 hash=2015a9a639cee845 classical=0
+QVU_STEP step=10 op=1 q0=2 q1=0 c0=0 hash=d8cabe130a9079f5 classical=0
+QVU_STEP step=11 op=1 q0=3 q1=0 c0=0 hash=d515691b307b5245 classical=0
+QVU_MEASURE step=12 qubit=0 cbit=0 draw=1735923382 outcome=0 source=getrandom
+QVU_STEP step=12 op=11 q0=0 q1=0 c0=0 hash=b08ad1c79ed2d148 classical=0
+QVU_MEASURE step=13 qubit=1 cbit=1 draw=548159967 outcome=1 source=getrandom
+QVU_STEP step=13 op=11 q0=1 q1=0 c0=1 hash=9071db20aaa45b48 classical=2
+QVU_MEASURE step=14 qubit=2 cbit=2 draw=938181903 outcome=0 source=getrandom
+QVU_STEP step=14 op=11 q0=2 q1=0 c0=2 hash=9071db20aaa45b48 classical=2
+QVU_MEASURE step=15 qubit=3 cbit=3 draw=732494968 outcome=1 source=getrandom
+QVU_STEP step=15 op=11 q0=3 q1=0 c0=3 hash=a4650da2cce7c5c4 classical=10
+QVU_FINAL qubits=5 cbits=4 operations=16 classical=10 norm=1152921504625031252 seedtag=82bcf551ae31982f
+QVU_AMP index=10 re=759250124 im=0
+QVU_AMP index=26 re=-759250126 im=0

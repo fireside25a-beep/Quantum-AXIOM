@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "cases": {
+    "pristine": {
+      "exit_code": 0,
+      "expected_accept": true,
+      "observed_accept": true,
+      "passed": true
+    },
+    "changed_payload": {
+      "exit_code": 4,
+      "expected_accept": false,
+      "observed_accept": false,
+      "passed": true
+    },
+    "changed_manifest": {
+      "exit_code": 3,
+      "expected_accept": false,
+      "observed_accept": false,
+      "passed": true
+    },
+    "unsigned_extra": {
+      "exit_code": 1,
+      "expected_accept": false,
+      "observed_accept": false,
+      "passed": true
+    },
+    "symlink": {
+      "exit_code": 5,
+      "expected_accept": false,
+      "observed_accept": false,
+      "passed": true
+    },
+    "optimized_unsigned_extra": {
+      "exit_code": 1,
+      "expected_accept": false,
+      "observed_accept": false,
+      "passed": true
+    },
+    "git_metadata": {
+      "exit_code": 0,
+      "expected_accept": true,
+      "observed_accept": true,
+      "passed": true
+    }
+  }
+}

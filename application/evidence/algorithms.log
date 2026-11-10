@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "environment": {
+    "machine": "x86_64",
+    "system": "Linux"
+  },
+  "programs": {
+    "grover_2": {
+      "sites": 2,
+      "operations": 14,
+      "classical_result": 3,
+      "measurement_events": 2,
+      "norm_q60": 1152921504606846976,
+      "absolute_norm_error_q60": 0,
+      "native_vs_independent_oracle": "PASS",
+      "bit_exact_entropy_replay": "PASS",
+      "source_sha256": "8737c73d0adcff7fc3416696a5418ffd5f3faf5086e4d99058d3d3bc867131ae",
+      "packet_sha256": "2f0015cb9ff8849c562e3c3fa29dfdd7dcb6e8266b8698792f18e4d36081d357"
+    },
+    "bernstein_vazirani_4": {
+      "sites": 5,
+      "operations": 16,
+      "classical_result": 10,
+      "measurement_events": 4,
+      "norm_q60": 1152921504625031252,
+      "absolute_norm_error_q60": 18184276,
+      "native_vs_independent_oracle": "PASS",
+      "bit_exact_entropy_replay": "PASS",
+      "source_sha256": "96829fd854b6391fc7b3f6bc6467f12000996d4b9ccce348235f1aa66677e905",
+      "packet_sha256": "009b1cc7d25bb41ebd64d33c8d6985d2bbcad9496c066bfb0e9ba651e8202e9f"
+    },
+    "ghz_16": {
+      "sites": 16,
+      "operations": 18,
+      "classical_result": 3,
+      "measurement_events": 2,
+      "norm_q60": 1152921502459363329,
+      "absolute_norm_error_q60": 2147483647,
+      "native_vs_independent_oracle": "PASS",
+      "bit_exact_entropy_replay": "PASS",
+      "source_sha256": "f48a53cbb18557e449f4b97923f2c923b9a0da3dc1f86ad0dc88a17f9c33cd04",
+      "packet_sha256": "a4262bb8254c7a519b993213cc816c1cb3b923b3840b1330a025cb68b3edca97"
+    },
+    "inverse_12": {
+      "sites": 12,
+      "operations": 16,
+      "classical_result": 0,
+      "measurement_events": 2,
+      "norm_q60": 1152921504606846976,
+      "absolute_norm_error_q60": 0,
+      "native_vs_independent_oracle": "PASS",
+      "bit_exact_entropy_replay": "PASS",
+      "source_sha256": "3d0a33d67c1b8e856a608d233717ce058f835f5eeaac449d41f11f4df6ea8fb4",
+      "packet_sha256": "ac2922af1c17fc518e7da2cfe078f03f9b7b26da1d215de15f71ea975d0ecd72"
+    },
+    "teleport_verified": {
+      "sites": 3,
+      "operations": 11,
+      "classical_result": 3,
+      "measurement_events": 3,
+      "norm_q60": 1152921502459363329,
+      "absolute_norm_error_q60": 2147483647,
+      "native_vs_independent_oracle": "PASS",
+      "bit_exact_entropy_replay": "PASS",
+      "source_sha256": "5c3d237101f643f5bdae5ebb7dff78af24dbf0b5c4ab64c0e9ec5f175d329e2a",
+      "packet_sha256": "9ec477d99f907124a476a1d056dcf9ff3aadfbb6d5fa74ebc592d12c79e95439"
+    }
+  },
+  "measurement_replays": 5,
+  "operation_count": 75,
+  "native_compilations": 5,
+  "corruption_detection": {
+    "all_payload_bits_flipped_and_refused_by_native_inspector": 1408,
+    "mutated_packets_refused_by_native_executor": 176,
+    "note": "FNV detects tested accidental changes but is not a cryptographic MAC"
+  },
+  "numerical_claim": "fixed-Q30 classical amplitude calculation; not hardware coherence"
+}

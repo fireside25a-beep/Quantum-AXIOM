@@ -1,0 +1,2062 @@
+# RX payload includes native instructions and embedded constants.
+
+Disassembly of section .data:
+
+0000000000401000 <.data>:
+  401000:	49 bc 80 00 80 00 00 	movabs r12,0x800080
+  401007:	00 00 00 
+  40100a:	49 bd 00 00 00 00 00 	movabs r13,0x0
+  401011:	00 00 00 
+  401014:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40101b:	00 00 00 
+  40101e:	48 bf 00 00 00 00 00 	movabs rdi,0x0
+  401025:	00 00 00 
+  401028:	4c 89 e6             	mov    rsi,r12
+  40102b:	4c 01 ee             	add    rsi,r13
+  40102e:	48 ba 01 00 04 00 00 	movabs rdx,0x40001
+  401035:	00 00 00 
+  401038:	4c 29 ea             	sub    rdx,r13
+  40103b:	0f 05                	syscall
+  40103d:	48 bb fc ff ff ff ff 	movabs rbx,0xfffffffffffffffc
+  401044:	ff ff ff 
+  401047:	48 39 d8             	cmp    rax,rbx
+  40104a:	0f 84 c4 ff ff ff    	je     0x401014
+  401050:	48 bb 00 00 00 00 00 	movabs rbx,0x0
+  401057:	00 00 00 
+  40105a:	48 39 d8             	cmp    rax,rbx
+  40105d:	0f 8c d6 06 00 00    	jl     0x401739
+  401063:	0f 84 1b 00 00 00    	je     0x401084
+  401069:	49 01 c5             	add    r13,rax
+  40106c:	48 bb 00 00 04 00 00 	movabs rbx,0x40000
+  401073:	00 00 00 
+  401076:	49 39 dd             	cmp    r13,rbx
+  401079:	0f 87 ba 06 00 00    	ja     0x401739
+  40107f:	e9 90 ff ff ff       	jmp    0x401014
+  401084:	4d 01 e5             	add    r13,r12
+  401087:	48 be 81 00 99 00 00 	movabs rsi,0x990081
+  40108e:	00 00 00 
+  401091:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  401098:	00 00 00 
+  40109b:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4010a2:	48 be 89 00 99 00 00 	movabs rsi,0x990089
+  4010a9:	00 00 00 
+  4010ac:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4010b3:	48 be 91 00 99 00 00 	movabs rsi,0x990091
+  4010ba:	00 00 00 
+  4010bd:	48 b8 00 04 00 00 00 	movabs rax,0x400
+  4010c4:	00 00 00 
+  4010c7:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4010ce:	49 bc 80 00 80 00 00 	movabs r12,0x800080
+  4010d5:	00 00 00 
+  4010d8:	49 be 00 00 00 00 00 	movabs r14,0x0
+  4010df:	00 00 00 
+  4010e2:	49 bf 00 00 00 00 00 	movabs r15,0x0
+  4010e9:	00 00 00 
+  4010ec:	48 be 08 00 80 00 00 	movabs rsi,0x800008
+  4010f3:	00 00 00 
+  4010f6:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4010fd:	00 00 00 
+  401100:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401107:	e8 6d 06 00 00       	call   0x401779
+  40110c:	48 85 c0             	test   rax,rax
+  40110f:	0f 84 a4 04 00 00    	je     0x4015b9
+  401115:	e8 d4 07 00 00       	call   0x4018ee
+  40111a:	48 bb 3d 62 cb 8f ec 	movabs rbx,0x39f7fcec8fcb623d
+  401121:	fc f7 39 
+  401124:	48 39 d8             	cmp    rax,rbx
+  401127:	0f 84 29 0b 00 00    	je     0x401c56
+  40112d:	48 bb 14 44 4b 19 91 	movabs rbx,0xbb51791194b4414
+  401134:	17 b5 0b 
+  401137:	48 39 d8             	cmp    rax,rbx
+  40113a:	0f 84 55 0c 00 00    	je     0x401d95
+  401140:	48 bb 23 cd 6c 13 19 	movabs rbx,0x761d19136ccd23
+  401147:	1d 76 00 
+  40114a:	48 39 d8             	cmp    rax,rbx
+  40114d:	0f 84 51 0c 00 00    	je     0x401da4
+  401153:	48 bb e5 e3 47 b2 8a 	movabs rbx,0x436cf28ab247e3e5
+  40115a:	f2 6c 43 
+  40115d:	48 39 d8             	cmp    rax,rbx
+  401160:	0f 84 5e 0c 00 00    	je     0x401dc4
+  401166:	48 bb e3 a1 3b b5 07 	movabs rbx,0x8914e07b53ba1e3
+  40116d:	4e 91 08 
+  401170:	48 39 d8             	cmp    rax,rbx
+  401173:	0f 84 98 0c 00 00    	je     0x401e11
+  401179:	48 bb 66 88 3b b5 07 	movabs rbx,0x8913f07b53b8866
+  401180:	3f 91 08 
+  401183:	48 39 d8             	cmp    rax,rbx
+  401186:	0f 84 a7 0c 00 00    	je     0x401e33
+  40118c:	48 bb 52 6b d2 2b 19 	movabs rbx,0x2b9ce8192bd26b52
+  401193:	e8 9c 2b 
+  401196:	48 39 d8             	cmp    rax,rbx
+  401199:	0f 84 a3 0c 00 00    	je     0x401e42
+  40119f:	48 bb 92 12 17 d2 83 	movabs rbx,0xc9e2a983d2171292
+  4011a6:	a9 e2 c9 
+  4011a9:	48 39 d8             	cmp    rax,rbx
+  4011ac:	0f 84 b0 0c 00 00    	je     0x401e62
+  4011b2:	48 bb 19 f7 66 17 19 	movabs rbx,0x8084b191766f719
+  4011b9:	4b 08 08 
+  4011bc:	48 39 d8             	cmp    rax,rbx
+  4011bf:	0f 84 30 0d 00 00    	je     0x401ef5
+  4011c5:	48 bb 54 e6 30 05 19 	movabs rbx,0xe70bc3190530e654
+  4011cc:	c3 0b e7 
+  4011cf:	48 39 d8             	cmp    rax,rbx
+  4011d2:	0f 84 62 0d 00 00    	je     0x401f3a
+  4011d8:	48 bb f5 c2 0f 5d 19 	movabs rbx,0x82719d195d0fc2f5
+  4011df:	9d 71 82 
+  4011e2:	48 39 d8             	cmp    rax,rbx
+  4011e5:	0f 84 94 0d 00 00    	je     0x401f7f
+  4011eb:	48 bb 3e 16 e7 7f 19 	movabs rbx,0xbfa9b2197fe7163e
+  4011f2:	b2 a9 bf 
+  4011f5:	48 39 d8             	cmp    rax,rbx
+  4011f8:	0f 84 c6 0d 00 00    	je     0x401fc4
+  4011fe:	48 bb 86 f2 1f 05 19 	movabs rbx,0xe6f79719051ff286
+  401205:	97 f7 e6 
+  401208:	48 39 d8             	cmp    rax,rbx
+  40120b:	0f 84 f8 0d 00 00    	je     0x402009
+  401211:	48 bb a4 5c 56 b5 07 	movabs rbx,0x8b05407b5565ca4
+  401218:	54 b0 08 
+  40121b:	48 39 d8             	cmp    rax,rbx
+  40121e:	0f 84 2a 0e 00 00    	je     0x40204e
+  401224:	48 bb 07 af 07 0d 19 	movabs rbx,0xf60c0b190d07af07
+  40122b:	0b 0c f6 
+  40122e:	48 39 d8             	cmp    rax,rbx
+  401231:	0f 84 5c 0e 00 00    	je     0x402093
+  401237:	48 bb 25 2b 7c 19 ef 	movabs rbx,0xf9e6e6ef197c2b25
+  40123e:	e6 e6 f9 
+  401241:	48 39 d8             	cmp    rax,rbx
+  401244:	0f 84 8e 0e 00 00    	je     0x4020d8
+  40124a:	48 bb e9 71 f2 70 ad 	movabs rbx,0xce0eecad70f271e9
+  401251:	ec 0e ce 
+  401254:	48 39 d8             	cmp    rax,rbx
+  401257:	0f 84 5d 0f 00 00    	je     0x4021ba
+  40125d:	48 bb 23 66 f7 eb b6 	movabs rbx,0x15cdfbb6ebf76623
+  401264:	fb cd 15 
+  401267:	48 39 d8             	cmp    rax,rbx
+  40126a:	0f 84 71 0f 00 00    	je     0x4021e1
+  401270:	48 bb 8e bd b0 76 ad 	movabs rbx,0x44ee54ad76b0bd8e
+  401277:	54 ee 44 
+  40127a:	48 39 d8             	cmp    rax,rbx
+  40127d:	0f 84 94 0f 00 00    	je     0x402217
+  401283:	48 bb 42 5c 52 ae c0 	movabs rbx,0xd1b798c0ae525c42
+  40128a:	98 b7 d1 
+  40128d:	48 39 d8             	cmp    rax,rbx
+  401290:	0f 84 9f 0f 00 00    	je     0x402235
+  401296:	48 bb d6 8e ea 5c 19 	movabs rbx,0x8245a1195cea8ed6
+  40129d:	a1 45 82 
+  4012a0:	48 39 d8             	cmp    rax,rbx
+  4012a3:	0f 84 29 10 00 00    	je     0x4022d2
+  4012a9:	48 bb a4 84 ea 5c 19 	movabs rbx,0x82459b195cea84a4
+  4012b0:	9b 45 82 
+  4012b3:	48 39 d8             	cmp    rax,rbx
+  4012b6:	0f 84 36 10 00 00    	je     0x4022f2
+  4012bc:	48 bb 91 e8 d5 5c 19 	movabs rbx,0x822d95195cd5e891
+  4012c3:	95 2d 82 
+  4012c6:	48 39 d8             	cmp    rax,rbx
+  4012c9:	0f 84 43 10 00 00    	je     0x402312
+  4012cf:	48 bb e1 3c 4a 17 19 	movabs rbx,0x7e66519174a3ce1
+  4012d6:	65 e6 07 
+  4012d9:	48 39 d8             	cmp    rax,rbx
+  4012dc:	0f 84 9d 0e 00 00    	je     0x40217f
+  4012e2:	48 bb 88 58 6e f4 18 	movabs rbx,0xcaa83a18f46e5888
+  4012e9:	3a a8 ca 
+  4012ec:	48 39 d8             	cmp    rax,rbx
+  4012ef:	0f 84 0a 11 00 00    	je     0x4023ff
+  4012f5:	48 bb 4a 9f 8e 25 19 	movabs rbx,0x215ad619258e9f4a
+  4012fc:	d6 5a 21 
+  4012ff:	48 39 d8             	cmp    rax,rbx
+  401302:	0f 84 4b 11 00 00    	je     0x402453
+  401308:	48 bb 61 d2 71 25 19 	movabs rbx,0x2138e5192571d261
+  40130f:	e5 38 21 
+  401312:	48 39 d8             	cmp    rax,rbx
+  401315:	0f 84 8c 11 00 00    	je     0x4024a7
+  40131b:	48 bb 87 e8 d4 2b 19 	movabs rbx,0x2ba012192bd4e887
+  401322:	12 a0 2b 
+  401325:	48 39 d8             	cmp    rax,rbx
+  401328:	0f 84 cd 11 00 00    	je     0x4024fb
+  40132e:	48 bb b3 df 61 f4 18 	movabs rbx,0xca9a1718f461dfb3
+  401335:	17 9a ca 
+  401338:	48 39 d8             	cmp    rax,rbx
+  40133b:	0f 84 0e 12 00 00    	je     0x40254f
+  401341:	48 bb 9d 45 62 27 0e 	movabs rbx,0x6c80030e2762459d
+  401348:	03 80 6c 
+  40134b:	48 39 d8             	cmp    rax,rbx
+  40134e:	0f 84 b2 12 00 00    	je     0x402606
+  401354:	48 bb 50 2f 4f 56 19 	movabs rbx,0x779b5819564f2f50
+  40135b:	58 9b 77 
+  40135e:	48 39 d8             	cmp    rax,rbx
+  401361:	0f 84 f0 12 00 00    	je     0x402657
+  401367:	48 bb 80 15 55 3a 19 	movabs rbx,0x455b62193a551580
+  40136e:	62 5b 45 
+  401371:	48 39 d8             	cmp    rax,rbx
+  401374:	0f 84 2e 13 00 00    	je     0x4026a8
+  40137a:	48 bb a9 a4 3b e8 90 	movabs rbx,0xb5167a90e83ba4a9
+  401381:	7a 16 b5 
+  401384:	48 39 d8             	cmp    rax,rbx
+  401387:	0f 84 45 13 00 00    	je     0x4026d2
+  40138d:	48 bb a5 c5 64 b5 07 	movabs rbx,0x8c14e07b564c5a5
+  401394:	4e c1 08 
+  401397:	48 39 d8             	cmp    rax,rbx
+  40139a:	0f 84 5c 13 00 00    	je     0x4026fc
+  4013a0:	48 bb 69 31 5f 3a 19 	movabs rbx,0x45666e193a5f3169
+  4013a7:	6e 66 45 
+  4013aa:	48 39 d8             	cmp    rax,rbx
+  4013ad:	0f 84 82 13 00 00    	je     0x402735
+  4013b3:	48 bb 6d ee 64 b5 07 	movabs rbx,0x8c16607b564ee6d
+  4013ba:	66 c1 08 
+  4013bd:	48 39 d8             	cmp    rax,rbx
+  4013c0:	0f 84 a8 13 00 00    	je     0x40276e
+  4013c6:	48 bb 43 3e 78 3a 19 	movabs rbx,0x458477193a783e43
+  4013cd:	77 84 45 
+  4013d0:	48 39 d8             	cmp    rax,rbx
+  4013d3:	0f 84 ce 13 00 00    	je     0x4027a7
+  4013d9:	48 bb 98 77 80 3a 19 	movabs rbx,0x458e67193a807798
+  4013e0:	67 8e 45 
+  4013e3:	48 39 d8             	cmp    rax,rbx
+  4013e6:	0f 84 f4 13 00 00    	je     0x4027e0
+  4013ec:	48 bb 54 e9 64 b5 07 	movabs rbx,0x8c16307b564e954
+  4013f3:	63 c1 08 
+  4013f6:	48 39 d8             	cmp    rax,rbx
+  4013f9:	0f 84 1a 14 00 00    	je     0x402819
+  4013ff:	48 bb a3 d6 64 b5 07 	movabs rbx,0x8c15807b564d6a3
+  401406:	58 c1 08 
+  401409:	48 39 d8             	cmp    rax,rbx
+  40140c:	0f 84 40 14 00 00    	je     0x402852
+  401412:	48 bb 31 0b 72 3a 19 	movabs rbx,0x457d6b193a720b31
+  401419:	6b 7d 45 
+  40141c:	48 39 d8             	cmp    rax,rbx
+  40141f:	0f 84 66 14 00 00    	je     0x40288b
+  401425:	48 bb 72 f2 58 3a 19 	movabs rbx,0x455f5b193a58f272
+  40142c:	5b 5f 45 
+  40142f:	48 39 d8             	cmp    rax,rbx
+  401432:	0f 84 8c 14 00 00    	je     0x4028c4
+  401438:	48 bb ee e5 64 b5 07 	movabs rbx,0x8c16107b564e5ee
+  40143f:	61 c1 08 
+  401442:	48 39 d8             	cmp    rax,rbx
+  401445:	0f 84 b2 14 00 00    	je     0x4028fd
+  40144b:	48 bb ec a6 f4 60 19 	movabs rbx,0x89e9ae1960f4a6ec
+  401452:	ae e9 89 
+  401455:	48 39 d8             	cmp    rax,rbx
+  401458:	0f 84 06 15 00 00    	je     0x402964
+  40145e:	48 bb ba 07 25 0b f6 	movabs rbx,0x5d8b55f60b2507ba
+  401465:	55 8b 5d 
+  401468:	48 39 d8             	cmp    rax,rbx
+  40146b:	0f 84 07 15 00 00    	je     0x402978
+  401471:	48 bb 4c 91 37 fd ab 	movabs rbx,0xba1dc1abfd37914c
+  401478:	c1 1d ba 
+  40147b:	48 39 d8             	cmp    rax,rbx
+  40147e:	0f 84 17 15 00 00    	je     0x40299b
+  401484:	48 bb 0e 9b ca 8c 56 	movabs rbx,0xaf717d568cca9b0e
+  40148b:	7d 71 af 
+  40148e:	48 39 d8             	cmp    rax,rbx
+  401491:	0f 84 0c 11 00 00    	je     0x4025a3
+  401497:	48 bb 82 46 1a 85 6c 	movabs rbx,0x57b9496c851a4682
+  40149e:	49 b9 57 
+  4014a1:	48 39 d8             	cmp    rax,rbx
+  4014a4:	0f 84 3e 16 00 00    	je     0x402ae8
+  4014aa:	48 bb 29 f5 1c 0a 08 	movabs rbx,0xb91a3e080a1cf529
+  4014b1:	3e 1a b9 
+  4014b4:	48 39 d8             	cmp    rax,rbx
+  4014b7:	0f 84 f8 16 00 00    	je     0x402bb5
+  4014bd:	48 bb 38 d6 02 cb 07 	movabs rbx,0x494b3d07cb02d638
+  4014c4:	3d 4b 49 
+  4014c7:	48 39 d8             	cmp    rax,rbx
+  4014ca:	0f 84 2b 17 00 00    	je     0x402bfb
+  4014d0:	48 bb 3c 4d 73 b5 07 	movabs rbx,0x8d25a07b5734d3c
+  4014d7:	5a d2 08 
+  4014da:	48 39 d8             	cmp    rax,rbx
+  4014dd:	0f 84 e9 17 00 00    	je     0x402ccc
+  4014e3:	48 bb bd 44 73 b5 07 	movabs rbx,0x8d25507b57344bd
+  4014ea:	55 d2 08 
+  4014ed:	48 39 d8             	cmp    rax,rbx
+  4014f0:	0f 84 75 18 00 00    	je     0x402d6b
+  4014f6:	48 bb d4 a9 34 cf 07 	movabs rbx,0x511e7607cf34a9d4
+  4014fd:	76 1e 51 
+  401500:	48 39 d8             	cmp    rax,rbx
+  401503:	0f 84 01 19 00 00    	je     0x402e0a
+  401509:	48 bb 2f 6a 0b 53 19 	movabs rbx,0x70e14119530b6a2f
+  401510:	41 e1 70 
+  401513:	48 39 d8             	cmp    rax,rbx
+  401516:	0f 84 8d 19 00 00    	je     0x402ea9
+  40151c:	48 bb 0c 32 73 b5 07 	movabs rbx,0x8d24a07b573320c
+  401523:	4a d2 08 
+  401526:	48 39 d8             	cmp    rax,rbx
+  401529:	0f 84 5c 1a 00 00    	je     0x402f8b
+  40152f:	48 bb bf 33 73 b5 07 	movabs rbx,0x8d24b07b57333bf
+  401536:	4b d2 08 
+  401539:	48 39 d8             	cmp    rax,rbx
+  40153c:	0f 84 e8 1a 00 00    	je     0x40302a
+  401542:	48 bb 72 35 73 b5 07 	movabs rbx,0x8d24c07b5733572
+  401549:	4c d2 08 
+  40154c:	48 39 d8             	cmp    rax,rbx
+  40154f:	0f 84 74 1b 00 00    	je     0x4030c9
+  401555:	48 bb cd 76 57 8c 36 	movabs rbx,0x49242368c5776cd
+  40155c:	42 92 04 
+  40155f:	48 39 d8             	cmp    rax,rbx
+  401562:	0f 84 00 1c 00 00    	je     0x403168
+  401568:	48 bb 4c f3 fc 49 32 	movabs rbx,0x9821183249fcf34c
+  40156f:	18 21 98 
+  401572:	48 39 d8             	cmp    rax,rbx
+  401575:	0f 84 63 1c 00 00    	je     0x4031de
+  40157b:	48 bb b2 8d 31 5a cd 	movabs rbx,0xcb4b82cd5a318db2
+  401582:	82 4b cb 
+  401585:	48 39 d8             	cmp    rax,rbx
+  401588:	0f 84 67 1d 00 00    	je     0x4032f5
+  40158e:	48 bb 5f 64 d2 de 6e 	movabs rbx,0x5784ac6eded2645f
+  401595:	ac 84 57 
+  401598:	48 39 d8             	cmp    rax,rbx
+  40159b:	0f 84 ca 1d 00 00    	je     0x40336b
+  4015a1:	48 bb 06 3a ed 07 07 	movabs rbx,0x33e4ac0707ed3a06
+  4015a8:	ac e4 33 
+  4015ab:	48 39 d8             	cmp    rax,rbx
+  4015ae:	0f 84 5b 20 00 00    	je     0x40360f
+  4015b4:	e9 80 01 00 00       	jmp    0x401739
+  4015b9:	48 bb 00 00 00 00 00 	movabs rbx,0x0
+  4015c0:	00 00 00 
+  4015c3:	49 39 de             	cmp    r14,rbx
+  4015c6:	0f 84 6d 01 00 00    	je     0x401739
+  4015cc:	48 be 00 00 80 00 00 	movabs rsi,0x800000
+  4015d3:	00 00 00 
+  4015d6:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  4015dd:	48 85 c0             	test   rax,rax
+  4015e0:	0f 85 16 00 00 00    	jne    0x4015fc
+  4015e6:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  4015ed:	00 00 00 
+  4015f0:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4015f7:	e9 8b fa ff ff       	jmp    0x401087
+  4015fc:	48 be 81 00 99 00 00 	movabs rsi,0x990081
+  401603:	00 00 00 
+  401606:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40160d:	48 85 c0             	test   rax,rax
+  401610:	0f 85 5e 1e 00 00    	jne    0x403474
+  401616:	48 be db 29 40 00 00 	movabs rsi,0x4029db
+  40161d:	00 00 00 
+  401620:	48 bf 81 00 89 00 00 	movabs rdi,0x890081
+  401627:	00 00 00 
+  40162a:	48 b9 e8 00 00 00 00 	movabs rcx,0xe8
+  401631:	00 00 00 
+  401634:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  40163b:	00 
+  40163c:	48 88 87 00 00 00 00 	rex.W mov BYTE PTR [rdi+0x0],al
+  401643:	48 ff c6             	inc    rsi
+  401646:	48 ff c7             	inc    rdi
+  401649:	48 ff c9             	dec    rcx
+  40164c:	0f 85 e2 ff ff ff    	jne    0x401634
+  401652:	4c 89 f0             	mov    rax,r14
+  401655:	48 bb 00 10 00 00 00 	movabs rbx,0x1000
+  40165c:	00 00 00 
+  40165f:	48 01 d8             	add    rax,rbx
+  401662:	49 89 c0             	mov    r8,rax
+  401665:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  40166c:	00 00 00 
+  40166f:	48 bb 60 00 00 00 00 	movabs rbx,0x60
+  401676:	00 00 00 
+  401679:	48 01 de             	add    rsi,rbx
+  40167c:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401683:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  40168a:	00 00 00 
+  40168d:	48 01 de             	add    rsi,rbx
+  401690:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401697:	48 bb 00 10 00 00 00 	movabs rbx,0x1000
+  40169e:	00 00 00 
+  4016a1:	49 39 df             	cmp    r15,rbx
+  4016a4:	0f 83 03 00 00 00    	jae    0x4016ad
+  4016aa:	49 89 df             	mov    r15,rbx
+  4016ad:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  4016b4:	00 00 00 
+  4016b7:	48 bb a0 00 00 00 00 	movabs rbx,0xa0
+  4016be:	00 00 00 
+  4016c1:	48 01 de             	add    rsi,rbx
+  4016c4:	4c 89 be 00 00 00 00 	mov    QWORD PTR [rsi+0x0],r15
+  4016cb:	49 b9 81 00 89 00 00 	movabs r9,0x890081
+  4016d2:	00 00 00 
+  4016d5:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  4016dc:	00 00 00 
+  4016df:	48 bf 01 00 00 00 00 	movabs rdi,0x1
+  4016e6:	00 00 00 
+  4016e9:	4c 89 ce             	mov    rsi,r9
+  4016ec:	4c 89 c2             	mov    rdx,r8
+  4016ef:	0f 05                	syscall
+  4016f1:	48 bb fc ff ff ff ff 	movabs rbx,0xfffffffffffffffc
+  4016f8:	ff ff ff 
+  4016fb:	48 39 d8             	cmp    rax,rbx
+  4016fe:	0f 84 d1 ff ff ff    	je     0x4016d5
+  401704:	48 bb 00 00 00 00 00 	movabs rbx,0x0
+  40170b:	00 00 00 
+  40170e:	48 39 d8             	cmp    rax,rbx
+  401711:	0f 8e 22 00 00 00    	jle    0x401739
+  401717:	49 01 c1             	add    r9,rax
+  40171a:	49 29 c0             	sub    r8,rax
+  40171d:	0f 85 b2 ff ff ff    	jne    0x4016d5
+  401723:	48 b8 3c 00 00 00 00 	movabs rax,0x3c
+  40172a:	00 00 00 
+  40172d:	48 bf 00 00 00 00 00 	movabs rdi,0x0
+  401734:	00 00 00 
+  401737:	0f 05                	syscall
+  401739:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  401740:	00 00 00 
+  401743:	48 bf 02 00 00 00 00 	movabs rdi,0x2
+  40174a:	00 00 00 
+  40174d:	48 be be 29 40 00 00 	movabs rsi,0x4029be
+  401754:	00 00 00 
+  401757:	48 ba 1c 00 00 00 00 	movabs rdx,0x1c
+  40175e:	00 00 00 
+  401761:	0f 05                	syscall
+  401763:	48 b8 3c 00 00 00 00 	movabs rax,0x3c
+  40176a:	00 00 00 
+  40176d:	48 bf 4a 00 00 00 00 	movabs rdi,0x4a
+  401774:	00 00 00 
+  401777:	0f 05                	syscall
+  401779:	4d 39 ec             	cmp    r12,r13
+  40177c:	0f 83 61 01 00 00    	jae    0x4018e3
+  401782:	49 0f b6 84 24 00 00 	movzx  rax,BYTE PTR [r12+0x0]
+  401789:	00 00 
+  40178b:	49 ff c4             	inc    r12
+  40178e:	48 bb 23 00 00 00 00 	movabs rbx,0x23
+  401795:	00 00 00 
+  401798:	48 39 d8             	cmp    rax,rbx
+  40179b:	0f 84 15 01 00 00    	je     0x4018b6
+  4017a1:	48 bb 20 00 00 00 00 	movabs rbx,0x20
+  4017a8:	00 00 00 
+  4017ab:	48 39 d8             	cmp    rax,rbx
+  4017ae:	0f 84 c5 ff ff ff    	je     0x401779
+  4017b4:	48 bb 09 00 00 00 00 	movabs rbx,0x9
+  4017bb:	00 00 00 
+  4017be:	48 39 d8             	cmp    rax,rbx
+  4017c1:	0f 84 b2 ff ff ff    	je     0x401779
+  4017c7:	48 bb 0a 00 00 00 00 	movabs rbx,0xa
+  4017ce:	00 00 00 
+  4017d1:	48 39 d8             	cmp    rax,rbx
+  4017d4:	0f 84 9f ff ff ff    	je     0x401779
+  4017da:	48 bb 0d 00 00 00 00 	movabs rbx,0xd
+  4017e1:	00 00 00 
+  4017e4:	48 39 d8             	cmp    rax,rbx
+  4017e7:	0f 84 8c ff ff ff    	je     0x401779
+  4017ed:	48 bb 21 00 00 00 00 	movabs rbx,0x21
+  4017f4:	00 00 00 
+  4017f7:	48 39 d8             	cmp    rax,rbx
+  4017fa:	0f 82 39 ff ff ff    	jb     0x401739
+  401800:	48 bb 7e 00 00 00 00 	movabs rbx,0x7e
+  401807:	00 00 00 
+  40180a:	48 39 d8             	cmp    rax,rbx
+  40180d:	0f 87 26 ff ff ff    	ja     0x401739
+  401813:	48 be 40 00 80 00 00 	movabs rsi,0x800040
+  40181a:	00 00 00 
+  40181d:	48 b9 00 00 00 00 00 	movabs rcx,0x0
+  401824:	00 00 00 
+  401827:	48 88 86 00 00 00 00 	rex.W mov BYTE PTR [rsi+0x0],al
+  40182e:	48 ff c6             	inc    rsi
+  401831:	48 ff c1             	inc    rcx
+  401834:	48 bb 3f 00 00 00 00 	movabs rbx,0x3f
+  40183b:	00 00 00 
+  40183e:	48 39 d9             	cmp    rcx,rbx
+  401841:	0f 87 f2 fe ff ff    	ja     0x401739
+  401847:	4d 39 ec             	cmp    r12,r13
+  40184a:	0f 83 4a 00 00 00    	jae    0x40189a
+  401850:	49 0f b6 84 24 00 00 	movzx  rax,BYTE PTR [r12+0x0]
+  401857:	00 00 
+  401859:	48 bb 23 00 00 00 00 	movabs rbx,0x23
+  401860:	00 00 00 
+  401863:	48 39 d8             	cmp    rax,rbx
+  401866:	0f 84 2e 00 00 00    	je     0x40189a
+  40186c:	48 bb 20 00 00 00 00 	movabs rbx,0x20
+  401873:	00 00 00 
+  401876:	48 39 d8             	cmp    rax,rbx
+  401879:	0f 86 1b 00 00 00    	jbe    0x40189a
+  40187f:	48 bb 7e 00 00 00 00 	movabs rbx,0x7e
+  401886:	00 00 00 
+  401889:	48 39 d8             	cmp    rax,rbx
+  40188c:	0f 87 a7 fe ff ff    	ja     0x401739
+  401892:	49 ff c4             	inc    r12
+  401895:	e9 8d ff ff ff       	jmp    0x401827
+  40189a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4018a1:	00 00 00 
+  4018a4:	48 88 86 00 00 00 00 	rex.W mov BYTE PTR [rsi+0x0],al
+  4018ab:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  4018b2:	00 00 00 
+  4018b5:	c3                   	ret
+  4018b6:	4d 39 ec             	cmp    r12,r13
+  4018b9:	0f 83 24 00 00 00    	jae    0x4018e3
+  4018bf:	49 0f b6 84 24 00 00 	movzx  rax,BYTE PTR [r12+0x0]
+  4018c6:	00 00 
+  4018c8:	49 ff c4             	inc    r12
+  4018cb:	48 bb 0a 00 00 00 00 	movabs rbx,0xa
+  4018d2:	00 00 00 
+  4018d5:	48 39 d8             	cmp    rax,rbx
+  4018d8:	0f 85 d8 ff ff ff    	jne    0x4018b6
+  4018de:	e9 96 fe ff ff       	jmp    0x401779
+  4018e3:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4018ea:	00 00 00 
+  4018ed:	c3                   	ret
+  4018ee:	48 be 40 00 80 00 00 	movabs rsi,0x800040
+  4018f5:	00 00 00 
+  4018f8:	48 b8 25 23 22 84 e4 	movabs rax,0xcbf29ce484222325
+  4018ff:	9c f2 cb 
+  401902:	48 b9 b3 01 00 00 00 	movabs rcx,0x100000001b3
+  401909:	01 00 00 
+  40190c:	48 0f b6 96 00 00 00 	movzx  rdx,BYTE PTR [rsi+0x0]
+  401913:	00 
+  401914:	48 85 d2             	test   rdx,rdx
+  401917:	0f 84 0f 00 00 00    	je     0x40192c
+  40191d:	48 31 d0             	xor    rax,rdx
+  401920:	48 0f af c1          	imul   rax,rcx
+  401924:	48 ff c6             	inc    rsi
+  401927:	e9 e0 ff ff ff       	jmp    0x40190c
+  40192c:	c3                   	ret
+  40192d:	e8 47 fe ff ff       	call   0x401779
+  401932:	48 85 c0             	test   rax,rax
+  401935:	0f 84 fe fd ff ff    	je     0x401739
+  40193b:	48 be 40 00 80 00 00 	movabs rsi,0x800040
+  401942:	00 00 00 
+  401945:	49 b8 00 00 00 00 00 	movabs r8,0x0
+  40194c:	00 00 00 
+  40194f:	49 b9 00 00 00 00 00 	movabs r9,0x0
+  401956:	00 00 00 
+  401959:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  401960:	00 
+  401961:	48 bb 2d 00 00 00 00 	movabs rbx,0x2d
+  401968:	00 00 00 
+  40196b:	48 39 d8             	cmp    rax,rbx
+  40196e:	0f 85 0d 00 00 00    	jne    0x401981
+  401974:	49 b9 01 00 00 00 00 	movabs r9,0x1
+  40197b:	00 00 00 
+  40197e:	48 ff c6             	inc    rsi
+  401981:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  401988:	00 
+  401989:	48 85 c0             	test   rax,rax
+  40198c:	0f 84 a7 fd ff ff    	je     0x401739
+  401992:	48 bb 30 00 00 00 00 	movabs rbx,0x30
+  401999:	00 00 00 
+  40199c:	48 29 d8             	sub    rax,rbx
+  40199f:	48 bb 09 00 00 00 00 	movabs rbx,0x9
+  4019a6:	00 00 00 
+  4019a9:	48 39 d8             	cmp    rax,rbx
+  4019ac:	0f 87 87 fd ff ff    	ja     0x401739
+  4019b2:	48 bb 99 99 99 99 99 	movabs rbx,0x1999999999999999
+  4019b9:	99 99 19 
+  4019bc:	49 39 d8             	cmp    r8,rbx
+  4019bf:	0f 87 74 fd ff ff    	ja     0x401739
+  4019c5:	0f 82 13 00 00 00    	jb     0x4019de
+  4019cb:	48 bb 05 00 00 00 00 	movabs rbx,0x5
+  4019d2:	00 00 00 
+  4019d5:	48 39 d8             	cmp    rax,rbx
+  4019d8:	0f 87 5b fd ff ff    	ja     0x401739
+  4019de:	48 bb 0a 00 00 00 00 	movabs rbx,0xa
+  4019e5:	00 00 00 
+  4019e8:	4c 0f af c3          	imul   r8,rbx
+  4019ec:	49 01 c0             	add    r8,rax
+  4019ef:	48 ff c6             	inc    rsi
+  4019f2:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  4019f9:	00 
+  4019fa:	48 85 c0             	test   rax,rax
+  4019fd:	0f 85 8f ff ff ff    	jne    0x401992
+  401a03:	4d 85 c9             	test   r9,r9
+  401a06:	0f 84 16 00 00 00    	je     0x401a22
+  401a0c:	48 bb 00 00 00 00 00 	movabs rbx,0x8000000000000000
+  401a13:	00 00 80 
+  401a16:	49 39 d8             	cmp    r8,rbx
+  401a19:	0f 87 1a fd ff ff    	ja     0x401739
+  401a1f:	49 f7 d8             	neg    r8
+  401a22:	4c 89 c0             	mov    rax,r8
+  401a25:	c3                   	ret
+  401a26:	e8 02 ff ff ff       	call   0x40192d
+  401a2b:	48 bb 0f 00 00 00 00 	movabs rbx,0xf
+  401a32:	00 00 00 
+  401a35:	48 39 d8             	cmp    rax,rbx
+  401a38:	0f 87 fb fc ff ff    	ja     0x401739
+  401a3e:	c3                   	ret
+  401a3f:	e8 e2 ff ff ff       	call   0x401a26
+  401a44:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  401a4b:	00 00 00 
+  401a4e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401a55:	e8 cc ff ff ff       	call   0x401a26
+  401a5a:	49 89 c1             	mov    r9,rax
+  401a5d:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  401a64:	00 00 00 
+  401a67:	4c 8b 86 00 00 00 00 	mov    r8,QWORD PTR [rsi+0x0]
+  401a6e:	c3                   	ret
+  401a6f:	48 be 81 00 99 00 00 	movabs rsi,0x990081
+  401a76:	00 00 00 
+  401a79:	48 8b be 00 00 00 00 	mov    rdi,QWORD PTR [rsi+0x0]
+  401a80:	48 85 ff             	test   rdi,rdi
+  401a83:	0f 84 1a 00 00 00    	je     0x401aa3
+  401a89:	48 be 89 00 99 00 00 	movabs rsi,0x990089
+  401a90:	00 00 00 
+  401a93:	48 8b be 00 00 00 00 	mov    rdi,QWORD PTR [rsi+0x0]
+  401a9a:	48 85 ff             	test   rdi,rdi
+  401a9d:	0f 84 96 fc ff ff    	je     0x401739
+  401aa3:	48 be 08 00 80 00 00 	movabs rsi,0x800008
+  401aaa:	00 00 00 
+  401aad:	48 8b be 00 00 00 00 	mov    rdi,QWORD PTR [rsi+0x0]
+  401ab4:	48 85 ff             	test   rdi,rdi
+  401ab7:	0f 85 7c fc ff ff    	jne    0x401739
+  401abd:	48 bf 00 f0 0f 00 00 	movabs rdi,0xff000
+  401ac4:	00 00 00 
+  401ac7:	49 39 fe             	cmp    r14,rdi
+  401aca:	0f 83 69 fc ff ff    	jae    0x401739
+  401ad0:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  401ad7:	00 00 00 
+  401ada:	48 bf 00 10 00 00 00 	movabs rdi,0x1000
+  401ae1:	00 00 00 
+  401ae4:	48 01 fe             	add    rsi,rdi
+  401ae7:	48 bf 81 00 99 00 00 	movabs rdi,0x990081
+  401aee:	00 00 00 
+  401af1:	48 8b bf 00 00 00 00 	mov    rdi,QWORD PTR [rdi+0x0]
+  401af8:	48 c1 e7 06          	shl    rdi,0x6
+  401afc:	48 01 fe             	add    rsi,rdi
+  401aff:	4c 01 f6             	add    rsi,r14
+  401b02:	48 88 86 00 00 00 00 	rex.W mov BYTE PTR [rsi+0x0],al
+  401b09:	49 ff c6             	inc    r14
+  401b0c:	c3                   	ret
+  401b0d:	48 b9 04 00 00 00 00 	movabs rcx,0x4
+  401b14:	00 00 00 
+  401b17:	e9 0a 00 00 00       	jmp    0x401b26
+  401b1c:	48 b9 08 00 00 00 00 	movabs rcx,0x8
+  401b23:	00 00 00 
+  401b26:	48 89 c3             	mov    rbx,rax
+  401b29:	48 89 d8             	mov    rax,rbx
+  401b2c:	e8 3e ff ff ff       	call   0x401a6f
+  401b31:	48 c1 eb 08          	shr    rbx,0x8
+  401b35:	48 ff c9             	dec    rcx
+  401b38:	0f 85 eb ff ff ff    	jne    0x401b29
+  401b3e:	c3                   	ret
+  401b3f:	e8 aa fd ff ff       	call   0x4018ee
+  401b44:	49 89 c0             	mov    r8,rax
+  401b47:	48 be 10 00 80 00 00 	movabs rsi,0x800010
+  401b4e:	00 00 00 
+  401b51:	4c 8b 96 00 00 00 00 	mov    r10,QWORD PTR [rsi+0x0]
+  401b58:	49 b9 00 00 00 00 00 	movabs r9,0x0
+  401b5f:	00 00 00 
+  401b62:	4d 39 d1             	cmp    r9,r10
+  401b65:	0f 83 9f 00 00 00    	jae    0x401c0a
+  401b6b:	4d 89 cb             	mov    r11,r9
+  401b6e:	48 bb 50 00 00 00 00 	movabs rbx,0x50
+  401b75:	00 00 00 
+  401b78:	4c 0f af db          	imul   r11,rbx
+  401b7c:	48 be 81 00 84 00 00 	movabs rsi,0x840081
+  401b83:	00 00 00 
+  401b86:	49 01 f3             	add    r11,rsi
+  401b89:	49 8b 83 00 00 00 00 	mov    rax,QWORD PTR [r11+0x0]
+  401b90:	4c 39 c0             	cmp    rax,r8
+  401b93:	0f 85 47 00 00 00    	jne    0x401be0
+  401b99:	4c 89 de             	mov    rsi,r11
+  401b9c:	48 bb 10 00 00 00 00 	movabs rbx,0x10
+  401ba3:	00 00 00 
+  401ba6:	48 01 de             	add    rsi,rbx
+  401ba9:	48 bf 40 00 80 00 00 	movabs rdi,0x800040
+  401bb0:	00 00 00 
+  401bb3:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  401bba:	00 
+  401bbb:	48 0f b6 97 00 00 00 	movzx  rdx,BYTE PTR [rdi+0x0]
+  401bc2:	00 
+  401bc3:	48 39 d0             	cmp    rax,rdx
+  401bc6:	0f 85 14 00 00 00    	jne    0x401be0
+  401bcc:	48 85 c0             	test   rax,rax
+  401bcf:	0f 84 13 00 00 00    	je     0x401be8
+  401bd5:	48 ff c6             	inc    rsi
+  401bd8:	48 ff c7             	inc    rdi
+  401bdb:	e9 d3 ff ff ff       	jmp    0x401bb3
+  401be0:	49 ff c1             	inc    r9
+  401be3:	e9 7a ff ff ff       	jmp    0x401b62
+  401be8:	4c 89 de             	mov    rsi,r11
+  401beb:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  401bf2:	00 00 00 
+  401bf5:	48 01 de             	add    rsi,rbx
+  401bf8:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401bff:	48 ba 01 00 00 00 00 	movabs rdx,0x1
+  401c06:	00 00 00 
+  401c09:	c3                   	ret
+  401c0a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  401c11:	00 00 00 
+  401c14:	48 ba 00 00 00 00 00 	movabs rdx,0x0
+  401c1b:	00 00 00 
+  401c1e:	c3                   	ret
+  401c1f:	e8 55 fb ff ff       	call   0x401779
+  401c24:	48 85 c0             	test   rax,rax
+  401c27:	0f 84 0c fb ff ff    	je     0x401739
+  401c2d:	e8 0d ff ff ff       	call   0x401b3f
+  401c32:	48 85 d2             	test   rdx,rdx
+  401c35:	0f 85 1a 00 00 00    	jne    0x401c55
+  401c3b:	48 be 00 00 80 00 00 	movabs rsi,0x800000
+  401c42:	00 00 00 
+  401c45:	48 8b 9e 00 00 00 00 	mov    rbx,QWORD PTR [rsi+0x0]
+  401c4c:	48 85 db             	test   rbx,rbx
+  401c4f:	0f 85 e4 fa ff ff    	jne    0x401739
+  401c55:	c3                   	ret
+  401c56:	e8 1e fb ff ff       	call   0x401779
+  401c5b:	48 85 c0             	test   rax,rax
+  401c5e:	0f 84 d5 fa ff ff    	je     0x401739
+  401c64:	e8 d6 fe ff ff       	call   0x401b3f
+  401c69:	48 be 08 00 80 00 00 	movabs rsi,0x800008
+  401c70:	00 00 00 
+  401c73:	48 8b 9e 00 00 00 00 	mov    rbx,QWORD PTR [rsi+0x0]
+  401c7a:	48 85 db             	test   rbx,rbx
+  401c7d:	0f 84 15 00 00 00    	je     0x401c98
+  401c83:	4d 89 f9             	mov    r9,r15
+  401c86:	48 bb 00 00 80 00 00 	movabs rbx,0x800000
+  401c8d:	00 00 00 
+  401c90:	49 01 d9             	add    r9,rbx
+  401c93:	e9 10 00 00 00       	jmp    0x401ca8
+  401c98:	4d 89 f1             	mov    r9,r14
+  401c9b:	48 bb 00 10 40 00 00 	movabs rbx,0x401000
+  401ca2:	00 00 00 
+  401ca5:	49 01 d9             	add    r9,rbx
+  401ca8:	48 be 00 00 80 00 00 	movabs rsi,0x800000
+  401caf:	00 00 00 
+  401cb2:	48 8b 9e 00 00 00 00 	mov    rbx,QWORD PTR [rsi+0x0]
+  401cb9:	48 85 db             	test   rbx,rbx
+  401cbc:	0f 84 17 00 00 00    	je     0x401cd9
+  401cc2:	48 85 d2             	test   rdx,rdx
+  401cc5:	0f 84 6e fa ff ff    	je     0x401739
+  401ccb:	4c 39 c8             	cmp    rax,r9
+  401cce:	0f 85 65 fa ff ff    	jne    0x401739
+  401cd4:	e9 2e f4 ff ff       	jmp    0x401107
+  401cd9:	48 85 d2             	test   rdx,rdx
+  401cdc:	0f 85 57 fa ff ff    	jne    0x401739
+  401ce2:	48 be 10 00 80 00 00 	movabs rsi,0x800010
+  401ce9:	00 00 00 
+  401cec:	4c 8b 96 00 00 00 00 	mov    r10,QWORD PTR [rsi+0x0]
+  401cf3:	48 bb 00 10 00 00 00 	movabs rbx,0x1000
+  401cfa:	00 00 00 
+  401cfd:	49 39 da             	cmp    r10,rbx
+  401d00:	0f 83 33 fa ff ff    	jae    0x401739
+  401d06:	4d 89 d3             	mov    r11,r10
+  401d09:	48 bb 50 00 00 00 00 	movabs rbx,0x50
+  401d10:	00 00 00 
+  401d13:	4c 0f af db          	imul   r11,rbx
+  401d17:	48 be 81 00 84 00 00 	movabs rsi,0x840081
+  401d1e:	00 00 00 
+  401d21:	49 01 f3             	add    r11,rsi
+  401d24:	e8 c5 fb ff ff       	call   0x4018ee
+  401d29:	49 89 83 00 00 00 00 	mov    QWORD PTR [r11+0x0],rax
+  401d30:	4c 89 df             	mov    rdi,r11
+  401d33:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  401d3a:	00 00 00 
+  401d3d:	48 01 df             	add    rdi,rbx
+  401d40:	4c 89 8f 00 00 00 00 	mov    QWORD PTR [rdi+0x0],r9
+  401d47:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  401d4e:	00 00 00 
+  401d51:	48 01 df             	add    rdi,rbx
+  401d54:	48 be 40 00 80 00 00 	movabs rsi,0x800040
+  401d5b:	00 00 00 
+  401d5e:	48 0f b6 86 00 00 00 	movzx  rax,BYTE PTR [rsi+0x0]
+  401d65:	00 
+  401d66:	48 88 87 00 00 00 00 	rex.W mov BYTE PTR [rdi+0x0],al
+  401d6d:	48 ff c6             	inc    rsi
+  401d70:	48 ff c7             	inc    rdi
+  401d73:	48 85 c0             	test   rax,rax
+  401d76:	0f 85 e2 ff ff ff    	jne    0x401d5e
+  401d7c:	49 ff c2             	inc    r10
+  401d7f:	48 be 10 00 80 00 00 	movabs rsi,0x800010
+  401d86:	00 00 00 
+  401d89:	4c 89 96 00 00 00 00 	mov    QWORD PTR [rsi+0x0],r10
+  401d90:	e9 72 f3 ff ff       	jmp    0x401107
+  401d95:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  401d9c:	00 00 00 
+  401d9f:	e9 0a 00 00 00       	jmp    0x401dae
+  401da4:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  401dab:	00 00 00 
+  401dae:	48 be 08 00 80 00 00 	movabs rsi,0x800008
+  401db5:	00 00 00 
+  401db8:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401dbf:	e9 43 f3 ff ff       	jmp    0x401107
+  401dc4:	e8 64 fb ff ff       	call   0x40192d
+  401dc9:	48 be 08 00 80 00 00 	movabs rsi,0x800008
+  401dd0:	00 00 00 
+  401dd3:	48 8b 9e 00 00 00 00 	mov    rbx,QWORD PTR [rsi+0x0]
+  401dda:	48 bf 01 00 00 00 00 	movabs rdi,0x1
+  401de1:	00 00 00 
+  401de4:	48 39 fb             	cmp    rbx,rdi
+  401de7:	0f 85 4c f9 ff ff    	jne    0x401739
+  401ded:	48 bb 00 00 80 00 00 	movabs rbx,0x800000
+  401df4:	00 00 00 
+  401df7:	48 39 d8             	cmp    rax,rbx
+  401dfa:	0f 87 39 f9 ff ff    	ja     0x401739
+  401e00:	49 01 c7             	add    r15,rax
+  401e03:	49 39 df             	cmp    r15,rbx
+  401e06:	0f 87 2d f9 ff ff    	ja     0x401739
+  401e0c:	e9 f6 f2 ff ff       	jmp    0x401107
+  401e11:	e8 17 fb ff ff       	call   0x40192d
+  401e16:	48 bb ff 00 00 00 00 	movabs rbx,0xff
+  401e1d:	00 00 00 
+  401e20:	48 39 d8             	cmp    rax,rbx
+  401e23:	0f 87 10 f9 ff ff    	ja     0x401739
+  401e29:	e8 41 fc ff ff       	call   0x401a6f
+  401e2e:	e9 d4 f2 ff ff       	jmp    0x401107
+  401e33:	e8 f5 fa ff ff       	call   0x40192d
+  401e38:	e8 df fc ff ff       	call   0x401b1c
+  401e3d:	e9 c5 f2 ff ff       	jmp    0x401107
+  401e42:	e8 df fb ff ff       	call   0x401a26
+  401e47:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  401e4e:	00 00 00 
+  401e51:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401e58:	e8 d0 fa ff ff       	call   0x40192d
+  401e5d:	e9 1b 00 00 00       	jmp    0x401e7d
+  401e62:	e8 bf fb ff ff       	call   0x401a26
+  401e67:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  401e6e:	00 00 00 
+  401e71:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401e78:	e8 a2 fd ff ff       	call   0x401c1f
+  401e7d:	48 be 28 00 80 00 00 	movabs rsi,0x800028
+  401e84:	00 00 00 
+  401e87:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401e8e:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  401e95:	00 00 00 
+  401e98:	4c 8b 86 00 00 00 00 	mov    r8,QWORD PTR [rsi+0x0]
+  401e9f:	4c 89 c0             	mov    rax,r8
+  401ea2:	48 c1 e8 03          	shr    rax,0x3
+  401ea6:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  401ead:	00 00 00 
+  401eb0:	48 09 d8             	or     rax,rbx
+  401eb3:	e8 b7 fb ff ff       	call   0x401a6f
+  401eb8:	4c 89 c0             	mov    rax,r8
+  401ebb:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  401ec2:	00 00 00 
+  401ec5:	48 21 d8             	and    rax,rbx
+  401ec8:	48 bb b8 00 00 00 00 	movabs rbx,0xb8
+  401ecf:	00 00 00 
+  401ed2:	48 01 d8             	add    rax,rbx
+  401ed5:	e8 95 fb ff ff       	call   0x401a6f
+  401eda:	48 be 28 00 80 00 00 	movabs rsi,0x800028
+  401ee1:	00 00 00 
+  401ee4:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401eeb:	e8 2c fc ff ff       	call   0x401b1c
+  401ef0:	e9 12 f2 ff ff       	jmp    0x401107
+  401ef5:	48 b8 89 00 00 00 00 	movabs rax,0x89
+  401efc:	00 00 00 
+  401eff:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401f06:	00 00 00 
+  401f09:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401f10:	e8 2a fb ff ff       	call   0x401a3f
+  401f15:	e8 03 02 00 00       	call   0x40211d
+  401f1a:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401f21:	00 00 00 
+  401f24:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401f2b:	e8 3f fb ff ff       	call   0x401a6f
+  401f30:	e8 10 02 00 00       	call   0x402145
+  401f35:	e9 cd f1 ff ff       	jmp    0x401107
+  401f3a:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  401f41:	00 00 00 
+  401f44:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401f4b:	00 00 00 
+  401f4e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401f55:	e8 e5 fa ff ff       	call   0x401a3f
+  401f5a:	e8 be 01 00 00       	call   0x40211d
+  401f5f:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401f66:	00 00 00 
+  401f69:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401f70:	e8 fa fa ff ff       	call   0x401a6f
+  401f75:	e8 cb 01 00 00       	call   0x402145
+  401f7a:	e9 88 f1 ff ff       	jmp    0x401107
+  401f7f:	48 b8 29 00 00 00 00 	movabs rax,0x29
+  401f86:	00 00 00 
+  401f89:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401f90:	00 00 00 
+  401f93:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401f9a:	e8 a0 fa ff ff       	call   0x401a3f
+  401f9f:	e8 79 01 00 00       	call   0x40211d
+  401fa4:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401fab:	00 00 00 
+  401fae:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401fb5:	e8 b5 fa ff ff       	call   0x401a6f
+  401fba:	e8 86 01 00 00       	call   0x402145
+  401fbf:	e9 43 f1 ff ff       	jmp    0x401107
+  401fc4:	48 b8 31 00 00 00 00 	movabs rax,0x31
+  401fcb:	00 00 00 
+  401fce:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401fd5:	00 00 00 
+  401fd8:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  401fdf:	e8 5b fa ff ff       	call   0x401a3f
+  401fe4:	e8 34 01 00 00       	call   0x40211d
+  401fe9:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  401ff0:	00 00 00 
+  401ff3:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  401ffa:	e8 70 fa ff ff       	call   0x401a6f
+  401fff:	e8 41 01 00 00       	call   0x402145
+  402004:	e9 fe f0 ff ff       	jmp    0x401107
+  402009:	48 b8 21 00 00 00 00 	movabs rax,0x21
+  402010:	00 00 00 
+  402013:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  40201a:	00 00 00 
+  40201d:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402024:	e8 16 fa ff ff       	call   0x401a3f
+  402029:	e8 ef 00 00 00       	call   0x40211d
+  40202e:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402035:	00 00 00 
+  402038:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40203f:	e8 2b fa ff ff       	call   0x401a6f
+  402044:	e8 fc 00 00 00       	call   0x402145
+  402049:	e9 b9 f0 ff ff       	jmp    0x401107
+  40204e:	48 b8 09 00 00 00 00 	movabs rax,0x9
+  402055:	00 00 00 
+  402058:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  40205f:	00 00 00 
+  402062:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402069:	e8 d1 f9 ff ff       	call   0x401a3f
+  40206e:	e8 aa 00 00 00       	call   0x40211d
+  402073:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  40207a:	00 00 00 
+  40207d:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  402084:	e8 e6 f9 ff ff       	call   0x401a6f
+  402089:	e8 b7 00 00 00       	call   0x402145
+  40208e:	e9 74 f0 ff ff       	jmp    0x401107
+  402093:	48 b8 39 00 00 00 00 	movabs rax,0x39
+  40209a:	00 00 00 
+  40209d:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4020a4:	00 00 00 
+  4020a7:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4020ae:	e8 8c f9 ff ff       	call   0x401a3f
+  4020b3:	e8 65 00 00 00       	call   0x40211d
+  4020b8:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4020bf:	00 00 00 
+  4020c2:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  4020c9:	e8 a1 f9 ff ff       	call   0x401a6f
+  4020ce:	e8 72 00 00 00       	call   0x402145
+  4020d3:	e9 2f f0 ff ff       	jmp    0x401107
+  4020d8:	48 b8 85 00 00 00 00 	movabs rax,0x85
+  4020df:	00 00 00 
+  4020e2:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4020e9:	00 00 00 
+  4020ec:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4020f3:	e8 47 f9 ff ff       	call   0x401a3f
+  4020f8:	e8 20 00 00 00       	call   0x40211d
+  4020fd:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402104:	00 00 00 
+  402107:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40210e:	e8 5c f9 ff ff       	call   0x401a6f
+  402113:	e8 2d 00 00 00       	call   0x402145
+  402118:	e9 ea ef ff ff       	jmp    0x401107
+  40211d:	4c 89 c8             	mov    rax,r9
+  402120:	48 c1 e8 03          	shr    rax,0x3
+  402124:	48 c1 e0 02          	shl    rax,0x2
+  402128:	4d 89 c2             	mov    r10,r8
+  40212b:	49 c1 ea 03          	shr    r10,0x3
+  40212f:	4c 09 d0             	or     rax,r10
+  402132:	49 ba 48 00 00 00 00 	movabs r10,0x48
+  402139:	00 00 00 
+  40213c:	4c 09 d0             	or     rax,r10
+  40213f:	e8 2b f9 ff ff       	call   0x401a6f
+  402144:	c3                   	ret
+  402145:	4c 89 c8             	mov    rax,r9
+  402148:	49 ba 07 00 00 00 00 	movabs r10,0x7
+  40214f:	00 00 00 
+  402152:	4c 21 d0             	and    rax,r10
+  402155:	48 c1 e0 03          	shl    rax,0x3
+  402159:	4d 89 c2             	mov    r10,r8
+  40215c:	48 ba 07 00 00 00 00 	movabs rdx,0x7
+  402163:	00 00 00 
+  402166:	49 21 d2             	and    r10,rdx
+  402169:	4c 09 d0             	or     rax,r10
+  40216c:	49 ba c0 00 00 00 00 	movabs r10,0xc0
+  402173:	00 00 00 
+  402176:	4c 09 d0             	or     rax,r10
+  402179:	e8 f1 f8 ff ff       	call   0x401a6f
+  40217e:	c3                   	ret
+  40217f:	e8 bb f8 ff ff       	call   0x401a3f
+  402184:	4d 89 c2             	mov    r10,r8
+  402187:	4d 89 c8             	mov    r8,r9
+  40218a:	4d 89 d1             	mov    r9,r10
+  40218d:	e8 8b ff ff ff       	call   0x40211d
+  402192:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  402199:	00 00 00 
+  40219c:	e8 ce f8 ff ff       	call   0x401a6f
+  4021a1:	48 b8 af 00 00 00 00 	movabs rax,0xaf
+  4021a8:	00 00 00 
+  4021ab:	e8 bf f8 ff ff       	call   0x401a6f
+  4021b0:	e8 90 ff ff ff       	call   0x402145
+  4021b5:	e9 4d ef ff ff       	jmp    0x401107
+  4021ba:	e8 80 f8 ff ff       	call   0x401a3f
+  4021bf:	4d 89 c2             	mov    r10,r8
+  4021c2:	4d 89 c8             	mov    r8,r9
+  4021c5:	4d 89 d1             	mov    r9,r10
+  4021c8:	e8 50 ff ff ff       	call   0x40211d
+  4021cd:	48 b8 8b 00 00 00 00 	movabs rax,0x8b
+  4021d4:	00 00 00 
+  4021d7:	e8 93 f8 ff ff       	call   0x401a6f
+  4021dc:	e9 72 00 00 00       	jmp    0x402253
+  4021e1:	e8 59 f8 ff ff       	call   0x401a3f
+  4021e6:	4d 89 c2             	mov    r10,r8
+  4021e9:	4d 89 c8             	mov    r8,r9
+  4021ec:	4d 89 d1             	mov    r9,r10
+  4021ef:	e8 29 ff ff ff       	call   0x40211d
+  4021f4:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4021fb:	00 00 00 
+  4021fe:	e8 6c f8 ff ff       	call   0x401a6f
+  402203:	48 b8 b6 00 00 00 00 	movabs rax,0xb6
+  40220a:	00 00 00 
+  40220d:	e8 5d f8 ff ff       	call   0x401a6f
+  402212:	e9 3c 00 00 00       	jmp    0x402253
+  402217:	e8 23 f8 ff ff       	call   0x401a3f
+  40221c:	e8 fc fe ff ff       	call   0x40211d
+  402221:	48 b8 89 00 00 00 00 	movabs rax,0x89
+  402228:	00 00 00 
+  40222b:	e8 3f f8 ff ff       	call   0x401a6f
+  402230:	e9 1e 00 00 00       	jmp    0x402253
+  402235:	e8 05 f8 ff ff       	call   0x401a3f
+  40223a:	e8 de fe ff ff       	call   0x40211d
+  40223f:	48 b8 88 00 00 00 00 	movabs rax,0x88
+  402246:	00 00 00 
+  402249:	e8 21 f8 ff ff       	call   0x401a6f
+  40224e:	e9 00 00 00 00       	jmp    0x402253
+  402253:	4c 89 c8             	mov    rax,r9
+  402256:	49 ba 07 00 00 00 00 	movabs r10,0x7
+  40225d:	00 00 00 
+  402260:	4c 21 d0             	and    rax,r10
+  402263:	48 c1 e0 03          	shl    rax,0x3
+  402267:	4d 89 c2             	mov    r10,r8
+  40226a:	48 ba 07 00 00 00 00 	movabs rdx,0x7
+  402271:	00 00 00 
+  402274:	49 21 d2             	and    r10,rdx
+  402277:	4c 09 d0             	or     rax,r10
+  40227a:	49 ba 80 00 00 00 00 	movabs r10,0x80
+  402281:	00 00 00 
+  402284:	4c 09 d0             	or     rax,r10
+  402287:	e8 e3 f7 ff ff       	call   0x401a6f
+  40228c:	4c 89 c0             	mov    rax,r8
+  40228f:	49 ba 07 00 00 00 00 	movabs r10,0x7
+  402296:	00 00 00 
+  402299:	4c 21 d0             	and    rax,r10
+  40229c:	49 ba 04 00 00 00 00 	movabs r10,0x4
+  4022a3:	00 00 00 
+  4022a6:	4c 39 d0             	cmp    rax,r10
+  4022a9:	0f 85 0f 00 00 00    	jne    0x4022be
+  4022af:	48 b8 24 00 00 00 00 	movabs rax,0x24
+  4022b6:	00 00 00 
+  4022b9:	e8 b1 f7 ff ff       	call   0x401a6f
+  4022be:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4022c5:	00 00 00 
+  4022c8:	e8 40 f8 ff ff       	call   0x401b0d
+  4022cd:	e9 35 ee ff ff       	jmp    0x401107
+  4022d2:	48 b8 04 00 00 00 00 	movabs rax,0x4
+  4022d9:	00 00 00 
+  4022dc:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4022e3:	00 00 00 
+  4022e6:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4022ed:	e9 40 00 00 00       	jmp    0x402332
+  4022f2:	48 b8 05 00 00 00 00 	movabs rax,0x5
+  4022f9:	00 00 00 
+  4022fc:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402303:	00 00 00 
+  402306:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40230d:	e9 20 00 00 00       	jmp    0x402332
+  402312:	48 b8 07 00 00 00 00 	movabs rax,0x7
+  402319:	00 00 00 
+  40231c:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402323:	00 00 00 
+  402326:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40232d:	e9 00 00 00 00       	jmp    0x402332
+  402332:	e8 ef f6 ff ff       	call   0x401a26
+  402337:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  40233e:	00 00 00 
+  402341:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402348:	e8 e0 f5 ff ff       	call   0x40192d
+  40234d:	48 bb 3f 00 00 00 00 	movabs rbx,0x3f
+  402354:	00 00 00 
+  402357:	48 39 d8             	cmp    rax,rbx
+  40235a:	0f 87 d9 f3 ff ff    	ja     0x401739
+  402360:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402367:	00 00 00 
+  40236a:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402371:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402378:	00 00 00 
+  40237b:	4c 8b 86 00 00 00 00 	mov    r8,QWORD PTR [rsi+0x0]
+  402382:	4c 89 c0             	mov    rax,r8
+  402385:	48 c1 e8 03          	shr    rax,0x3
+  402389:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  402390:	00 00 00 
+  402393:	48 09 d8             	or     rax,rbx
+  402396:	e8 d4 f6 ff ff       	call   0x401a6f
+  40239b:	48 b8 c1 00 00 00 00 	movabs rax,0xc1
+  4023a2:	00 00 00 
+  4023a5:	e8 c5 f6 ff ff       	call   0x401a6f
+  4023aa:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4023b1:	00 00 00 
+  4023b4:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  4023bb:	48 c1 e0 03          	shl    rax,0x3
+  4023bf:	4d 89 c2             	mov    r10,r8
+  4023c2:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  4023c9:	00 00 00 
+  4023cc:	49 21 da             	and    r10,rbx
+  4023cf:	4c 09 d0             	or     rax,r10
+  4023d2:	49 ba c0 00 00 00 00 	movabs r10,0xc0
+  4023d9:	00 00 00 
+  4023dc:	4c 09 d0             	or     rax,r10
+  4023df:	e8 8b f6 ff ff       	call   0x401a6f
+  4023e4:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  4023eb:	00 00 00 
+  4023ee:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  4023f5:	e8 75 f6 ff ff       	call   0x401a6f
+  4023fa:	e9 08 ed ff ff       	jmp    0x401107
+  4023ff:	e8 22 f6 ff ff       	call   0x401a26
+  402404:	49 89 c0             	mov    r8,rax
+  402407:	48 c1 e8 03          	shr    rax,0x3
+  40240b:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  402412:	00 00 00 
+  402415:	48 09 d8             	or     rax,rbx
+  402418:	e8 52 f6 ff ff       	call   0x401a6f
+  40241d:	48 b8 f7 00 00 00 00 	movabs rax,0xf7
+  402424:	00 00 00 
+  402427:	e8 43 f6 ff ff       	call   0x401a6f
+  40242c:	4c 89 c0             	mov    rax,r8
+  40242f:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  402436:	00 00 00 
+  402439:	48 21 d8             	and    rax,rbx
+  40243c:	48 bb f0 00 00 00 00 	movabs rbx,0xf0
+  402443:	00 00 00 
+  402446:	48 09 d8             	or     rax,rbx
+  402449:	e8 21 f6 ff ff       	call   0x401a6f
+  40244e:	e9 b4 ec ff ff       	jmp    0x401107
+  402453:	e8 ce f5 ff ff       	call   0x401a26
+  402458:	49 89 c0             	mov    r8,rax
+  40245b:	48 c1 e8 03          	shr    rax,0x3
+  40245f:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  402466:	00 00 00 
+  402469:	48 09 d8             	or     rax,rbx
+  40246c:	e8 fe f5 ff ff       	call   0x401a6f
+  402471:	48 b8 f7 00 00 00 00 	movabs rax,0xf7
+  402478:	00 00 00 
+  40247b:	e8 ef f5 ff ff       	call   0x401a6f
+  402480:	4c 89 c0             	mov    rax,r8
+  402483:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  40248a:	00 00 00 
+  40248d:	48 21 d8             	and    rax,rbx
+  402490:	48 bb d0 00 00 00 00 	movabs rbx,0xd0
+  402497:	00 00 00 
+  40249a:	48 09 d8             	or     rax,rbx
+  40249d:	e8 cd f5 ff ff       	call   0x401a6f
+  4024a2:	e9 60 ec ff ff       	jmp    0x401107
+  4024a7:	e8 7a f5 ff ff       	call   0x401a26
+  4024ac:	49 89 c0             	mov    r8,rax
+  4024af:	48 c1 e8 03          	shr    rax,0x3
+  4024b3:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  4024ba:	00 00 00 
+  4024bd:	48 09 d8             	or     rax,rbx
+  4024c0:	e8 aa f5 ff ff       	call   0x401a6f
+  4024c5:	48 b8 f7 00 00 00 00 	movabs rax,0xf7
+  4024cc:	00 00 00 
+  4024cf:	e8 9b f5 ff ff       	call   0x401a6f
+  4024d4:	4c 89 c0             	mov    rax,r8
+  4024d7:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  4024de:	00 00 00 
+  4024e1:	48 21 d8             	and    rax,rbx
+  4024e4:	48 bb d8 00 00 00 00 	movabs rbx,0xd8
+  4024eb:	00 00 00 
+  4024ee:	48 09 d8             	or     rax,rbx
+  4024f1:	e8 79 f5 ff ff       	call   0x401a6f
+  4024f6:	e9 0c ec ff ff       	jmp    0x401107
+  4024fb:	e8 26 f5 ff ff       	call   0x401a26
+  402500:	49 89 c0             	mov    r8,rax
+  402503:	48 c1 e8 03          	shr    rax,0x3
+  402507:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  40250e:	00 00 00 
+  402511:	48 09 d8             	or     rax,rbx
+  402514:	e8 56 f5 ff ff       	call   0x401a6f
+  402519:	48 b8 ff 00 00 00 00 	movabs rax,0xff
+  402520:	00 00 00 
+  402523:	e8 47 f5 ff ff       	call   0x401a6f
+  402528:	4c 89 c0             	mov    rax,r8
+  40252b:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  402532:	00 00 00 
+  402535:	48 21 d8             	and    rax,rbx
+  402538:	48 bb c0 00 00 00 00 	movabs rbx,0xc0
+  40253f:	00 00 00 
+  402542:	48 09 d8             	or     rax,rbx
+  402545:	e8 25 f5 ff ff       	call   0x401a6f
+  40254a:	e9 b8 eb ff ff       	jmp    0x401107
+  40254f:	e8 d2 f4 ff ff       	call   0x401a26
+  402554:	49 89 c0             	mov    r8,rax
+  402557:	48 c1 e8 03          	shr    rax,0x3
+  40255b:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  402562:	00 00 00 
+  402565:	48 09 d8             	or     rax,rbx
+  402568:	e8 02 f5 ff ff       	call   0x401a6f
+  40256d:	48 b8 ff 00 00 00 00 	movabs rax,0xff
+  402574:	00 00 00 
+  402577:	e8 f3 f4 ff ff       	call   0x401a6f
+  40257c:	4c 89 c0             	mov    rax,r8
+  40257f:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  402586:	00 00 00 
+  402589:	48 21 d8             	and    rax,rbx
+  40258c:	48 bb c8 00 00 00 00 	movabs rbx,0xc8
+  402593:	00 00 00 
+  402596:	48 09 d8             	or     rax,rbx
+  402599:	e8 d1 f4 ff ff       	call   0x401a6f
+  40259e:	e9 64 eb ff ff       	jmp    0x401107
+  4025a3:	e8 7e f4 ff ff       	call   0x401a26
+  4025a8:	49 89 c0             	mov    r8,rax
+  4025ab:	48 c1 e8 03          	shr    rax,0x3
+  4025af:	48 bb 48 00 00 00 00 	movabs rbx,0x48
+  4025b6:	00 00 00 
+  4025b9:	48 09 d8             	or     rax,rbx
+  4025bc:	e8 ae f4 ff ff       	call   0x401a6f
+  4025c1:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4025c8:	00 00 00 
+  4025cb:	e8 9f f4 ff ff       	call   0x401a6f
+  4025d0:	48 b8 c7 00 00 00 00 	movabs rax,0xc7
+  4025d7:	00 00 00 
+  4025da:	e8 90 f4 ff ff       	call   0x401a6f
+  4025df:	4c 89 c0             	mov    rax,r8
+  4025e2:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  4025e9:	00 00 00 
+  4025ec:	48 21 d8             	and    rax,rbx
+  4025ef:	48 bb f8 00 00 00 00 	movabs rbx,0xf8
+  4025f6:	00 00 00 
+  4025f9:	48 09 d8             	or     rax,rbx
+  4025fc:	e8 6e f4 ff ff       	call   0x401a6f
+  402601:	e9 01 eb ff ff       	jmp    0x401107
+  402606:	e8 1b f4 ff ff       	call   0x401a26
+  40260b:	49 89 c0             	mov    r8,rax
+  40260e:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  402615:	00 00 00 
+  402618:	48 39 d8             	cmp    rax,rbx
+  40261b:	0f 82 0f 00 00 00    	jb     0x402630
+  402621:	48 b8 41 00 00 00 00 	movabs rax,0x41
+  402628:	00 00 00 
+  40262b:	e8 3f f4 ff ff       	call   0x401a6f
+  402630:	4c 89 c0             	mov    rax,r8
+  402633:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  40263a:	00 00 00 
+  40263d:	48 21 d8             	and    rax,rbx
+  402640:	48 bb 50 00 00 00 00 	movabs rbx,0x50
+  402647:	00 00 00 
+  40264a:	48 01 d8             	add    rax,rbx
+  40264d:	e8 1d f4 ff ff       	call   0x401a6f
+  402652:	e9 b0 ea ff ff       	jmp    0x401107
+  402657:	e8 ca f3 ff ff       	call   0x401a26
+  40265c:	49 89 c0             	mov    r8,rax
+  40265f:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  402666:	00 00 00 
+  402669:	48 39 d8             	cmp    rax,rbx
+  40266c:	0f 82 0f 00 00 00    	jb     0x402681
+  402672:	48 b8 41 00 00 00 00 	movabs rax,0x41
+  402679:	00 00 00 
+  40267c:	e8 ee f3 ff ff       	call   0x401a6f
+  402681:	4c 89 c0             	mov    rax,r8
+  402684:	48 bb 07 00 00 00 00 	movabs rbx,0x7
+  40268b:	00 00 00 
+  40268e:	48 21 d8             	and    rax,rbx
+  402691:	48 bb 58 00 00 00 00 	movabs rbx,0x58
+  402698:	00 00 00 
+  40269b:	48 01 d8             	add    rax,rbx
+  40269e:	e8 cc f3 ff ff       	call   0x401a6f
+  4026a3:	e9 5f ea ff ff       	jmp    0x401107
+  4026a8:	e8 72 f5 ff ff       	call   0x401c1f
+  4026ad:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  4026b4:	00 00 00 
+  4026b7:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4026be:	48 b8 e9 00 00 00 00 	movabs rax,0xe9
+  4026c5:	00 00 00 
+  4026c8:	e8 a2 f3 ff ff       	call   0x401a6f
+  4026cd:	e9 64 02 00 00       	jmp    0x402936
+  4026d2:	e8 48 f5 ff ff       	call   0x401c1f
+  4026d7:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  4026de:	00 00 00 
+  4026e1:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4026e8:	48 b8 e8 00 00 00 00 	movabs rax,0xe8
+  4026ef:	00 00 00 
+  4026f2:	e8 78 f3 ff ff       	call   0x401a6f
+  4026f7:	e9 3a 02 00 00       	jmp    0x402936
+  4026fc:	e8 1e f5 ff ff       	call   0x401c1f
+  402701:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  402708:	00 00 00 
+  40270b:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402712:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  402719:	00 00 00 
+  40271c:	e8 4e f3 ff ff       	call   0x401a6f
+  402721:	48 b8 84 00 00 00 00 	movabs rax,0x84
+  402728:	00 00 00 
+  40272b:	e8 3f f3 ff ff       	call   0x401a6f
+  402730:	e9 01 02 00 00       	jmp    0x402936
+  402735:	e8 e5 f4 ff ff       	call   0x401c1f
+  40273a:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  402741:	00 00 00 
+  402744:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40274b:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  402752:	00 00 00 
+  402755:	e8 15 f3 ff ff       	call   0x401a6f
+  40275a:	48 b8 85 00 00 00 00 	movabs rax,0x85
+  402761:	00 00 00 
+  402764:	e8 06 f3 ff ff       	call   0x401a6f
+  402769:	e9 c8 01 00 00       	jmp    0x402936
+  40276e:	e8 ac f4 ff ff       	call   0x401c1f
+  402773:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  40277a:	00 00 00 
+  40277d:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402784:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  40278b:	00 00 00 
+  40278e:	e8 dc f2 ff ff       	call   0x401a6f
+  402793:	48 b8 82 00 00 00 00 	movabs rax,0x82
+  40279a:	00 00 00 
+  40279d:	e8 cd f2 ff ff       	call   0x401a6f
+  4027a2:	e9 8f 01 00 00       	jmp    0x402936
+  4027a7:	e8 73 f4 ff ff       	call   0x401c1f
+  4027ac:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  4027b3:	00 00 00 
+  4027b6:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4027bd:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4027c4:	00 00 00 
+  4027c7:	e8 a3 f2 ff ff       	call   0x401a6f
+  4027cc:	48 b8 83 00 00 00 00 	movabs rax,0x83
+  4027d3:	00 00 00 
+  4027d6:	e8 94 f2 ff ff       	call   0x401a6f
+  4027db:	e9 56 01 00 00       	jmp    0x402936
+  4027e0:	e8 3a f4 ff ff       	call   0x401c1f
+  4027e5:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  4027ec:	00 00 00 
+  4027ef:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4027f6:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4027fd:	00 00 00 
+  402800:	e8 6a f2 ff ff       	call   0x401a6f
+  402805:	48 b8 86 00 00 00 00 	movabs rax,0x86
+  40280c:	00 00 00 
+  40280f:	e8 5b f2 ff ff       	call   0x401a6f
+  402814:	e9 1d 01 00 00       	jmp    0x402936
+  402819:	e8 01 f4 ff ff       	call   0x401c1f
+  40281e:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  402825:	00 00 00 
+  402828:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40282f:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  402836:	00 00 00 
+  402839:	e8 31 f2 ff ff       	call   0x401a6f
+  40283e:	48 b8 87 00 00 00 00 	movabs rax,0x87
+  402845:	00 00 00 
+  402848:	e8 22 f2 ff ff       	call   0x401a6f
+  40284d:	e9 e4 00 00 00       	jmp    0x402936
+  402852:	e8 c8 f3 ff ff       	call   0x401c1f
+  402857:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  40285e:	00 00 00 
+  402861:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402868:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  40286f:	00 00 00 
+  402872:	e8 f8 f1 ff ff       	call   0x401a6f
+  402877:	48 b8 8c 00 00 00 00 	movabs rax,0x8c
+  40287e:	00 00 00 
+  402881:	e8 e9 f1 ff ff       	call   0x401a6f
+  402886:	e9 ab 00 00 00       	jmp    0x402936
+  40288b:	e8 8f f3 ff ff       	call   0x401c1f
+  402890:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  402897:	00 00 00 
+  40289a:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4028a1:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4028a8:	00 00 00 
+  4028ab:	e8 bf f1 ff ff       	call   0x401a6f
+  4028b0:	48 b8 8d 00 00 00 00 	movabs rax,0x8d
+  4028b7:	00 00 00 
+  4028ba:	e8 b0 f1 ff ff       	call   0x401a6f
+  4028bf:	e9 72 00 00 00       	jmp    0x402936
+  4028c4:	e8 56 f3 ff ff       	call   0x401c1f
+  4028c9:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  4028d0:	00 00 00 
+  4028d3:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4028da:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4028e1:	00 00 00 
+  4028e4:	e8 86 f1 ff ff       	call   0x401a6f
+  4028e9:	48 b8 8e 00 00 00 00 	movabs rax,0x8e
+  4028f0:	00 00 00 
+  4028f3:	e8 77 f1 ff ff       	call   0x401a6f
+  4028f8:	e9 39 00 00 00       	jmp    0x402936
+  4028fd:	e8 1d f3 ff ff       	call   0x401c1f
+  402902:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  402909:	00 00 00 
+  40290c:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402913:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  40291a:	00 00 00 
+  40291d:	e8 4d f1 ff ff       	call   0x401a6f
+  402922:	48 b8 8f 00 00 00 00 	movabs rax,0x8f
+  402929:	00 00 00 
+  40292c:	e8 3e f1 ff ff       	call   0x401a6f
+  402931:	e9 00 00 00 00       	jmp    0x402936
+  402936:	48 be 38 00 80 00 00 	movabs rsi,0x800038
+  40293d:	00 00 00 
+  402940:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  402947:	4c 89 f3             	mov    rbx,r14
+  40294a:	48 ba 04 10 40 00 00 	movabs rdx,0x401004
+  402951:	00 00 00 
+  402954:	48 01 d3             	add    rbx,rdx
+  402957:	48 29 d8             	sub    rax,rbx
+  40295a:	e8 ae f1 ff ff       	call   0x401b0d
+  40295f:	e9 a3 e7 ff ff       	jmp    0x401107
+  402964:	48 b8 c3 00 00 00 00 	movabs rax,0xc3
+  40296b:	00 00 00 
+  40296e:	e8 fc f0 ff ff       	call   0x401a6f
+  402973:	e9 8f e7 ff ff       	jmp    0x401107
+  402978:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  40297f:	00 00 00 
+  402982:	e8 e8 f0 ff ff       	call   0x401a6f
+  402987:	48 b8 05 00 00 00 00 	movabs rax,0x5
+  40298e:	00 00 00 
+  402991:	e8 d9 f0 ff ff       	call   0x401a6f
+  402996:	e9 6c e7 ff ff       	jmp    0x401107
+  40299b:	48 b8 0f 00 00 00 00 	movabs rax,0xf
+  4029a2:	00 00 00 
+  4029a5:	e8 c5 f0 ff ff       	call   0x401a6f
+  4029aa:	48 b8 a2 00 00 00 00 	movabs rax,0xa2
+  4029b1:	00 00 00 
+  4029b4:	e8 b6 f0 ff ff       	call   0x401a6f
+  4029b9:	e9 49 e7 ff ff       	jmp    0x401107
+  4029be:	41                   	rex.B
+  4029bf:	4e                   	rex.WRX
+  4029c0:	46                   	rex.RX
+  4029c1:	36 34 20             	ss xor al,0x20
+  4029c4:	63 6f 6d             	movsxd ebp,DWORD PTR [rdi+0x6d]
+  4029c7:	70 69                	jo     0x402a32
+  4029c9:	6c                   	ins    BYTE PTR es:[rdi],dx
+  4029ca:	65 72 20             	gs jb  0x4029ed
+  4029cd:	72 65                	jb     0x402a34
+  4029cf:	66 75 73             	data16 jne 0x402a45
+  4029d2:	65 64 20 69 6e       	gs and BYTE PTR fs:[rcx+0x6e],ch
+  4029d7:	70 75                	jo     0x402a4e
+  4029d9:	74 0a                	je     0x4029e5
+  4029db:	7f 45                	jg     0x402a22
+  4029dd:	4c                   	rex.WR
+  4029de:	46 02 01             	rex.RX add r8b,BYTE PTR [rcx]
+  4029e1:	01 00                	add    DWORD PTR [rax],eax
+	...
+  4029eb:	02 00                	add    al,BYTE PTR [rax]
+  4029ed:	3e 00 01             	ds add BYTE PTR [rcx],al
+  4029f0:	00 00                	add    BYTE PTR [rax],al
+  4029f2:	00 00                	add    BYTE PTR [rax],al
+  4029f4:	10 40 00             	adc    BYTE PTR [rax+0x0],al
+  4029f7:	00 00                	add    BYTE PTR [rax],al
+  4029f9:	00 00                	add    BYTE PTR [rax],al
+  4029fb:	40 00 00             	rex add BYTE PTR [rax],al
+	...
+  402a0e:	00 40 00             	add    BYTE PTR [rax+0x0],al
+  402a11:	38 00                	cmp    BYTE PTR [rax],al
+  402a13:	03 00                	add    eax,DWORD PTR [rax]
+  402a15:	00 00                	add    BYTE PTR [rax],al
+  402a17:	00 00                	add    BYTE PTR [rax],al
+  402a19:	00 00                	add    BYTE PTR [rax],al
+  402a1b:	01 00                	add    DWORD PTR [rax],eax
+  402a1d:	00 00                	add    BYTE PTR [rax],al
+  402a1f:	05 00 00 00 00       	add    eax,0x0
+	...
+  402a2c:	00 40 00             	add    BYTE PTR [rax+0x0],al
+  402a2f:	00 00                	add    BYTE PTR [rax],al
+  402a31:	00 00                	add    BYTE PTR [rax],al
+  402a33:	00 00                	add    BYTE PTR [rax],al
+  402a35:	40 00 00             	rex add BYTE PTR [rax],al
+	...
+  402a4c:	10 00                	adc    BYTE PTR [rax],al
+  402a4e:	00 00                	add    BYTE PTR [rax],al
+  402a50:	00 00                	add    BYTE PTR [rax],al
+  402a52:	00 01                	add    BYTE PTR [rcx],al
+  402a54:	00 00                	add    BYTE PTR [rax],al
+  402a56:	00 06                	add    BYTE PTR [rsi],al
+	...
+  402a64:	00 80 00 00 00 00    	add    BYTE PTR [rax+0x0],al
+  402a6a:	00 00                	add    BYTE PTR [rax],al
+  402a6c:	00 80 00 00 00 00    	add    BYTE PTR [rax+0x0],al
+	...
+  402a7a:	00 00                	add    BYTE PTR [rax],al
+  402a7c:	10 00                	adc    BYTE PTR [rax],al
+  402a7e:	00 00                	add    BYTE PTR [rax],al
+  402a80:	00 00                	add    BYTE PTR [rax],al
+  402a82:	00 00                	add    BYTE PTR [rax],al
+  402a84:	10 00                	adc    BYTE PTR [rax],al
+  402a86:	00 00                	add    BYTE PTR [rax],al
+  402a88:	00 00                	add    BYTE PTR [rax],al
+  402a8a:	00 51 e5             	add    BYTE PTR [rcx-0x1b],dl
+  402a8d:	74 64                	je     0x402af3
+  402a8f:	06                   	(bad)
+	...
+  402ab8:	00 00                	add    BYTE PTR [rax],al
+  402aba:	00 10                	add    BYTE PTR [rax],dl
+  402abc:	00 00                	add    BYTE PTR [rax],al
+  402abe:	00 00                	add    BYTE PTR [rax],al
+  402ac0:	00 00                	add    BYTE PTR [rax],al
+  402ac2:	00 48 be             	add    BYTE PTR [rax-0x42],cl
+  402ac5:	81 00 99 00 00 00    	add    DWORD PTR [rax],0x99
+  402acb:	00 00                	add    BYTE PTR [rax],al
+  402acd:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  402ad4:	48 bb 01 00 00 00 00 	movabs rbx,0x1
+  402adb:	00 00 00 
+  402ade:	48 39 d8             	cmp    rax,rbx
+  402ae1:	0f 85 52 ec ff ff    	jne    0x401739
+  402ae7:	c3                   	ret
+  402ae8:	48 be 81 00 99 00 00 	movabs rsi,0x990081
+  402aef:	00 00 00 
+  402af2:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  402af9:	48 85 c0             	test   rax,rax
+  402afc:	0f 85 37 ec ff ff    	jne    0x401739
+  402b02:	4d 85 f6             	test   r14,r14
+  402b05:	0f 85 2e ec ff ff    	jne    0x401739
+  402b0b:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  402b12:	00 00 00 
+  402b15:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402b1c:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  402b23:	00 00 00 
+  402b26:	48 b9 40 10 00 00 00 	movabs rcx,0x1040
+  402b2d:	00 00 00 
+  402b30:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402b37:	00 00 00 
+  402b3a:	48 88 86 00 00 00 00 	rex.W mov BYTE PTR [rsi+0x0],al
+  402b41:	48 ff c6             	inc    rsi
+  402b44:	48 ff c9             	dec    rcx
+  402b47:	0f 85 ed ff ff ff    	jne    0x402b3a
+  402b4d:	49 b8 81 00 89 00 00 	movabs r8,0x890081
+  402b54:	00 00 00 
+  402b57:	48 bb 40 04 00 00 00 	movabs rbx,0x440
+  402b5e:	00 00 00 
+  402b61:	49 01 d8             	add    r8,rbx
+  402b64:	49 b9 01 00 00 00 00 	movabs r9,0x1
+  402b6b:	00 00 00 
+  402b6e:	49 ba 20 00 00 00 00 	movabs r10,0x20
+  402b75:	00 00 00 
+  402b78:	4d 89 88 00 00 00 00 	mov    QWORD PTR [r8+0x0],r9
+  402b7f:	4c 89 c6             	mov    rsi,r8
+  402b82:	48 bb 08 03 00 00 00 	movabs rbx,0x308
+  402b89:	00 00 00 
+  402b8c:	48 01 de             	add    rsi,rbx
+  402b8f:	4c 89 8e 00 00 00 00 	mov    QWORD PTR [rsi+0x0],r9
+  402b96:	48 bb 18 00 00 00 00 	movabs rbx,0x18
+  402b9d:	00 00 00 
+  402ba0:	49 01 d8             	add    r8,rbx
+  402ba3:	49 c1 e1 01          	shl    r9,0x1
+  402ba7:	49 ff ca             	dec    r10
+  402baa:	0f 85 c8 ff ff ff    	jne    0x402b78
+  402bb0:	e9 52 e5 ff ff       	jmp    0x401107
+  402bb5:	e8 09 ff ff ff       	call   0x402ac3
+  402bba:	e8 6e ed ff ff       	call   0x40192d
+  402bbf:	48 bb 01 00 00 00 00 	movabs rbx,0x1
+  402bc6:	00 00 00 
+  402bc9:	48 39 d8             	cmp    rax,rbx
+  402bcc:	0f 82 67 eb ff ff    	jb     0x401739
+  402bd2:	48 bb 00 04 00 00 00 	movabs rbx,0x400
+  402bd9:	00 00 00 
+  402bdc:	48 39 d8             	cmp    rax,rbx
+  402bdf:	0f 87 54 eb ff ff    	ja     0x401739
+  402be5:	48 be 91 00 99 00 00 	movabs rsi,0x990091
+  402bec:	00 00 00 
+  402bef:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402bf6:	e9 0c e5 ff ff       	jmp    0x401107
+  402bfb:	e8 c3 fe ff ff       	call   0x402ac3
+  402c00:	e8 28 ed ff ff       	call   0x40192d
+  402c05:	48 bb 3f 00 00 00 00 	movabs rbx,0x3f
+  402c0c:	00 00 00 
+  402c0f:	48 39 d8             	cmp    rax,rbx
+  402c12:	0f 87 21 eb ff ff    	ja     0x401739
+  402c18:	49 89 c3             	mov    r11,rax
+  402c1b:	48 bb 18 00 00 00 00 	movabs rbx,0x18
+  402c22:	00 00 00 
+  402c25:	4c 0f af db          	imul   r11,rbx
+  402c29:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  402c30:	00 00 00 
+  402c33:	48 bb 40 04 00 00 00 	movabs rbx,0x440
+  402c3a:	00 00 00 
+  402c3d:	49 01 f3             	add    r11,rsi
+  402c40:	49 01 db             	add    r11,rbx
+  402c43:	e8 e5 ec ff ff       	call   0x40192d
+  402c48:	48 bb ff ff ff ff 00 	movabs rbx,0xffffffff
+  402c4f:	00 00 00 
+  402c52:	48 39 d8             	cmp    rax,rbx
+  402c55:	0f 87 de ea ff ff    	ja     0x401739
+  402c5b:	49 89 83 00 00 00 00 	mov    QWORD PTR [r11+0x0],rax
+  402c62:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  402c69:	00 00 00 
+  402c6c:	49 01 db             	add    r11,rbx
+  402c6f:	e8 b9 ec ff ff       	call   0x40192d
+  402c74:	48 bb ff ff ff ff 00 	movabs rbx,0xffffffff
+  402c7b:	00 00 00 
+  402c7e:	48 39 d8             	cmp    rax,rbx
+  402c81:	0f 87 b2 ea ff ff    	ja     0x401739
+  402c87:	49 89 83 00 00 00 00 	mov    QWORD PTR [r11+0x0],rax
+  402c8e:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  402c95:	00 00 00 
+  402c98:	49 01 db             	add    r11,rbx
+  402c9b:	e8 8d ec ff ff       	call   0x40192d
+  402ca0:	48 bb 03 00 00 00 00 	movabs rbx,0x3
+  402ca7:	00 00 00 
+  402caa:	48 39 d8             	cmp    rax,rbx
+  402cad:	0f 87 86 ea ff ff    	ja     0x401739
+  402cb3:	49 89 83 00 00 00 00 	mov    QWORD PTR [r11+0x0],rax
+  402cba:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  402cc1:	00 00 00 
+  402cc4:	49 01 db             	add    r11,rbx
+  402cc7:	e9 3b e4 ff ff       	jmp    0x401107
+  402ccc:	e8 f2 fd ff ff       	call   0x402ac3
+  402cd1:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402cd8:	00 00 00 
+  402cdb:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402ce2:	00 00 00 
+  402ce5:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402cec:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402cf3:	00 00 00 
+  402cf6:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402cfd:	00 00 00 
+  402d00:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402d07:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  402d0e:	00 00 00 
+  402d11:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402d18:	00 00 00 
+  402d1b:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402d22:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402d29:	00 00 00 
+  402d2c:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  402d33:	00 00 00 
+  402d36:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402d3d:	e8 eb eb ff ff       	call   0x40192d
+  402d42:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  402d49:	00 00 00 
+  402d4c:	48 39 d8             	cmp    rax,rbx
+  402d4f:	0f 87 e4 e9 ff ff    	ja     0x401739
+  402d55:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402d5c:	00 00 00 
+  402d5f:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402d66:	e9 76 06 00 00       	jmp    0x4033e1
+  402d6b:	e8 53 fd ff ff       	call   0x402ac3
+  402d70:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402d77:	00 00 00 
+  402d7a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402d81:	00 00 00 
+  402d84:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402d8b:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402d92:	00 00 00 
+  402d95:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402d9c:	00 00 00 
+  402d9f:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402da6:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  402dad:	00 00 00 
+  402db0:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402db7:	00 00 00 
+  402dba:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402dc1:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402dc8:	00 00 00 
+  402dcb:	48 b8 02 00 00 00 00 	movabs rax,0x2
+  402dd2:	00 00 00 
+  402dd5:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402ddc:	e8 4c eb ff ff       	call   0x40192d
+  402de1:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  402de8:	00 00 00 
+  402deb:	48 39 d8             	cmp    rax,rbx
+  402dee:	0f 87 45 e9 ff ff    	ja     0x401739
+  402df4:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402dfb:	00 00 00 
+  402dfe:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402e05:	e9 d7 05 00 00       	jmp    0x4033e1
+  402e0a:	e8 b4 fc ff ff       	call   0x402ac3
+  402e0f:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402e16:	00 00 00 
+  402e19:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402e20:	00 00 00 
+  402e23:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402e2a:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402e31:	00 00 00 
+  402e34:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402e3b:	00 00 00 
+  402e3e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402e45:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  402e4c:	00 00 00 
+  402e4f:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402e56:	00 00 00 
+  402e59:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402e60:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402e67:	00 00 00 
+  402e6a:	48 b8 03 00 00 00 00 	movabs rax,0x3
+  402e71:	00 00 00 
+  402e74:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402e7b:	e8 ad ea ff ff       	call   0x40192d
+  402e80:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  402e87:	00 00 00 
+  402e8a:	48 39 d8             	cmp    rax,rbx
+  402e8d:	0f 87 a6 e8 ff ff    	ja     0x401739
+  402e93:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402e9a:	00 00 00 
+  402e9d:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402ea4:	e9 38 05 00 00       	jmp    0x4033e1
+  402ea9:	e8 15 fc ff ff       	call   0x402ac3
+  402eae:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402eb5:	00 00 00 
+  402eb8:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402ebf:	00 00 00 
+  402ec2:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402ec9:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402ed0:	00 00 00 
+  402ed3:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402eda:	00 00 00 
+  402edd:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402ee4:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  402eeb:	00 00 00 
+  402eee:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402ef5:	00 00 00 
+  402ef8:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402eff:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402f06:	00 00 00 
+  402f09:	48 b8 04 00 00 00 00 	movabs rax,0x4
+  402f10:	00 00 00 
+  402f13:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402f1a:	e8 0e ea ff ff       	call   0x40192d
+  402f1f:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  402f26:	00 00 00 
+  402f29:	48 39 d8             	cmp    rax,rbx
+  402f2c:	0f 87 07 e8 ff ff    	ja     0x401739
+  402f32:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402f39:	00 00 00 
+  402f3c:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402f43:	e8 e5 e9 ff ff       	call   0x40192d
+  402f48:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  402f4f:	00 00 00 
+  402f52:	48 39 d8             	cmp    rax,rbx
+  402f55:	0f 87 de e7 ff ff    	ja     0x401739
+  402f5b:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402f62:	00 00 00 
+  402f65:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402f6c:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402f73:	00 00 00 
+  402f76:	48 8b 9e 00 00 00 00 	mov    rbx,QWORD PTR [rsi+0x0]
+  402f7d:	48 39 d8             	cmp    rax,rbx
+  402f80:	0f 84 b3 e7 ff ff    	je     0x401739
+  402f86:	e9 56 04 00 00       	jmp    0x4033e1
+  402f8b:	e8 33 fb ff ff       	call   0x402ac3
+  402f90:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  402f97:	00 00 00 
+  402f9a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402fa1:	00 00 00 
+  402fa4:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402fab:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  402fb2:	00 00 00 
+  402fb5:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402fbc:	00 00 00 
+  402fbf:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402fc6:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  402fcd:	00 00 00 
+  402fd0:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  402fd7:	00 00 00 
+  402fda:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402fe1:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  402fe8:	00 00 00 
+  402feb:	48 b8 05 00 00 00 00 	movabs rax,0x5
+  402ff2:	00 00 00 
+  402ff5:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  402ffc:	e8 2c e9 ff ff       	call   0x40192d
+  403001:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  403008:	00 00 00 
+  40300b:	48 39 d8             	cmp    rax,rbx
+  40300e:	0f 87 25 e7 ff ff    	ja     0x401739
+  403014:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  40301b:	00 00 00 
+  40301e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403025:	e9 b7 03 00 00       	jmp    0x4033e1
+  40302a:	e8 94 fa ff ff       	call   0x402ac3
+  40302f:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403036:	00 00 00 
+  403039:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403040:	00 00 00 
+  403043:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40304a:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  403051:	00 00 00 
+  403054:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40305b:	00 00 00 
+  40305e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403065:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  40306c:	00 00 00 
+  40306f:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403076:	00 00 00 
+  403079:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403080:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  403087:	00 00 00 
+  40308a:	48 b8 06 00 00 00 00 	movabs rax,0x6
+  403091:	00 00 00 
+  403094:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40309b:	e8 8d e8 ff ff       	call   0x40192d
+  4030a0:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  4030a7:	00 00 00 
+  4030aa:	48 39 d8             	cmp    rax,rbx
+  4030ad:	0f 87 86 e6 ff ff    	ja     0x401739
+  4030b3:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  4030ba:	00 00 00 
+  4030bd:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4030c4:	e9 18 03 00 00       	jmp    0x4033e1
+  4030c9:	e8 f5 f9 ff ff       	call   0x402ac3
+  4030ce:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  4030d5:	00 00 00 
+  4030d8:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4030df:	00 00 00 
+  4030e2:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4030e9:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  4030f0:	00 00 00 
+  4030f3:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4030fa:	00 00 00 
+  4030fd:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403104:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  40310b:	00 00 00 
+  40310e:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403115:	00 00 00 
+  403118:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40311f:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  403126:	00 00 00 
+  403129:	48 b8 07 00 00 00 00 	movabs rax,0x7
+  403130:	00 00 00 
+  403133:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40313a:	e8 ee e7 ff ff       	call   0x40192d
+  40313f:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  403146:	00 00 00 
+  403149:	48 39 d8             	cmp    rax,rbx
+  40314c:	0f 87 e7 e5 ff ff    	ja     0x401739
+  403152:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403159:	00 00 00 
+  40315c:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403163:	e9 79 02 00 00       	jmp    0x4033e1
+  403168:	e8 56 f9 ff ff       	call   0x402ac3
+  40316d:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403174:	00 00 00 
+  403177:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40317e:	00 00 00 
+  403181:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403188:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  40318f:	00 00 00 
+  403192:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403199:	00 00 00 
+  40319c:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4031a3:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  4031aa:	00 00 00 
+  4031ad:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4031b4:	00 00 00 
+  4031b7:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4031be:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4031c5:	00 00 00 
+  4031c8:	48 b8 08 00 00 00 00 	movabs rax,0x8
+  4031cf:	00 00 00 
+  4031d2:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4031d9:	e9 03 02 00 00       	jmp    0x4033e1
+  4031de:	e8 e0 f8 ff ff       	call   0x402ac3
+  4031e3:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  4031ea:	00 00 00 
+  4031ed:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4031f4:	00 00 00 
+  4031f7:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4031fe:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  403205:	00 00 00 
+  403208:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40320f:	00 00 00 
+  403212:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403219:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  403220:	00 00 00 
+  403223:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40322a:	00 00 00 
+  40322d:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403234:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  40323b:	00 00 00 
+  40323e:	48 b8 10 00 00 00 00 	movabs rax,0x10
+  403245:	00 00 00 
+  403248:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40324f:	e8 d9 e6 ff ff       	call   0x40192d
+  403254:	48 bb 01 00 00 00 00 	movabs rbx,0x1
+  40325b:	00 00 00 
+  40325e:	48 39 d8             	cmp    rax,rbx
+  403261:	0f 82 d2 e4 ff ff    	jb     0x401739
+  403267:	48 bb ff 00 00 00 00 	movabs rbx,0xff
+  40326e:	00 00 00 
+  403271:	48 39 d8             	cmp    rax,rbx
+  403274:	0f 87 bf e4 ff ff    	ja     0x401739
+  40327a:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403281:	00 00 00 
+  403284:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40328b:	e8 9d e6 ff ff       	call   0x40192d
+  403290:	48 bb ff 03 00 00 00 	movabs rbx,0x3ff
+  403297:	00 00 00 
+  40329a:	48 39 d8             	cmp    rax,rbx
+  40329d:	0f 87 96 e4 ff ff    	ja     0x401739
+  4032a3:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  4032aa:	00 00 00 
+  4032ad:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4032b4:	e8 74 e6 ff ff       	call   0x40192d
+  4032b9:	48 bb 01 00 00 00 00 	movabs rbx,0x1
+  4032c0:	00 00 00 
+  4032c3:	48 39 d8             	cmp    rax,rbx
+  4032c6:	0f 82 6d e4 ff ff    	jb     0x401739
+  4032cc:	48 bb 00 04 00 00 00 	movabs rbx,0x400
+  4032d3:	00 00 00 
+  4032d6:	48 39 d8             	cmp    rax,rbx
+  4032d9:	0f 87 5a e4 ff ff    	ja     0x401739
+  4032df:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  4032e6:	00 00 00 
+  4032e9:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4032f0:	e9 ec 00 00 00       	jmp    0x4033e1
+  4032f5:	e8 c9 f7 ff ff       	call   0x402ac3
+  4032fa:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403301:	00 00 00 
+  403304:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40330b:	00 00 00 
+  40330e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403315:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  40331c:	00 00 00 
+  40331f:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403326:	00 00 00 
+  403329:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403330:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  403337:	00 00 00 
+  40333a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403341:	00 00 00 
+  403344:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40334b:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  403352:	00 00 00 
+  403355:	48 b8 11 00 00 00 00 	movabs rax,0x11
+  40335c:	00 00 00 
+  40335f:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403366:	e9 76 00 00 00       	jmp    0x4033e1
+  40336b:	e8 53 f7 ff ff       	call   0x402ac3
+  403370:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403377:	00 00 00 
+  40337a:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403381:	00 00 00 
+  403384:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40338b:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  403392:	00 00 00 
+  403395:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40339c:	00 00 00 
+  40339f:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4033a6:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  4033ad:	00 00 00 
+  4033b0:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4033b7:	00 00 00 
+  4033ba:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4033c1:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  4033c8:	00 00 00 
+  4033cb:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  4033d2:	00 00 00 
+  4033d5:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4033dc:	e9 00 00 00 00       	jmp    0x4033e1
+  4033e1:	48 be 89 00 99 00 00 	movabs rsi,0x990089
+  4033e8:	00 00 00 
+  4033eb:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  4033f2:	00 00 00 
+  4033f5:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4033fc:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  403403:	00 00 00 
+  403406:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40340d:	e8 0a e7 ff ff       	call   0x401b1c
+  403412:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  403419:	00 00 00 
+  40341c:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  403423:	e8 f4 e6 ff ff       	call   0x401b1c
+  403428:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  40342f:	00 00 00 
+  403432:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  403439:	e8 de e6 ff ff       	call   0x401b1c
+  40343e:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  403445:	00 00 00 
+  403448:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40344f:	e8 c8 e6 ff ff       	call   0x401b1c
+  403454:	48 be 89 00 99 00 00 	movabs rsi,0x990089
+  40345b:	00 00 00 
+  40345e:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403465:	00 00 00 
+  403468:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40346f:	e9 93 dc ff ff       	jmp    0x401107
+  403474:	4c 89 f0             	mov    rax,r14
+  403477:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  40347e:	00 00 00 
+  403481:	48 21 d8             	and    rax,rbx
+  403484:	0f 85 af e2 ff ff    	jne    0x401739
+  40348a:	4d 89 f0             	mov    r8,r14
+  40348d:	49 c1 e8 05          	shr    r8,0x5
+  403491:	48 bb 01 00 00 00 00 	movabs rbx,0x1
+  403498:	00 00 00 
+  40349b:	49 39 d8             	cmp    r8,rbx
+  40349e:	0f 82 95 e2 ff ff    	jb     0x401739
+  4034a4:	48 bb 00 04 00 00 00 	movabs rbx,0x400
+  4034ab:	00 00 00 
+  4034ae:	49 39 d8             	cmp    r8,rbx
+  4034b1:	0f 87 82 e2 ff ff    	ja     0x401739
+  4034b7:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  4034be:	00 00 00 
+  4034c1:	48 bb 00 00 00 00 00 	movabs rbx,0x0
+  4034c8:	00 00 00 
+  4034cb:	48 01 de             	add    rsi,rbx
+  4034ce:	48 b8 41 58 51 56 4d 	movabs rax,0x31314d56515841
+  4034d5:	31 31 00 
+  4034d8:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4034df:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  4034e6:	00 00 00 
+  4034e9:	48 bb 08 00 00 00 00 	movabs rbx,0x8
+  4034f0:	00 00 00 
+  4034f3:	48 01 de             	add    rsi,rbx
+  4034f6:	48 b8 01 00 00 00 00 	movabs rax,0x1
+  4034fd:	00 00 00 
+  403500:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403507:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  40350e:	00 00 00 
+  403511:	48 bb 10 00 00 00 00 	movabs rbx,0x10
+  403518:	00 00 00 
+  40351b:	48 01 de             	add    rsi,rbx
+  40351e:	48 b8 20 00 00 00 00 	movabs rax,0x20
+  403525:	00 00 00 
+  403528:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40352f:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  403536:	00 00 00 
+  403539:	48 bb 18 00 00 00 00 	movabs rbx,0x18
+  403540:	00 00 00 
+  403543:	48 01 de             	add    rsi,rbx
+  403546:	4c 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],r8
+  40354d:	48 be 91 00 99 00 00 	movabs rsi,0x990091
+  403554:	00 00 00 
+  403557:	48 8b 86 00 00 00 00 	mov    rax,QWORD PTR [rsi+0x0]
+  40355e:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  403565:	00 00 00 
+  403568:	48 bb 20 00 00 00 00 	movabs rbx,0x20
+  40356f:	00 00 00 
+  403572:	48 01 de             	add    rsi,rbx
+  403575:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40357c:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  403583:	00 00 00 
+  403586:	48 bb 40 00 00 00 00 	movabs rbx,0x40
+  40358d:	00 00 00 
+  403590:	48 01 de             	add    rsi,rbx
+  403593:	4c 89 f1             	mov    rcx,r14
+  403596:	48 bb 00 10 00 00 00 	movabs rbx,0x1000
+  40359d:	00 00 00 
+  4035a0:	48 01 d9             	add    rcx,rbx
+  4035a3:	48 b8 25 23 22 84 e4 	movabs rax,0xcbf29ce484222325
+  4035aa:	9c f2 cb 
+  4035ad:	48 bb b3 01 00 00 00 	movabs rbx,0x100000001b3
+  4035b4:	01 00 00 
+  4035b7:	48 0f b6 96 00 00 00 	movzx  rdx,BYTE PTR [rsi+0x0]
+  4035be:	00 
+  4035bf:	48 31 d0             	xor    rax,rdx
+  4035c2:	48 0f af c3          	imul   rax,rbx
+  4035c6:	48 ff c6             	inc    rsi
+  4035c9:	48 ff c9             	dec    rcx
+  4035cc:	0f 85 e5 ff ff ff    	jne    0x4035b7
+  4035d2:	48 be 81 00 89 00 00 	movabs rsi,0x890081
+  4035d9:	00 00 00 
+  4035dc:	48 bb 28 00 00 00 00 	movabs rbx,0x28
+  4035e3:	00 00 00 
+  4035e6:	48 01 de             	add    rsi,rbx
+  4035e9:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4035f0:	4d 89 f0             	mov    r8,r14
+  4035f3:	48 bb 40 10 00 00 00 	movabs rbx,0x1040
+  4035fa:	00 00 00 
+  4035fd:	49 01 d8             	add    r8,rbx
+  403600:	49 b9 81 00 89 00 00 	movabs r9,0x890081
+  403607:	00 00 00 
+  40360a:	e9 c6 e0 ff ff       	jmp    0x4016d5
+  40360f:	e8 af f4 ff ff       	call   0x402ac3
+  403614:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  40361b:	00 00 00 
+  40361e:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403625:	00 00 00 
+  403628:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40362f:	48 be 20 00 80 00 00 	movabs rsi,0x800020
+  403636:	00 00 00 
+  403639:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  403640:	00 00 00 
+  403643:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  40364a:	48 be 99 00 99 00 00 	movabs rsi,0x990099
+  403651:	00 00 00 
+  403654:	48 b8 00 00 00 00 00 	movabs rax,0x0
+  40365b:	00 00 00 
+  40365e:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403665:	48 be 30 00 80 00 00 	movabs rsi,0x800030
+  40366c:	00 00 00 
+  40366f:	48 b8 09 00 00 00 00 	movabs rax,0x9
+  403676:	00 00 00 
+  403679:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  403680:	e8 a8 e2 ff ff       	call   0x40192d
+  403685:	48 bb 1f 00 00 00 00 	movabs rbx,0x1f
+  40368c:	00 00 00 
+  40368f:	48 39 d8             	cmp    rax,rbx
+  403692:	0f 87 a1 e0 ff ff    	ja     0x401739
+  403698:	48 be 18 00 80 00 00 	movabs rsi,0x800018
+  40369f:	00 00 00 
+  4036a2:	48 89 86 00 00 00 00 	mov    QWORD PTR [rsi+0x0],rax
+  4036a9:	e9 33 fd ff ff       	jmp    0x4033e1

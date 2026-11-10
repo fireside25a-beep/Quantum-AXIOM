@@ -1,0 +1,248 @@
+{
+  "status": "PASS",
+  "g9_archive_sha256": "53eced8b27b53c720a21a3b95a109ea6a0e89577b9d0b872daacb7e9ce1f27f0",
+  "unchanged_original_build_outputs": 48,
+  "outputs": [
+    {
+      "path": "native/clifford/bell_pair.x86_64",
+      "byte_identical": true,
+      "sha256": "2ec4574edcadc590d2fe5d293ecd6cf3fbb7c078f10ec859259176092aa86f03"
+    },
+    {
+      "path": "native/clifford/coherent_ring.x86_64",
+      "byte_identical": true,
+      "sha256": "05781e4372262448edba45d262502e0eaeef81e4520939aa42db3e06d3ffb8f4"
+    },
+    {
+      "path": "native/clifford/cross_register.x86_64",
+      "byte_identical": true,
+      "sha256": "1496e967ebdd0bc51b100972f72d4c6333fb64fb69244813d9a8a6d128026daa"
+    },
+    {
+      "path": "native/clifford/error_syndrome_unitary.x86_64",
+      "byte_identical": true,
+      "sha256": "43e48147a979a92b072c4b2fa88cfab7aceed23fdea1f84c7e54af623c4033dd"
+    },
+    {
+      "path": "native/clifford/ghz_32.x86_64",
+      "byte_identical": true,
+      "sha256": "66d86ed762f8220454fb23ab427fa300a9c5c10b0b1d85b77b5d2a112136b1ed"
+    },
+    {
+      "path": "native/clifford/phase_echo.x86_64",
+      "byte_identical": true,
+      "sha256": "bc4cff9edac583ccf252375ff41212a812b5ad13db43df26e6ec0fd64a2c87af"
+    },
+    {
+      "path": "native/clifford/phase_inverse.x86_64",
+      "byte_identical": true,
+      "sha256": "e1ec5b69e01be4756fe1c601eb775538fa268abd0c15697e19d5ec785dd4f4d0"
+    },
+    {
+      "path": "native/dense/bell_measure.qvb",
+      "byte_identical": true,
+      "sha256": "c1626c859c20ac44b819fa75bd65cb5b298987da7cc79d64e91a520b03f41781"
+    },
+    {
+      "path": "native/dense/bernstein_vazirani_4.qvb",
+      "byte_identical": true,
+      "sha256": "009b1cc7d25bb41ebd64d33c8d6985d2bbcad9496c066bfb0e9ba651e8202e9f"
+    },
+    {
+      "path": "native/dense/bin/native_q_compile",
+      "byte_identical": true,
+      "sha256": "a466c84be83902bfb1b8012ed2bb657fcc470839cfd5ee077861f1de9345a283"
+    },
+    {
+      "path": "native/dense/bin/native_q_execute",
+      "byte_identical": true,
+      "sha256": "39866c5e780e8501dedd5469521b51c58fb06f2c7e34500f16a2ffabed97aee3"
+    },
+    {
+      "path": "native/dense/bin/native_q_inspect",
+      "byte_identical": true,
+      "sha256": "388abb8994294d5d86a4a92571647991b23d0ade9ac1841e20ad863db72bbc79"
+    },
+    {
+      "path": "native/dense/bin/native_q_seed",
+      "byte_identical": true,
+      "sha256": "da5fcdb476bd7aed51bbc51c9ac2741319684d9c72e0519dd0546f7f7da81fb9"
+    },
+    {
+      "path": "native/dense/comptime_unroll.qvb",
+      "byte_identical": true,
+      "sha256": "fa1b4451bfcf23fd0d9f09b6aa13b36e1c211f0f756f3dad3ae9dd858b547b3d"
+    },
+    {
+      "path": "native/dense/ghz_12.qvb",
+      "byte_identical": true,
+      "sha256": "654b76ca7e7dffe99edf10c63a96efb12cdaeb70cee704d1acfb20f7353fd1ca"
+    },
+    {
+      "path": "native/dense/ghz_16.qvb",
+      "byte_identical": true,
+      "sha256": "a4262bb8254c7a519b993213cc816c1cb3b923b3840b1330a025cb68b3edca97"
+    },
+    {
+      "path": "native/dense/grover_2.qvb",
+      "byte_identical": true,
+      "sha256": "2f0015cb9ff8849c562e3c3fa29dfdd7dcb6e8266b8698792f18e4d36081d357"
+    },
+    {
+      "path": "native/dense/inverse_12.qvb",
+      "byte_identical": true,
+      "sha256": "ac2922af1c17fc518e7da2cfe078f03f9b7b26da1d215de15f71ea975d0ecd72"
+    },
+    {
+      "path": "native/dense/phase_kickback.qvb",
+      "byte_identical": true,
+      "sha256": "6c3d0123b4698a0d49d1ddabd1186c3807ba166fa3848d6c827c43317665dda7"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors000.qvb",
+      "byte_identical": true,
+      "sha256": "6ac500c362d23b5b542104f72beca4f8489298afd6f5f6c2acd456d41549f813"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors001.qvb",
+      "byte_identical": true,
+      "sha256": "e9b0921cde3b83b89eae6e1a0ff77839f7807dc816bc572b4adc88ac2e7c207c"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors010.qvb",
+      "byte_identical": true,
+      "sha256": "d129b4a47c129b73af9d66c10a596e9c8d9d8a307267153800bc9fc20407722c"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors011.qvb",
+      "byte_identical": true,
+      "sha256": "605b839c0e017e54d18c314505e6102f8bfbdca4288b194ca4c84bc1a1f63b3b"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors100.qvb",
+      "byte_identical": true,
+      "sha256": "9bde731c989fb9e3c1ac25594f8f3ea923c70d890bfe872150df6c3272906985"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors101.qvb",
+      "byte_identical": true,
+      "sha256": "54ee7c124955dad2ebb87d24bc99dbf8f885c3af64cefa98921dc9e587521f8b"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors110.qvb",
+      "byte_identical": true,
+      "sha256": "170ad4e434d8afffd273210cce37ef1cf52bbcc6e350c7e4a09b02ed01b23ecd"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical0_errors111.qvb",
+      "byte_identical": true,
+      "sha256": "6c528d4137a9cdba2513e4a4eccf67ee617e8c88680c15c37b99e0242e7d4a33"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors000.qvb",
+      "byte_identical": true,
+      "sha256": "2a246ec6d144afedf0228f2bd54ce09d682c2169f2b00ab93e500b4d112793f8"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors001.qvb",
+      "byte_identical": true,
+      "sha256": "d135bb2d109c03272a06b021b947e7cabe87ec40eddabe0776e7cf256c82735b"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors010.qvb",
+      "byte_identical": true,
+      "sha256": "35cef3fb44c31eb5ef9c46c55172ca086f4fc4b2ff4d63bc131e5482e9f47f24"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors011.qvb",
+      "byte_identical": true,
+      "sha256": "05e13408c6d48a6367e6c1d2cf2d66f1f0340d846fa39d09acc275197f0f8edc"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors100.qvb",
+      "byte_identical": true,
+      "sha256": "7671b14e1decc3317c2194cf42a0b6619290456e9d408c8721cee515edd6be81"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors101.qvb",
+      "byte_identical": true,
+      "sha256": "1652c38e0ca2543ac9a4f26758a50bcfbb9f78d0ddef224937afd852b2c081be"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors110.qvb",
+      "byte_identical": true,
+      "sha256": "006dc1b12ec05486ea94555918bab30dd6b79120720035e353d46e53436ada75"
+    },
+    {
+      "path": "native/dense/repetition_compiled/logical1_errors111.qvb",
+      "byte_identical": true,
+      "sha256": "3fad135040e55d984be9c86d8b4b3f91eef3896ba7d3ad69ff0a03d5acd344d9"
+    },
+    {
+      "path": "native/dense/reversible_echo.qvb",
+      "byte_identical": true,
+      "sha256": "38a3230d3967905042543a41ded14f404d42a28bd8b5c61e407b230434c65b9a"
+    },
+    {
+      "path": "native/dense/sdk/libnative_quantum_abi.a",
+      "byte_identical": true,
+      "sha256": "7f34f07da78c4172bb0ac144d6a970a3fb954de0b8ca5eff029c54614e6e96fe"
+    },
+    {
+      "path": "native/dense/sdk/libnative_quantum_abi.so",
+      "byte_identical": true,
+      "sha256": "023d87ec2193f28d6a63e340177e06651a54b182b73cbe11637131abebf62136"
+    },
+    {
+      "path": "native/dense/t_interference.qvb",
+      "byte_identical": true,
+      "sha256": "90c3a7431df41bd408ee763865db951e689d8a15f73af204d9e712f798df974c"
+    },
+    {
+      "path": "native/dense/teleport_plus.qvb",
+      "byte_identical": true,
+      "sha256": "38343f6134e6ea961dbf274338962bdaa3384e992c19cad3f758d350d27630d4"
+    },
+    {
+      "path": "native/dense/teleport_verified.qvb",
+      "byte_identical": true,
+      "sha256": "9ec477d99f907124a476a1d056dcf9ff3aadfbb6d5fa74ebc592d12c79e95439"
+    },
+    {
+      "path": "native/dense/wide20.qvb",
+      "byte_identical": true,
+      "sha256": "c0c2cd423220c34cb5ddbdec637b9d72300b9d2c460cea51cf9c15b4d56a6eab"
+    },
+    {
+      "path": "native/seed/compiler_self_seed.bits",
+      "byte_identical": true,
+      "sha256": "1921fe1e366d9d53e787cb0b9db8030028d850aa98432098399ca5280b092824"
+    },
+    {
+      "path": "native/seed/genesis.x86_64",
+      "byte_identical": true,
+      "sha256": "4e5cf6764c2d79aa8877ba91fe638b8bc04d804b6166315f7e976a73fb364127"
+    },
+    {
+      "path": "native/seed/native_seed_emitter.x86_64",
+      "byte_identical": true,
+      "sha256": "28bc84107206bbab4f94142c8409dd0a97a009bece49e8622af8f46f985e8d92"
+    },
+    {
+      "path": "security/native_emitter_probe.x86_64",
+      "byte_identical": true,
+      "sha256": "865125c5fec2a6d650dc8f452712249c4772c63ff6aef599e6c4606eaaf57eb4"
+    },
+    {
+      "path": "security/native_q_compile_bpf_probe.x86_64",
+      "byte_identical": true,
+      "sha256": "d2a458cea532e53af2659e60c8e69e222bf28c4ffe48a52f45915b5b51ddd76b"
+    },
+    {
+      "path": "security/native_q_execute_bpf_probe.x86_64",
+      "byte_identical": true,
+      "sha256": "7b0e5eaa66b96ab6cd914e8519ea8b7dea42b13a180f1e91e640e094431044c5"
+    }
+  ],
+  "new_native_seed": "native/seed/closed_routine_seed.x86_64"
+}

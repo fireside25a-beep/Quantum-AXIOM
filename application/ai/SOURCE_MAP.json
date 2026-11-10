@@ -1,0 +1,551 @@
+{
+  "release": "AXIOM Native Fabric G11 native quantum machine",
+  "sources": [
+    {
+      "path": "Makefile",
+      "sha256": "7d28b08a7a6fa9c4f6640caddc853119af5b3df8afa42ab98140ae32bf8cfcb3",
+      "bytes": 2252,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "docs/derive_abi_docs.py",
+      "sha256": "7df6a89735c4a3c66f979665853ec42d6b5447df0834961f717118c1e06c2a20",
+      "bytes": 11241,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "docs/derive_machine_docs.py",
+      "sha256": "6e1fee5c41fe9583e2d77c57808dfc456301cd80fca9f0a667a8126d54787c2d",
+      "bytes": 7940,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "docs/generate_source_diagrams.py",
+      "sha256": "047f5583703690c608d928393a5b9fdb2aa9b50264163d6519567cd3d5f4f270",
+      "bytes": 6641,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/bell_pair.qcl",
+      "sha256": "78c58c08b538f902bca17887e35c0bf90c9f060e8dc246083f5edbed80b131cb",
+      "bytes": 20,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/coherent_ring.qcl",
+      "sha256": "001c920987f458c6491a266ea7f290b6af1b5fb164eb41fb8fef0840dd163fbc",
+      "bytes": 61,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/cross_register.qcl",
+      "sha256": "566d413de347b3ade276e030b9827ef227575cb2abc872be921af927d98da4a4",
+      "bytes": 57,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/error_syndrome_unitary.qcl",
+      "sha256": "5b6f933fc4dff51605264ccc9dc009d8b3b27432aa9cd239c9e9d35441c8a02e",
+      "bytes": 45,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/ghz_32.qcl",
+      "sha256": "297baefaf5552bd102d6b113e470db0df94d7e140ea51740bab0d76987d2cb0d",
+      "bytes": 273,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/phase_echo.qcl",
+      "sha256": "ef163f84bf97eb36101ef6733e7ae020ee904072fe571fcf2672ed75898daf54",
+      "bytes": 27,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Clifford32/phase_inverse.qcl",
+      "sha256": "a39076d81e2a494367c0ce47f55404a40bfa69666def427723e99ac2dd0e1bcb",
+      "bytes": 39,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors000.ql",
+      "sha256": "0dfd98f3d0f02eef90c005e2f4094d8d2984766b511c5568f94319cf05e32d34",
+      "bytes": 67,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors001.ql",
+      "sha256": "8b36fe7c63e98c321d75349b8f2ad72403e4586e1c619b04ec54b635515d3f4b",
+      "bytes": 71,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors010.ql",
+      "sha256": "8919e1858fcc2f0d231aef3568ebc0ca70f9bdfac95106076be8278a72549285",
+      "bytes": 71,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors011.ql",
+      "sha256": "072076a6834d337e5a1e19184c8f8c810e0458e0b8be7d655c927f0ab8551e26",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors100.ql",
+      "sha256": "1514bcc4ada51c7f9768560ab5b7cefc33d0067f7e0f7701edca06add9460c6e",
+      "bytes": 71,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors101.ql",
+      "sha256": "c7e409f448175f1293f8c53e30ae4c28fcb039e6e64b6f8bd3677cff31e13d7c",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors110.ql",
+      "sha256": "fc68ea4c105c9c33e550047041fed372c6d1e55e596310564a64a839e905c21a",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical0_errors111.ql",
+      "sha256": "d98f8230e42b4a9088016d46cf462a52956c38538b37017573106f7f50c396ee",
+      "bytes": 79,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors000.ql",
+      "sha256": "f670612ce3178d93576d73035de692f992e57123e7532db91706e68d83fa7ddd",
+      "bytes": 71,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors001.ql",
+      "sha256": "90210ada13bd0de3f96259f9ff9ca0a66fa7a49c2e197f95971b363c90ecc869",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors010.ql",
+      "sha256": "7ad326ec76e27e324689967ae358453c3ba86b0aa997f4130daeb37491c35c20",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors011.ql",
+      "sha256": "47a2c21106fad4e056306fd7554366299349ece5664d6ef76989914439b0cb96",
+      "bytes": 79,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors100.ql",
+      "sha256": "23ffc9eb59aa417f676f5e76dd3cd7db32b918627515e2387b77d638bfe37ec2",
+      "bytes": 75,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors101.ql",
+      "sha256": "8ec038a616cf0049ea3079e99a695709b046ca9ffa4338b751c87e198efe6cf9",
+      "bytes": 79,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors110.ql",
+      "sha256": "47b0396aa34de460368d22589dcf7b1debe79ae56986ff8de34bfd6965b1f2d5",
+      "bytes": 79,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/Repetition/logical1_errors111.ql",
+      "sha256": "e3e5b8bb1c6ced831ee6abc0a689e069e84e244b9cafbd2fdb1e84b83a160ccd",
+      "bytes": 83,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/bell_measure.ql",
+      "sha256": "b0a47f4dddfabb64b01dcd1c3ebd3ee1594ef83e17587d5118fcf31cd1caddd1",
+      "bytes": 52,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/bernstein_vazirani_4.ql",
+      "sha256": "96829fd854b6391fc7b3f6bc6467f12000996d4b9ccce348235f1aa66677e905",
+      "bytes": 174,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/comptime_unroll.ql",
+      "sha256": "1801b0776b3c47e59d6b06c55697cb377607cd22e22181b4522f68cd2e1b151a",
+      "bytes": 134,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/ghz_12.ql",
+      "sha256": "ba1df3dcc29c7465e2587121ec30f402d99dc960087ae356b028120db2530441",
+      "bytes": 115,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/ghz_16.ql",
+      "sha256": "f48a53cbb18557e449f4b97923f2c923b9a0da3dc1f86ad0dc88a17f9c33cd04",
+      "bytes": 223,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/grover_2.ql",
+      "sha256": "8737c73d0adcff7fc3416696a5418ffd5f3faf5086e4d99058d3d3bc867131ae",
+      "bytes": 150,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/inverse_12.ql",
+      "sha256": "3d0a33d67c1b8e856a608d233717ce058f835f5eeaac449d41f11f4df6ea8fb4",
+      "bytes": 199,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/phase_kickback.ql",
+      "sha256": "77979b45243817b0429e973caee1a6cace80052570bcdf8213b5ee93f1853838",
+      "bytes": 70,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/reversible_echo.ql",
+      "sha256": "ccd9ffcccacd2147c7af3ea35ba62ef80f31cb791a7f2665417ed37a29a7c807",
+      "bytes": 71,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/t_interference.ql",
+      "sha256": "eda9936ab473d37c354e66146e8c9a12316c0270fcab6dbce36062924bd7a745",
+      "bytes": 91,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/teleport_plus.ql",
+      "sha256": "45f14528a5ed45f905e5abc0918cef3b3a59cbf9d21fa6e13ec27f60e63a9f28",
+      "bytes": 87,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/teleport_verified.ql",
+      "sha256": "5c3d237101f643f5bdae5ebb7dff78af24dbf0b5c4ab64c0e9ec5f175d329e2a",
+      "bytes": 171,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Dense/wide20.ql",
+      "sha256": "1000a1911e36992782b68b934450cbb95fa6059c06a4e0d73ddddf03c3f15588",
+      "bytes": 56,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Machine/entropy_seed_loop.anf",
+      "sha256": "b1259fc169088eadb395b96dbc5d814b9daf18515e320b5a1f32379c117655e2",
+      "bytes": 57,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Machine/inverse_ghz32.anf",
+      "sha256": "0124ec99af34abba9d223144ad8d4283e34c8fa338a0be8e6cec71a866286f5d",
+      "bytes": 630,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/Machine/nested_quantum.anf",
+      "sha256": "0d4acdb80fa7c50f3f95c6c66cc8b733fd669189d427c58ff0ac0f7f69305348",
+      "bytes": 121,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "examples/States/closed_routine_machine.anf",
+      "sha256": "2d8e13b558148cadd39f15c8d32cc042defd72258054d38109500a0e3b06f0d4",
+      "bytes": 1208,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/clifford/native_clifford_compiler.py",
+      "sha256": "90692ec08ae7eb4bef10978f572f8676203c5df78e55b14e7b3cdd0d849c236c",
+      "bytes": 18189,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/Makefile",
+      "sha256": "137c13e6e951e55b7552ae5ef742f10c8720f80308149b8ccd0bce765d69304a",
+      "bytes": 1359,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/sdk/axiom_qvu.h",
+      "sha256": "e93bb52e829ca2c4e9d82b81b8b1e53497222eaad991659b89a964bd1f33b9ff",
+      "bytes": 897,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/source/native_entropy_seed.S",
+      "sha256": "dd200a3c7671dc0f66e03ad7a2cd606019a743c3ae8621c5ef030576a69725ca",
+      "bytes": 2484,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/source/native_packet_abi.S",
+      "sha256": "7eb4e7bd00eacbd32a566024cdb5e8c91f86320a6ee34d9b77cd99e236ffb6c1",
+      "bytes": 3308,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/source/native_packet_inspect.S",
+      "sha256": "78b59d1d893eef5c7837bd7a2167cd3cbd85edac013c1fef1613b016d65dbb9c",
+      "bytes": 2982,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/source/native_q_compile.S",
+      "sha256": "8139fcdf17c3660e3979fdced0fc51b36b7857bb5b7c899cb37e0bc08beaa26d",
+      "bytes": 13838,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/dense/source/native_q_execute.S",
+      "sha256": "04fa2cd0d22c46c2bf1c9bd27a2fba0e4c5e7aaa822e06d4a157072eafbd585e",
+      "bytes": 18803,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/machine/axiom_machine.h",
+      "sha256": "be40e46a264480aefe987e4648116aa92fde09736c34ab2cd37a0e49e228a5b8",
+      "bytes": 934,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/machine/quantum_core.anf",
+      "sha256": "c77ba256cc18c8573107312f0926b2da1c4b51adc066268aa0366b72882f703d",
+      "bytes": 1437,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/machine/quantum_machine.anf",
+      "sha256": "21afba23581becef6a1ee6a1bb6ade23dd4e92e92c6094d2ad49ceeb77d44ba8",
+      "bytes": 9422,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/machine/reverse_history.anf",
+      "sha256": "1cdd5d848d06eb868a7ad0a84f94624b0da296c3c170e39a3a05c283df3c0f80",
+      "bytes": 7940,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/seed/emitter.ld",
+      "sha256": "99b1767126a138c3192a44cb7c884c44914daacb1094a97c797a69916cedb5cb",
+      "bytes": 292,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/seed/encode_bitseed.py",
+      "sha256": "a671bd77ed1bba54011e1cea5ed35e427c4edfb29de1dd765d0605ad75352b66",
+      "bytes": 744,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/seed/native_seed_emitter.S",
+      "sha256": "453c5be63312dda9f3c8cb42063c7a14bdef8751c39aeb4a3bfcca91c04da0c7",
+      "bytes": 2572,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/seed/nucleus.qcl",
+      "sha256": "e5989e6279b4eafaee5e9e396ee8b4f047bf6f8ae2844bae73ca148ef7a4e632",
+      "bytes": 308,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/selfhost/bootstrap_anf.py",
+      "sha256": "e0538078d999c6703195f09428cd74074874fd4b75f14b86b9fd351fc5371f6c",
+      "bytes": 5922,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/selfhost/build_selfhost.py",
+      "sha256": "db3cfd93fff9b2bb95ba7255838d0cabd59df9cc4e1d58acd504f26dac31cdba",
+      "bytes": 3679,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "native/selfhost/compiler.anf",
+      "sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "bytes": 22718,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "scripts/RUN_VERIFICATION.sh",
+      "sha256": "f179f639f7fcbb216fb089c9a1f9f9d57ca79d96695ac3772ea16a53dc456d72",
+      "bytes": 2002,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "scripts/build_packets.py",
+      "sha256": "37dbe1e6787c68953888332abd3c56cfb840a925d96349bc1d0f7e1e40183bac",
+      "bytes": 1124,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "scripts/refresh_release_records.py",
+      "sha256": "916482295e9e49122757cca96ba0ad6ca22f03da77ce398aef3154969accf29e",
+      "bytes": 5835,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "security/SIGN_WITH_YOUR_KEY.sh",
+      "sha256": "fdc07062684ccc1385ab395a68132484329da330444cc3b21d4e0e17d3542c0d",
+      "bytes": 806,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "security/VERIFY_RELEASE.sh",
+      "sha256": "01c7ef6dc4bb39d170efd2d2e0abf23c039d2d63a2ab20fbc22337f18b7a5752",
+      "bytes": 1979,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/basis_repetition.py",
+      "sha256": "94b0cfa6c0e710933d307127f1934b3de597e75536aa8b18d4fd73766e551e9c",
+      "bytes": 2918,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/benchmark_native.py",
+      "sha256": "32128218df6bd8999460502b91fb4dceaf7270eae7d24d472b8a1f48a2b41f8a",
+      "bytes": 2892,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/closed_routine_lineage.py",
+      "sha256": "39112c8b11307b9b2e7ec7197d746d65151f2e0642b0a0eccc713838162f1041",
+      "bytes": 6964,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/closed_routine_probe.c",
+      "sha256": "07e5fd1d1239de85b197485eda5a73b8c1b83a56116e3e153fe35f1544934ee8",
+      "bytes": 3075,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/distribution_integrity.py",
+      "sha256": "ff37e654f5a81d150d217a881a4bac207d859c6f5563bf817cf7161dcbc08efe",
+      "bytes": 2318,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/fault_campaign.py",
+      "sha256": "2e295965db40ab10d111c78d2a4e60cc9e9920d27fe6d96ddca35e95f6fca288",
+      "bytes": 2939,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/full_memory_fault_matrix.py",
+      "sha256": "4cfb29802ced670c454863f8d560e59f44476e73d6a31cbfd93ee2684dc2be3f",
+      "bytes": 3454,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/mathematical_laws.py",
+      "sha256": "48624f2b70f2b736c414ac5b9cd4141e5aa2f7506c8d353d30415fce23944682",
+      "bytes": 4993,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/native_clifford_independent.py",
+      "sha256": "21c7f6b1b1106ff042f3cc36f45f168225d05b94344e263ae59784c28fe9e51e",
+      "bytes": 9850,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/native_dense_regression.py",
+      "sha256": "3f9ef206cbafffb431be0b8bf71c3d1193becb6f2c2b59c92a43ce3d97d3fead",
+      "bytes": 12880,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/native_machine_acceptance.py",
+      "sha256": "87c001d8d97e2baf5029064532f4f22aba3abed3f2e651ac00526fef7d8511d4",
+      "bytes": 16315,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/quantum_algorithms_acceptance.py",
+      "sha256": "a164337d4bc59673a55a04f1075f03d488edc9bb6ddf9c55f76399819cceffc1",
+      "bytes": 4480,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/reference/closed_routine/neuro_mantle.c",
+      "sha256": "e595e964c4d787905a198c12b7b2936f89782db1406f61d7e0abb31ad2ff5d8a",
+      "bytes": 8787,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/reference/closed_routine/neuro_mantle.h",
+      "sha256": "049f68d502a9bdd04506a2ba165281dac848739c0ea7ab234a647821f7913759",
+      "bytes": 2599,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/reference/closed_routine/neuro_world.c",
+      "sha256": "b6a8ea886eb3746af357f43d8a0f352b089703045c16df186d5ee2ea9d00e2ce",
+      "bytes": 6985,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/reference/closed_routine/neuro_world.h",
+      "sha256": "5591579fefdaa2cd88229a73e90f98f6f0d0b3e84d1ff543e42a2147bf159350",
+      "bytes": 2181,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/reference/closed_routine/primitiveq.c",
+      "sha256": "56312f25fbfa59bff5d14cb876bc81ca0127650dec7ea4ddaa1f5a146e53a1de",
+      "bytes": 11400,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/reference/closed_routine/primitiveq.h",
+      "sha256": "c0dcc8b9dc2258cf163460fe6888a4975dc43a8c83e3a334361807545186b3d8",
+      "bytes": 2820,
+      "role": "unchanged_compatibility_reference"
+    },
+    {
+      "path": "tests/release_regressions.py",
+      "sha256": "9886b79ba7dc10a5231d8ee085e8e25bb74a72c7bb92b1fa13a0ebe68ea5f9bc",
+      "bytes": 13681,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/security_platform_assurance.py",
+      "sha256": "3787cf9b6e9201ba7f3c0d27b4913acf8ce53d5e6493ff15f5687a698a64ee5f",
+      "bytes": 3641,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/summarize_evidence.py",
+      "sha256": "96efd5e43e50615b569cc85d225a024715962645eafc2fa4adb092e6a41637dc",
+      "bytes": 4986,
+      "role": "active_source_or_test"
+    },
+    {
+      "path": "tests/verify_release_programs.py",
+      "sha256": "88672cf2e164cb4393d071674378cc1ad7d965779183af80149b366d48993ec7",
+      "bytes": 4775,
+      "role": "active_source_or_test"
+    }
+  ],
+  "external_project_checkout_dependencies": [],
+  "embedded_reference_provenance": "tests/reference/closed_routine/PROVENANCE.json",
+  "native_build_outputs": "evidence/source_only_rebuild.json",
+  "native_compiler_and_machine": "evidence/native_self_hosting.json",
+  "execution_summary": "evidence/VERIFICATION_SUMMARY.json",
+  "verified_target": "Linux x86-64"
+}

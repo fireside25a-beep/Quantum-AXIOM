@@ -1,0 +1,28 @@
+digraph Axiom {
+ graph [rankdir=LR, bgcolor="white", label="AXIOM Native Fabric — executed software layers", labelloc=t, fontsize=20, fontname="DejaVu Sans", pad="0.2"];
+ node [fontname="DejaVu Sans", shape=box, style="rounded,filled", color="#28405A", fillcolor="#EAF3FD"];
+ edge [color="#52677C", arrowsize=0.8];
+ subgraph cluster_a {label="Native seed and direct instruction plane"; color="#9EBED6";
+   bitseed [label="Triple-lane\nbitseed data"];
+   emitter [label="x86-64 self-emitter\n(native ELF)"];
+   image [label="x86-64 ELF RX opcodes\nRW 32-site state"];
+   ecc [label="3-lane majority\n64-row tableau ECC"];
+   bitseed -> emitter -> image -> ecc;
+ }
+ subgraph cluster_b {label="Clifford32 direct program family"; color="#9EBED6";
+  qcl [label="QCL32 source\n(H / S / CX)"];
+  offline [label="Offline opcode generator\n(Python build utility)"];
+  native32 [label="Native standalone image\nno gate VM at runtime"];
+  qcl->offline->native32;
+ }
+ subgraph cluster_c {label="Dense QVU1 classical amplitude execution"; color="#9EBED6";
+  qlang [label="Quantum-language text\nCOMPTIME + gates"];
+  asmcomp [label="Assembly translator\nQVU1 packet compiler"];
+  packet [label="48-byte header\n16-byte records"];
+  check [label="ABI + digest +\nsemantic validation"];
+  sandbox [label="Linux NNP +\nseccomp BPF"];
+  runner [label="Native Q30 kernels\nup to 20 sites"];
+  qlang->asmcomp->packet->check->sandbox->runner;
+ }
+ ecc->native32 [style=dotted,label="separate image implementation"];
+}

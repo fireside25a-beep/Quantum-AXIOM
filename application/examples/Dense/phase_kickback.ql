@@ -1,0 +1,10 @@
+qubits 6
+cbits 2
+X 5
+H 0
+CX 0 5
+H 0
+T 2
+TDG 2
+MEASURE 0 0
+MEASURE 5 1

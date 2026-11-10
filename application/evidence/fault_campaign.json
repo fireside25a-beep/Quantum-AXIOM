@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "single_bit_replica_runs": 768,
+  "double_bit_same_location_refusals": 96,
+  "digest_flip_refusals": 32,
+  "state_lane_single_bit_repairs": 192,
+  "whole_lane_repair": 3,
+  "fatal_failures": [],
+  "elapsed_seconds": 2.774
+}

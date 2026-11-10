@@ -1,0 +1,11 @@
+QVU_STEP step=0 op=2 q0=0 q1=0 c0=0 hash=fb8496d8777e9c65 classical=0
+QVU_STEP step=1 op=9 q0=0 q1=1 c0=0 hash=5fbdc1177726fc65 classical=0
+QVU_STEP step=2 op=9 q0=0 q1=2 c0=0 hash=87cb0f7f51e7bc65 classical=0
+QVU_MEASURE step=3 qubit=0 cbit=0 draw=1486746865 outcome=1 source=getrandom
+QVU_STEP step=3 op=11 q0=0 q1=0 c0=0 hash=87cb0f7f51e7bc65 classical=1
+QVU_MEASURE step=4 qubit=1 cbit=1 draw=1922960579 outcome=1 source=getrandom
+QVU_STEP step=4 op=11 q0=1 q1=0 c0=1 hash=87cb0f7f51e7bc65 classical=3
+QVU_MEASURE step=5 qubit=2 cbit=2 draw=1471643398 outcome=1 source=getrandom
+QVU_STEP step=5 op=11 q0=2 q1=0 c0=2 hash=87cb0f7f51e7bc65 classical=7
+QVU_FINAL qubits=3 cbits=3 operations=6 classical=7 norm=1152921504606846976 seedtag=82bcf551ae31982f
+QVU_AMP index=7 re=1073741824 im=0

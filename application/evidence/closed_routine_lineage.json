@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "source_manifest_verified": true,
+  "native_reference_builds": {
+    "O0": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cases": 195,
+      "real_snn_feedback_spikes": 195,
+      "transactional_refusals": 195,
+      "exported_state_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0"
+    },
+    "O2": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cases": 195,
+      "real_snn_feedback_spikes": 195,
+      "transactional_refusals": 195,
+      "exported_state_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0"
+    },
+    "san": {
+      "status": "BLOCKED_LEAKSANITIZER_HOST_PTRACE",
+      "exit_code": 1,
+      "cases": 195,
+      "real_snn_feedback_spikes": 195,
+      "transactional_refusals": 195,
+      "exported_state_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0",
+      "stderr": "CLOSED_ROUTINE_PASS cases=195 feedback_spikes=195 transactional_refusals=195\n==23680==LeakSanitizer has encountered a fatal error.\n==23680==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==23680==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n",
+      "sanitizers_disabled": false,
+      "sanitizer_validation_complete": false
+    }
+  },
+  "native_import_sequences": 16,
+  "native_inverse_sequences": 16,
+  "malformed_snapshot_refusals": 14,
+  "scope": "executed source-linked state transfer; test-only preserved reference",
+  "general_compiler_self_hosting": false,
+  "physical_coherent_qubits": false,
+  "imported_seed_sha256": "ba78fe60b32e38974b8d6cbcac47915b0846d7b5002e17ded787744932eef5a7",
+  "source_volume_sha256": "cf1a836bf848f408594ec09f6d590e296276f2035dfe3aa55c74a93393fa0c5d",
+  "fixture_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0"
+}

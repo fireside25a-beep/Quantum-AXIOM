@@ -1,0 +1,487 @@
+# clifford32: ELF RX opcode region 0x401000, 1966 source-derived bytes
+
+Disassembly of section .data:
+
+0000000000401000 <.data>:
+  401000:	48 be 00 20 40 00 00 	movabs rsi,0x402000
+  401007:	00 00 00 
+  40100a:	48 b8 53 45 45 44 58 	movabs rax,0x2136385844454553
+  401011:	38 36 21 
+  401014:	48 39 06             	cmp    QWORD PTR [rsi],rax
+  401017:	0f 85 85 07 00 00    	jne    0x4017a2
+  40101d:	48 83 7e 50 20       	cmp    QWORD PTR [rsi+0x50],0x20
+  401022:	0f 85 7a 07 00 00    	jne    0x4017a2
+  401028:	48 83 7e 58 01       	cmp    QWORD PTR [rsi+0x58],0x1
+  40102d:	0f 85 6f 07 00 00    	jne    0x4017a2
+  401033:	48 83 7e 08 ff       	cmp    QWORD PTR [rsi+0x8],0xffffffffffffffff
+  401038:	0f 84 64 07 00 00    	je     0x4017a2
+  40103e:	4c 8b 66 10          	mov    r12,QWORD PTR [rsi+0x10]
+  401042:	4c 8b 6e 18          	mov    r13,QWORD PTR [rsi+0x18]
+  401046:	4c 8b 76 20          	mov    r14,QWORD PTR [rsi+0x20]
+  40104a:	4c 89 e0             	mov    rax,r12
+  40104d:	4c 21 e8             	and    rax,r13
+  401050:	4c 89 e3             	mov    rbx,r12
+  401053:	4c 21 f3             	and    rbx,r14
+  401056:	48 09 d8             	or     rax,rbx
+  401059:	4c 89 eb             	mov    rbx,r13
+  40105c:	4c 21 f3             	and    rbx,r14
+  40105f:	48 09 d8             	or     rax,rbx
+  401062:	49 89 c7             	mov    r15,rax
+  401065:	4c 8b 46 08          	mov    r8,QWORD PTR [rsi+0x8]
+  401069:	4c 89 c0             	mov    rax,r8
+  40106c:	48 69 c0 15 7c 4a 7f 	imul   rax,rax,0x7f4a7c15
+  401073:	4c 31 f8             	xor    rax,r15
+  401076:	49 bb 57 1d c2 91 0b 	movabs r11,0xdba79b0b91c21d57
+  40107d:	9b a7 db 
+  401080:	4c 31 d8             	xor    rax,r11
+  401083:	48 3b 46 28          	cmp    rax,QWORD PTR [rsi+0x28]
+  401087:	0f 85 15 07 00 00    	jne    0x4017a2
+  40108d:	48 89 c2             	mov    rdx,rax
+  401090:	48 f7 d2             	not    rdx
+  401093:	48 3b 56 30          	cmp    rdx,QWORD PTR [rsi+0x30]
+  401097:	0f 85 05 07 00 00    	jne    0x4017a2
+  40109d:	44 89 fa             	mov    edx,r15d
+  4010a0:	4c 89 fb             	mov    rbx,r15
+  4010a3:	48 c1 eb 20          	shr    rbx,0x20
+  4010a7:	21 da                	and    edx,ebx
+  4010a9:	0f 85 f3 06 00 00    	jne    0x4017a2
+  4010af:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  4010b6:	00 00 00 
+  4010b9:	48 bf 80 23 40 00 00 	movabs rdi,0x402380
+  4010c0:	00 00 00 
+  4010c3:	48 ba 80 26 40 00 00 	movabs rdx,0x402680
+  4010ca:	00 00 00 
+  4010cd:	b9 c0 00 00 00       	mov    ecx,0xc0
+  4010d2:	8b 06                	mov    eax,DWORD PTR [rsi]
+  4010d4:	44 8b 07             	mov    r8d,DWORD PTR [rdi]
+  4010d7:	44 8b 0a             	mov    r9d,DWORD PTR [rdx]
+  4010da:	41 89 c2             	mov    r10d,eax
+  4010dd:	45 21 c2             	and    r10d,r8d
+  4010e0:	41 89 c3             	mov    r11d,eax
+  4010e3:	45 21 cb             	and    r11d,r9d
+  4010e6:	45 09 da             	or     r10d,r11d
+  4010e9:	45 21 c8             	and    r8d,r9d
+  4010ec:	45 09 c2             	or     r10d,r8d
+  4010ef:	44 89 16             	mov    DWORD PTR [rsi],r10d
+  4010f2:	44 89 17             	mov    DWORD PTR [rdi],r10d
+  4010f5:	44 89 12             	mov    DWORD PTR [rdx],r10d
+  4010f8:	48 83 c6 04          	add    rsi,0x4
+  4010fc:	48 83 c7 04          	add    rdi,0x4
+  401100:	48 83 c2 04          	add    rdx,0x4
+  401104:	48 ff c9             	dec    rcx
+  401107:	0f 85 c5 ff ff ff    	jne    0x4010d2
+  40110d:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  401114:	00 00 00 
+  401117:	b8 c5 9d 1c 81       	mov    eax,0x811c9dc5
+  40111c:	b9 00 03 00 00       	mov    ecx,0x300
+  401121:	0f b6 16             	movzx  edx,BYTE PTR [rsi]
+  401124:	31 d0                	xor    eax,edx
+  401126:	69 c0 93 01 00 01    	imul   eax,eax,0x1000193
+  40112c:	48 ff c6             	inc    rsi
+  40112f:	ff c9                	dec    ecx
+  401131:	0f 85 ea ff ff ff    	jne    0x401121
+  401137:	48 be 00 20 40 00 00 	movabs rsi,0x402000
+  40113e:	00 00 00 
+  401141:	3b 46 60             	cmp    eax,DWORD PTR [rsi+0x60]
+  401144:	0f 85 58 06 00 00    	jne    0x4017a2
+  40114a:	f7 d0                	not    eax
+  40114c:	3b 46 68             	cmp    eax,DWORD PTR [rsi+0x68]
+  40114f:	0f 85 4d 06 00 00    	jne    0x4017a2
+  401155:	31 c0                	xor    eax,eax
+  401157:	0f a2                	cpuid
+  401159:	83 f8 07             	cmp    eax,0x7
+  40115c:	0f 82 34 06 00 00    	jb     0x401796
+  401162:	b8 07 00 00 00       	mov    eax,0x7
+  401167:	31 c9                	xor    ecx,ecx
+  401169:	0f a2                	cpuid
+  40116b:	0f ba e3 12          	bt     ebx,0x12
+  40116f:	0f 83 21 06 00 00    	jae    0x401796
+  401175:	b9 40 00 00 00       	mov    ecx,0x40
+  40117a:	48 0f c7 f8          	rdseed rax
+  40117e:	0f 82 0f 00 00 00    	jb     0x401193
+  401184:	f3 90                	pause
+  401186:	ff c9                	dec    ecx
+  401188:	0f 85 ec ff ff ff    	jne    0x40117a
+  40118e:	e9 03 06 00 00       	jmp    0x401796
+  401193:	4d 89 fa             	mov    r10,r15
+  401196:	4c 89 fb             	mov    rbx,r15
+  401199:	48 89 d9             	mov    rcx,rbx
+  40119c:	48 d1 c1             	rol    rcx,1
+  40119f:	48 31 cb             	xor    rbx,rcx
+  4011a2:	48 89 c1             	mov    rcx,rax
+  4011a5:	48 c1 c9 11          	ror    rcx,0x11
+  4011a9:	48 31 cb             	xor    rbx,rcx
+  4011ac:	48 31 c3             	xor    rbx,rax
+  4011af:	48 89 da             	mov    rdx,rbx
+  4011b2:	48 c1 c2 17          	rol    rdx,0x17
+  4011b6:	48 31 d3             	xor    rbx,rdx
+  4011b9:	89 da                	mov    edx,ebx
+  4011bb:	89 d9                	mov    ecx,ebx
+  4011bd:	c1 c9 0b             	ror    ecx,0xb
+  4011c0:	41 89 d1             	mov    r9d,edx
+  4011c3:	f7 d1                	not    ecx
+  4011c5:	21 ca                	and    edx,ecx
+  4011c7:	89 d9                	mov    ecx,ebx
+  4011c9:	c1 c1 07             	rol    ecx,0x7
+  4011cc:	41 f7 d1             	not    r9d
+  4011cf:	44 21 c9             	and    ecx,r9d
+  4011d2:	48 c1 e1 20          	shl    rcx,0x20
+  4011d6:	48 09 ca             	or     rdx,rcx
+  4011d9:	49 89 d7             	mov    r15,rdx
+  4011dc:	4c 89 fa             	mov    rdx,r15
+  4011df:	4c 31 d2             	xor    rdx,r10
+  4011e2:	48 89 56 40          	mov    QWORD PTR [rsi+0x40],rdx
+  4011e6:	48 89 46 38          	mov    QWORD PTR [rsi+0x38],rax
+  4011ea:	48 ff 46 08          	inc    QWORD PTR [rsi+0x8]
+  4011ee:	4c 89 7e 10          	mov    QWORD PTR [rsi+0x10],r15
+  4011f2:	4c 89 7e 18          	mov    QWORD PTR [rsi+0x18],r15
+  4011f6:	4c 89 7e 20          	mov    QWORD PTR [rsi+0x20],r15
+  4011fa:	48 8b 46 08          	mov    rax,QWORD PTR [rsi+0x8]
+  4011fe:	48 69 c0 15 7c 4a 7f 	imul   rax,rax,0x7f4a7c15
+  401205:	4c 31 f8             	xor    rax,r15
+  401208:	49 bb 57 1d c2 91 0b 	movabs r11,0xdba79b0b91c21d57
+  40120f:	9b a7 db 
+  401212:	4c 31 d8             	xor    rax,r11
+  401215:	48 89 46 28          	mov    QWORD PTR [rsi+0x28],rax
+  401219:	48 f7 d0             	not    rax
+  40121c:	48 89 46 30          	mov    QWORD PTR [rsi+0x30],rax
+  401220:	48 8b 5e 48          	mov    rbx,QWORD PTR [rsi+0x48]
+  401224:	48 c1 c3 05          	rol    rbx,0x5
+  401228:	4c 31 fb             	xor    rbx,r15
+  40122b:	48 33 5e 38          	xor    rbx,QWORD PTR [rsi+0x38]
+  40122f:	48 89 5e 48          	mov    QWORD PTR [rsi+0x48],rbx
+  401233:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  40123a:	00 00 00 
+  40123d:	b9 40 00 00 00       	mov    ecx,0x40
+  401242:	8b 06                	mov    eax,DWORD PTR [rsi]
+  401244:	8b 5e 04             	mov    ebx,DWORD PTR [rsi+0x4]
+  401247:	8b 56 08             	mov    edx,DWORD PTR [rsi+0x8]
+  40124a:	41 89 c0             	mov    r8d,eax
+  40124d:	41 21 d8             	and    r8d,ebx
+  401250:	41 81 e0 01 00 00 00 	and    r8d,0x1
+  401257:	45 85 c0             	test   r8d,r8d
+  40125a:	41 0f 95 c0          	setne  r8b
+  40125e:	45 0f b6 c0          	movzx  r8d,r8b
+  401262:	44 01 c2             	add    edx,r8d
+  401265:	44 01 c2             	add    edx,r8d
+  401268:	83 e2 03             	and    edx,0x3
+  40126b:	41 89 c0             	mov    r8d,eax
+  40126e:	41 31 d8             	xor    r8d,ebx
+  401271:	41 81 e0 01 00 00 00 	and    r8d,0x1
+  401278:	44 31 c0             	xor    eax,r8d
+  40127b:	44 31 c3             	xor    ebx,r8d
+  40127e:	41 89 c0             	mov    r8d,eax
+  401281:	41 81 e0 01 00 00 00 	and    r8d,0x1
+  401288:	41 c1 e0 01          	shl    r8d,0x1
+  40128c:	44 31 c0             	xor    eax,r8d
+  40128f:	41 89 d8             	mov    r8d,ebx
+  401292:	41 81 e0 02 00 00 00 	and    r8d,0x2
+  401299:	41 c1 e8 01          	shr    r8d,0x1
+  40129d:	44 31 c3             	xor    ebx,r8d
+  4012a0:	41 89 c0             	mov    r8d,eax
+  4012a3:	41 81 e0 02 00 00 00 	and    r8d,0x2
+  4012aa:	41 c1 e0 01          	shl    r8d,0x1
+  4012ae:	44 31 c0             	xor    eax,r8d
+  4012b1:	41 89 d8             	mov    r8d,ebx
+  4012b4:	41 81 e0 04 00 00 00 	and    r8d,0x4
+  4012bb:	41 c1 e8 01          	shr    r8d,0x1
+  4012bf:	44 31 c3             	xor    ebx,r8d
+  4012c2:	41 89 c0             	mov    r8d,eax
+  4012c5:	41 81 e0 04 00 00 00 	and    r8d,0x4
+  4012cc:	41 c1 e0 01          	shl    r8d,0x1
+  4012d0:	44 31 c0             	xor    eax,r8d
+  4012d3:	41 89 d8             	mov    r8d,ebx
+  4012d6:	41 81 e0 08 00 00 00 	and    r8d,0x8
+  4012dd:	41 c1 e8 01          	shr    r8d,0x1
+  4012e1:	44 31 c3             	xor    ebx,r8d
+  4012e4:	41 89 c0             	mov    r8d,eax
+  4012e7:	41 81 e0 08 00 00 00 	and    r8d,0x8
+  4012ee:	41 c1 e0 01          	shl    r8d,0x1
+  4012f2:	44 31 c0             	xor    eax,r8d
+  4012f5:	41 89 d8             	mov    r8d,ebx
+  4012f8:	41 81 e0 10 00 00 00 	and    r8d,0x10
+  4012ff:	41 c1 e8 01          	shr    r8d,0x1
+  401303:	44 31 c3             	xor    ebx,r8d
+  401306:	41 89 c0             	mov    r8d,eax
+  401309:	41 81 e0 10 00 00 00 	and    r8d,0x10
+  401310:	41 c1 e0 01          	shl    r8d,0x1
+  401314:	44 31 c0             	xor    eax,r8d
+  401317:	41 89 d8             	mov    r8d,ebx
+  40131a:	41 81 e0 20 00 00 00 	and    r8d,0x20
+  401321:	41 c1 e8 01          	shr    r8d,0x1
+  401325:	44 31 c3             	xor    ebx,r8d
+  401328:	41 89 c0             	mov    r8d,eax
+  40132b:	41 81 e0 20 00 00 00 	and    r8d,0x20
+  401332:	41 c1 e0 01          	shl    r8d,0x1
+  401336:	44 31 c0             	xor    eax,r8d
+  401339:	41 89 d8             	mov    r8d,ebx
+  40133c:	41 81 e0 40 00 00 00 	and    r8d,0x40
+  401343:	41 c1 e8 01          	shr    r8d,0x1
+  401347:	44 31 c3             	xor    ebx,r8d
+  40134a:	41 89 c0             	mov    r8d,eax
+  40134d:	41 81 e0 40 00 00 00 	and    r8d,0x40
+  401354:	41 c1 e0 01          	shl    r8d,0x1
+  401358:	44 31 c0             	xor    eax,r8d
+  40135b:	41 89 d8             	mov    r8d,ebx
+  40135e:	41 81 e0 80 00 00 00 	and    r8d,0x80
+  401365:	41 c1 e8 01          	shr    r8d,0x1
+  401369:	44 31 c3             	xor    ebx,r8d
+  40136c:	41 89 c0             	mov    r8d,eax
+  40136f:	41 81 e0 80 00 00 00 	and    r8d,0x80
+  401376:	41 c1 e0 01          	shl    r8d,0x1
+  40137a:	44 31 c0             	xor    eax,r8d
+  40137d:	41 89 d8             	mov    r8d,ebx
+  401380:	41 81 e0 00 01 00 00 	and    r8d,0x100
+  401387:	41 c1 e8 01          	shr    r8d,0x1
+  40138b:	44 31 c3             	xor    ebx,r8d
+  40138e:	41 89 c0             	mov    r8d,eax
+  401391:	41 81 e0 00 01 00 00 	and    r8d,0x100
+  401398:	41 c1 e0 01          	shl    r8d,0x1
+  40139c:	44 31 c0             	xor    eax,r8d
+  40139f:	41 89 d8             	mov    r8d,ebx
+  4013a2:	41 81 e0 00 02 00 00 	and    r8d,0x200
+  4013a9:	41 c1 e8 01          	shr    r8d,0x1
+  4013ad:	44 31 c3             	xor    ebx,r8d
+  4013b0:	41 89 c0             	mov    r8d,eax
+  4013b3:	41 81 e0 00 02 00 00 	and    r8d,0x200
+  4013ba:	41 c1 e0 01          	shl    r8d,0x1
+  4013be:	44 31 c0             	xor    eax,r8d
+  4013c1:	41 89 d8             	mov    r8d,ebx
+  4013c4:	41 81 e0 00 04 00 00 	and    r8d,0x400
+  4013cb:	41 c1 e8 01          	shr    r8d,0x1
+  4013cf:	44 31 c3             	xor    ebx,r8d
+  4013d2:	41 89 c0             	mov    r8d,eax
+  4013d5:	41 81 e0 00 04 00 00 	and    r8d,0x400
+  4013dc:	41 c1 e0 01          	shl    r8d,0x1
+  4013e0:	44 31 c0             	xor    eax,r8d
+  4013e3:	41 89 d8             	mov    r8d,ebx
+  4013e6:	41 81 e0 00 08 00 00 	and    r8d,0x800
+  4013ed:	41 c1 e8 01          	shr    r8d,0x1
+  4013f1:	44 31 c3             	xor    ebx,r8d
+  4013f4:	41 89 c0             	mov    r8d,eax
+  4013f7:	41 81 e0 00 08 00 00 	and    r8d,0x800
+  4013fe:	41 c1 e0 01          	shl    r8d,0x1
+  401402:	44 31 c0             	xor    eax,r8d
+  401405:	41 89 d8             	mov    r8d,ebx
+  401408:	41 81 e0 00 10 00 00 	and    r8d,0x1000
+  40140f:	41 c1 e8 01          	shr    r8d,0x1
+  401413:	44 31 c3             	xor    ebx,r8d
+  401416:	41 89 c0             	mov    r8d,eax
+  401419:	41 81 e0 00 10 00 00 	and    r8d,0x1000
+  401420:	41 c1 e0 01          	shl    r8d,0x1
+  401424:	44 31 c0             	xor    eax,r8d
+  401427:	41 89 d8             	mov    r8d,ebx
+  40142a:	41 81 e0 00 20 00 00 	and    r8d,0x2000
+  401431:	41 c1 e8 01          	shr    r8d,0x1
+  401435:	44 31 c3             	xor    ebx,r8d
+  401438:	41 89 c0             	mov    r8d,eax
+  40143b:	41 81 e0 00 20 00 00 	and    r8d,0x2000
+  401442:	41 c1 e0 01          	shl    r8d,0x1
+  401446:	44 31 c0             	xor    eax,r8d
+  401449:	41 89 d8             	mov    r8d,ebx
+  40144c:	41 81 e0 00 40 00 00 	and    r8d,0x4000
+  401453:	41 c1 e8 01          	shr    r8d,0x1
+  401457:	44 31 c3             	xor    ebx,r8d
+  40145a:	41 89 c0             	mov    r8d,eax
+  40145d:	41 81 e0 00 40 00 00 	and    r8d,0x4000
+  401464:	41 c1 e0 01          	shl    r8d,0x1
+  401468:	44 31 c0             	xor    eax,r8d
+  40146b:	41 89 d8             	mov    r8d,ebx
+  40146e:	41 81 e0 00 80 00 00 	and    r8d,0x8000
+  401475:	41 c1 e8 01          	shr    r8d,0x1
+  401479:	44 31 c3             	xor    ebx,r8d
+  40147c:	41 89 c0             	mov    r8d,eax
+  40147f:	41 81 e0 00 80 00 00 	and    r8d,0x8000
+  401486:	41 c1 e0 01          	shl    r8d,0x1
+  40148a:	44 31 c0             	xor    eax,r8d
+  40148d:	41 89 d8             	mov    r8d,ebx
+  401490:	41 81 e0 00 00 01 00 	and    r8d,0x10000
+  401497:	41 c1 e8 01          	shr    r8d,0x1
+  40149b:	44 31 c3             	xor    ebx,r8d
+  40149e:	41 89 c0             	mov    r8d,eax
+  4014a1:	41 81 e0 00 00 01 00 	and    r8d,0x10000
+  4014a8:	41 c1 e0 01          	shl    r8d,0x1
+  4014ac:	44 31 c0             	xor    eax,r8d
+  4014af:	41 89 d8             	mov    r8d,ebx
+  4014b2:	41 81 e0 00 00 02 00 	and    r8d,0x20000
+  4014b9:	41 c1 e8 01          	shr    r8d,0x1
+  4014bd:	44 31 c3             	xor    ebx,r8d
+  4014c0:	41 89 c0             	mov    r8d,eax
+  4014c3:	41 81 e0 00 00 02 00 	and    r8d,0x20000
+  4014ca:	41 c1 e0 01          	shl    r8d,0x1
+  4014ce:	44 31 c0             	xor    eax,r8d
+  4014d1:	41 89 d8             	mov    r8d,ebx
+  4014d4:	41 81 e0 00 00 04 00 	and    r8d,0x40000
+  4014db:	41 c1 e8 01          	shr    r8d,0x1
+  4014df:	44 31 c3             	xor    ebx,r8d
+  4014e2:	41 89 c0             	mov    r8d,eax
+  4014e5:	41 81 e0 00 00 04 00 	and    r8d,0x40000
+  4014ec:	41 c1 e0 01          	shl    r8d,0x1
+  4014f0:	44 31 c0             	xor    eax,r8d
+  4014f3:	41 89 d8             	mov    r8d,ebx
+  4014f6:	41 81 e0 00 00 08 00 	and    r8d,0x80000
+  4014fd:	41 c1 e8 01          	shr    r8d,0x1
+  401501:	44 31 c3             	xor    ebx,r8d
+  401504:	41 89 c0             	mov    r8d,eax
+  401507:	41 81 e0 00 00 08 00 	and    r8d,0x80000
+  40150e:	41 c1 e0 01          	shl    r8d,0x1
+  401512:	44 31 c0             	xor    eax,r8d
+  401515:	41 89 d8             	mov    r8d,ebx
+  401518:	41 81 e0 00 00 10 00 	and    r8d,0x100000
+  40151f:	41 c1 e8 01          	shr    r8d,0x1
+  401523:	44 31 c3             	xor    ebx,r8d
+  401526:	41 89 c0             	mov    r8d,eax
+  401529:	41 81 e0 00 00 10 00 	and    r8d,0x100000
+  401530:	41 c1 e0 01          	shl    r8d,0x1
+  401534:	44 31 c0             	xor    eax,r8d
+  401537:	41 89 d8             	mov    r8d,ebx
+  40153a:	41 81 e0 00 00 20 00 	and    r8d,0x200000
+  401541:	41 c1 e8 01          	shr    r8d,0x1
+  401545:	44 31 c3             	xor    ebx,r8d
+  401548:	41 89 c0             	mov    r8d,eax
+  40154b:	41 81 e0 00 00 20 00 	and    r8d,0x200000
+  401552:	41 c1 e0 01          	shl    r8d,0x1
+  401556:	44 31 c0             	xor    eax,r8d
+  401559:	41 89 d8             	mov    r8d,ebx
+  40155c:	41 81 e0 00 00 40 00 	and    r8d,0x400000
+  401563:	41 c1 e8 01          	shr    r8d,0x1
+  401567:	44 31 c3             	xor    ebx,r8d
+  40156a:	41 89 c0             	mov    r8d,eax
+  40156d:	41 81 e0 00 00 40 00 	and    r8d,0x400000
+  401574:	41 c1 e0 01          	shl    r8d,0x1
+  401578:	44 31 c0             	xor    eax,r8d
+  40157b:	41 89 d8             	mov    r8d,ebx
+  40157e:	41 81 e0 00 00 80 00 	and    r8d,0x800000
+  401585:	41 c1 e8 01          	shr    r8d,0x1
+  401589:	44 31 c3             	xor    ebx,r8d
+  40158c:	41 89 c0             	mov    r8d,eax
+  40158f:	41 81 e0 00 00 80 00 	and    r8d,0x800000
+  401596:	41 c1 e0 01          	shl    r8d,0x1
+  40159a:	44 31 c0             	xor    eax,r8d
+  40159d:	41 89 d8             	mov    r8d,ebx
+  4015a0:	41 81 e0 00 00 00 01 	and    r8d,0x1000000
+  4015a7:	41 c1 e8 01          	shr    r8d,0x1
+  4015ab:	44 31 c3             	xor    ebx,r8d
+  4015ae:	41 89 c0             	mov    r8d,eax
+  4015b1:	41 81 e0 00 00 00 01 	and    r8d,0x1000000
+  4015b8:	41 c1 e0 01          	shl    r8d,0x1
+  4015bc:	44 31 c0             	xor    eax,r8d
+  4015bf:	41 89 d8             	mov    r8d,ebx
+  4015c2:	41 81 e0 00 00 00 02 	and    r8d,0x2000000
+  4015c9:	41 c1 e8 01          	shr    r8d,0x1
+  4015cd:	44 31 c3             	xor    ebx,r8d
+  4015d0:	41 89 c0             	mov    r8d,eax
+  4015d3:	41 81 e0 00 00 00 02 	and    r8d,0x2000000
+  4015da:	41 c1 e0 01          	shl    r8d,0x1
+  4015de:	44 31 c0             	xor    eax,r8d
+  4015e1:	41 89 d8             	mov    r8d,ebx
+  4015e4:	41 81 e0 00 00 00 04 	and    r8d,0x4000000
+  4015eb:	41 c1 e8 01          	shr    r8d,0x1
+  4015ef:	44 31 c3             	xor    ebx,r8d
+  4015f2:	41 89 c0             	mov    r8d,eax
+  4015f5:	41 81 e0 00 00 00 04 	and    r8d,0x4000000
+  4015fc:	41 c1 e0 01          	shl    r8d,0x1
+  401600:	44 31 c0             	xor    eax,r8d
+  401603:	41 89 d8             	mov    r8d,ebx
+  401606:	41 81 e0 00 00 00 08 	and    r8d,0x8000000
+  40160d:	41 c1 e8 01          	shr    r8d,0x1
+  401611:	44 31 c3             	xor    ebx,r8d
+  401614:	41 89 c0             	mov    r8d,eax
+  401617:	41 81 e0 00 00 00 08 	and    r8d,0x8000000
+  40161e:	41 c1 e0 01          	shl    r8d,0x1
+  401622:	44 31 c0             	xor    eax,r8d
+  401625:	41 89 d8             	mov    r8d,ebx
+  401628:	41 81 e0 00 00 00 10 	and    r8d,0x10000000
+  40162f:	41 c1 e8 01          	shr    r8d,0x1
+  401633:	44 31 c3             	xor    ebx,r8d
+  401636:	41 89 c0             	mov    r8d,eax
+  401639:	41 81 e0 00 00 00 10 	and    r8d,0x10000000
+  401640:	41 c1 e0 01          	shl    r8d,0x1
+  401644:	44 31 c0             	xor    eax,r8d
+  401647:	41 89 d8             	mov    r8d,ebx
+  40164a:	41 81 e0 00 00 00 20 	and    r8d,0x20000000
+  401651:	41 c1 e8 01          	shr    r8d,0x1
+  401655:	44 31 c3             	xor    ebx,r8d
+  401658:	41 89 c0             	mov    r8d,eax
+  40165b:	41 81 e0 00 00 00 20 	and    r8d,0x20000000
+  401662:	41 c1 e0 01          	shl    r8d,0x1
+  401666:	44 31 c0             	xor    eax,r8d
+  401669:	41 89 d8             	mov    r8d,ebx
+  40166c:	41 81 e0 00 00 00 40 	and    r8d,0x40000000
+  401673:	41 c1 e8 01          	shr    r8d,0x1
+  401677:	44 31 c3             	xor    ebx,r8d
+  40167a:	41 89 c0             	mov    r8d,eax
+  40167d:	41 81 e0 00 00 00 40 	and    r8d,0x40000000
+  401684:	41 c1 e0 01          	shl    r8d,0x1
+  401688:	44 31 c0             	xor    eax,r8d
+  40168b:	41 89 d8             	mov    r8d,ebx
+  40168e:	41 81 e0 00 00 00 80 	and    r8d,0x80000000
+  401695:	41 c1 e8 01          	shr    r8d,0x1
+  401699:	44 31 c3             	xor    ebx,r8d
+  40169c:	89 06                	mov    DWORD PTR [rsi],eax
+  40169e:	89 5e 04             	mov    DWORD PTR [rsi+0x4],ebx
+  4016a1:	89 56 08             	mov    DWORD PTR [rsi+0x8],edx
+  4016a4:	48 83 c6 0c          	add    rsi,0xc
+  4016a8:	48 ff c9             	dec    rcx
+  4016ab:	0f 85 91 fb ff ff    	jne    0x401242
+  4016b1:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  4016b8:	00 00 00 
+  4016bb:	48 bf 80 23 40 00 00 	movabs rdi,0x402380
+  4016c2:	00 00 00 
+  4016c5:	b9 60 00 00 00       	mov    ecx,0x60
+  4016ca:	f3 48 a5             	rep movs QWORD PTR es:[rdi],QWORD PTR ds:[rsi]
+  4016cd:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  4016d4:	00 00 00 
+  4016d7:	48 bf 80 26 40 00 00 	movabs rdi,0x402680
+  4016de:	00 00 00 
+  4016e1:	b9 60 00 00 00       	mov    ecx,0x60
+  4016e6:	f3 48 a5             	rep movs QWORD PTR es:[rdi],QWORD PTR ds:[rsi]
+  4016e9:	48 be 80 20 40 00 00 	movabs rsi,0x402080
+  4016f0:	00 00 00 
+  4016f3:	b8 c5 9d 1c 81       	mov    eax,0x811c9dc5
+  4016f8:	b9 00 03 00 00       	mov    ecx,0x300
+  4016fd:	0f b6 16             	movzx  edx,BYTE PTR [rsi]
+  401700:	31 d0                	xor    eax,edx
+  401702:	69 c0 93 01 00 01    	imul   eax,eax,0x1000193
+  401708:	48 ff c6             	inc    rsi
+  40170b:	ff c9                	dec    ecx
+  40170d:	0f 85 ea ff ff ff    	jne    0x4016fd
+  401713:	48 be 00 20 40 00 00 	movabs rsi,0x402000
+  40171a:	00 00 00 
+  40171d:	89 46 60             	mov    DWORD PTR [rsi+0x60],eax
+  401720:	f7 d0                	not    eax
+  401722:	89 46 68             	mov    DWORD PTR [rsi+0x68],eax
+  401725:	b8 9d 00 00 00       	mov    eax,0x9d
+  40172a:	bf 26 00 00 00       	mov    edi,0x26
+  40172f:	be 01 00 00 00       	mov    esi,0x1
+  401734:	31 d2                	xor    edx,edx
+  401736:	45 31 d2             	xor    r10d,r10d
+  401739:	45 31 c0             	xor    r8d,r8d
+  40173c:	0f 05                	syscall
+  40173e:	85 c0                	test   eax,eax
+  401740:	0f 85 5c 00 00 00    	jne    0x4017a2
+  401746:	b8 3d 01 00 00       	mov    eax,0x13d
+  40174b:	bf 01 00 00 00       	mov    edi,0x1
+  401750:	31 f6                	xor    esi,esi
+  401752:	48 ba 80 1f 40 00 00 	movabs rdx,0x401f80
+  401759:	00 00 00 
+  40175c:	0f 05                	syscall
+  40175e:	85 c0                	test   eax,eax
+  401760:	0f 85 3c 00 00 00    	jne    0x4017a2
+  401766:	b8 01 00 00 00       	mov    eax,0x1
+  40176b:	bf 01 00 00 00       	mov    edi,0x1
+  401770:	48 be 00 00 40 00 00 	movabs rsi,0x400000
+  401777:	00 00 00 
+  40177a:	ba 80 29 00 00       	mov    edx,0x2980
+  40177f:	0f 05                	syscall
+  401781:	48 3d 80 29 00 00    	cmp    rax,0x2980
+  401787:	0f 85 15 00 00 00    	jne    0x4017a2
+  40178d:	31 ff                	xor    edi,edi
+  40178f:	b8 3c 00 00 00       	mov    eax,0x3c
+  401794:	0f 05                	syscall
+  401796:	bf 42 00 00 00       	mov    edi,0x42
+  40179b:	b8 3c 00 00 00       	mov    eax,0x3c
+  4017a0:	0f 05                	syscall
+  4017a2:	bf 4a 00 00 00       	mov    edi,0x4a
+  4017a7:	b8 3c 00 00 00       	mov    eax,0x3c
+  4017ac:	0f 05                	syscall

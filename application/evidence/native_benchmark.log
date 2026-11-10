@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scope": "process creation, packet I/O, allocation, five native gates, final output, termination",
+  "controls": "same executable, seed fixture and five-gate schedule; sites varied",
+  "rss_method": "per-child wait4 resource usage, KiB on Linux; process high-water metric",
+  "exclusions": [
+    "not an isolated kernel benchmark",
+    "CPU frequency/thermal state not controlled",
+    "no quantum-speedup comparison"
+  ],
+  "cases": [
+    {
+      "sites": 4,
+      "complex_state_slots": 16,
+      "state_buffer_bytes": 256,
+      "operations": 5,
+      "repetitions": 5,
+      "elapsed_ns": [
+        5486565,
+        2816680,
+        1489781,
+        1636395,
+        2552897
+      ],
+      "median_elapsed_ns": 2552897,
+      "peak_rss_kib": [
+        12416,
+        12544,
+        12544,
+        12544,
+        12544
+      ],
+      "maximum_peak_rss_kib": 12544
+    },
+    {
+      "sites": 8,
+      "complex_state_slots": 256,
+      "state_buffer_bytes": 4096,
+      "operations": 5,
+      "repetitions": 5,
+      "elapsed_ns": [
+        3276897,
+        2669319,
+        3709008,
+        2559062,
+        1870650
+      ],
+      "median_elapsed_ns": 2669319,
+      "peak_rss_kib": [
+        12544,
+        12544,
+        12544,
+        12544,
+        12544
+      ],
+      "maximum_peak_rss_kib": 12544
+    },
+    {
+      "sites": 12,
+      "complex_state_slots": 4096,
+      "state_buffer_bytes": 65536,
+      "operations": 5,
+      "repetitions": 5,
+      "elapsed_ns": [
+        5030835,
+        2066278,
+        2318178,
+        4955038,
+        5698221
+      ],
+      "median_elapsed_ns": 4955038,
+      "peak_rss_kib": [
+        12544,
+        12544,
+        12544,
+        12544,
+        12544
+      ],
+      "maximum_peak_rss_kib": 12544
+    },
+    {
+      "sites": 16,
+      "complex_state_slots": 65536,
+      "state_buffer_bytes": 1048576,
+      "operations": 5,
+      "repetitions": 5,
+      "elapsed_ns": [
+        5617292,
+        7345081,
+        8652624,
+        22394609,
+        5954968
+      ],
+      "median_elapsed_ns": 7345081,
+      "peak_rss_kib": [
+        12544,
+        12544,
+        12544,
+        12544,
+        12544
+      ],
+      "maximum_peak_rss_kib": 12544
+    },
+    {
+      "sites": 20,
+      "complex_state_slots": 1048576,
+      "state_buffer_bytes": 16777216,
+      "operations": 5,
+      "repetitions": 5,
+      "elapsed_ns": [
+        66004041,
+        63914780,
+        63690771,
+        49323792,
+        92390131
+      ],
+      "median_elapsed_ns": 63914780,
+      "peak_rss_kib": [
+        16896,
+        16896,
+        16896,
+        16896,
+        16896
+      ],
+      "maximum_peak_rss_kib": 16896
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "packet_magic": {
+    "path": "native/dense/source/native_packet_abi.S",
+    "line": 40,
+    "pattern": "0x31555651",
+    "file_sha256": "7eb4e7bd00eacbd32a566024cdb5e8c91f86320a6ee34d9b77cd99e236ffb6c1"
+  },
+  "packet_version": {
+    "path": "native/dense/source/native_packet_abi.S",
+    "line": 42,
+    "pattern": "[rdi+4],1",
+    "file_sha256": "7eb4e7bd00eacbd32a566024cdb5e8c91f86320a6ee34d9b77cd99e236ffb6c1"
+  },
+  "packet_record_limit": {
+    "path": "native/dense/source/native_packet_abi.S",
+    "line": 61,
+    "pattern": "4096",
+    "file_sha256": "7eb4e7bd00eacbd32a566024cdb5e8c91f86320a6ee34d9b77cd99e236ffb6c1"
+  },
+  "executor_20_site_limit": {
+    "path": "native/dense/source/native_q_execute.S",
+    "line": 614,
+    "pattern": "cmp eax,20",
+    "file_sha256": "04fa2cd0d22c46c2bf1c9bd27a2fba0e4c5e7aaa822e06d4a157072eafbd585e"
+  },
+  "packet_payload_hash": {
+    "path": "native/dense/source/native_packet_abi.S",
+    "line": 72,
+    "pattern": "0xcbf29ce484222325",
+    "file_sha256": "7eb4e7bd00eacbd32a566024cdb5e8c91f86320a6ee34d9b77cd99e236ffb6c1"
+  },
+  "seed_magic": {
+    "path": "native/dense/source/native_entropy_seed.S",
+    "line": 19,
+    "pattern": "0x0031304445455351",
+    "file_sha256": "dd200a3c7671dc0f66e03ad7a2cd606019a743c3ae8621c5ef030576a69725ca"
+  },
+  "kernel_entropy": {
+    "path": "native/dense/source/native_entropy_seed.S",
+    "line": 26,
+    "pattern": "mov eax, 318",
+    "file_sha256": "dd200a3c7671dc0f66e03ad7a2cd606019a743c3ae8621c5ef030576a69725ca"
+  },
+  "rdseed_optional": {
+    "path": "native/dense/source/native_entropy_seed.S",
+    "line": 58,
+    "pattern": "rdseed rax",
+    "file_sha256": "dd200a3c7671dc0f66e03ad7a2cd606019a743c3ae8621c5ef030576a69725ca"
+  },
+  "linux_filter": {
+    "path": "native/dense/source/native_q_execute.S",
+    "line": 67,
+    "pattern": "native_filter_program:",
+    "file_sha256": "04fa2cd0d22c46c2bf1c9bd27a2fba0e4c5e7aaa822e06d4a157072eafbd585e"
+  },
+  "native_measure_renormalization": {
+    "path": "native/dense/source/native_q_execute.S",
+    "line": 347,
+    "pattern": "renormalize_after_measure:",
+    "file_sha256": "04fa2cd0d22c46c2bf1c9bd27a2fba0e4c5e7aaa822e06d4a157072eafbd585e"
+  },
+  "gate_tokens": {
+    "path": "native/dense/source/native_q_compile.S",
+    "line": 14,
+    "pattern": "str_h: .asciz \"H\"",
+    "file_sha256": "8139fcdf17c3660e3979fdced0fc51b36b7857bb5b7c899cb37e0bc08beaa26d"
+  },
+  "vm_free_clifford": {
+    "path": "native/clifford/native_clifford_compiler.py",
+    "line": 3,
+    "pattern": "ELF64 x86-64",
+    "file_sha256": "90692ec08ae7eb4bef10978f572f8676203c5df78e55b14e7b3cdd0d849c236c"
+  }
+}

@@ -1,0 +1,39 @@
+name: Publish verified application assets
+on:
+  push:
+    tags: ['g[0-9]*']
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/verify.yml
+    permissions:
+      contents: read
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: axiom-distribution
+          path: dist/
+      - name: Check the release tag and asset checksums
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          test "$RELEASE_TAG" = "$(cat VERSION)"
+          cd dist
+          sha256sum -c SHA256SUMS
+      - name: Publish app and complete assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" --verify-tag --title "Quantum AXIOM $RELEASE_TAG" --notes-file docs/RELEASE_NOTES.md dist/axiom-*.zip dist/SHA256SUMS dist/RELEASE_CONTENTS.json dist/DELIVERY_CHECK.json

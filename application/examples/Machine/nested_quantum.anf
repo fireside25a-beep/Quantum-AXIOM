@@ -1,0 +1,14 @@
+qubits32
+qgas 64
+qh 0
+vmcall 10 4 8
+qz 31
+qhalt
+qcx 0 31
+vmcall 20 8 4
+qs 31
+vmreturn
+qh 31
+qentropy
+qephase 31
+vmreturn

@@ -1,0 +1,1902 @@
+# ANF64 source compiler. Register IDs use native x86-64 encoding order.
+# R12=input cursor, R13=input end, R14=code size, R15=bss size.
+code
+label start
+addr 12 input_buffer
+imm 13 0
+label read_input
+imm 0 0
+imm 7 0
+mov 6 12
+add 6 13
+imm 2 262145
+sub 2 13
+syscall
+imm 3 -4
+cmp 0 3
+jz read_input
+imm 3 0
+cmp 0 3
+jl refuse
+jz input_done
+add 13 0
+imm 3 262144
+cmp 13 3
+ja refuse
+jmp read_input
+label input_done
+add 13 12
+label pass_begin
+addr 6 output_kind
+imm 0 0
+store 6 0
+addr 6 q_emitting
+store 6 0
+addr 6 quantum_gas
+imm 0 1024
+store 6 0
+addr 12 input_buffer
+imm 14 0
+imm 15 0
+addr 6 section
+imm 0 0
+store 6 0
+label compile_next
+call next_token
+test 0 0
+jz pass_end
+call token_hash
+imm 3 4177085272364376637
+cmp 0 3
+jz op_label
+imm 3 843606417163895828
+cmp 0 3
+jz op_code
+imm 3 33246040789142819
+cmp 0 3
+jz op_bss
+imm 3 4858524775536387045
+cmp 0 3
+jz op_space
+imm 3 617360418938790371
+cmp 0 3
+jz op_db
+imm 3 617343926264367206
+cmp 0 3
+jz op_dq
+imm 3 3142641834804800338
+cmp 0 3
+jz op_imm
+imm 3 14547376129990660754
+cmp 0 3
+jz op_addr
+imm 3 578795123255998233
+cmp 0 3
+jz op_mov
+imm 3 16648614959733859924
+cmp 0 3
+jz op_add
+imm 3 9399466629559993077
+cmp 0 3
+jz op_sub
+imm 3 13810765554898114110
+cmp 0 3
+jz op_xor
+imm 3 16642937081686913670
+cmp 0 3
+jz op_and
+imm 3 626092740288339108
+cmp 0 3
+jz op_or
+imm 3 17729558035271495431
+cmp 0 3
+jz op_cmp
+imm 3 18007334074686647077
+cmp 0 3
+jz op_test
+imm 3 14848065251155538409
+cmp 0 3
+jz op_load
+imm 3 1571188608083650083
+cmp 0 3
+jz op_load8
+imm 3 4967000543033605518
+cmp 0 3
+jz op_store
+imm 3 15111715027990764610
+cmp 0 3
+jz op_store8
+imm 3 9387086128628797142
+cmp 0 3
+jz op_shl
+imm 3 9387079531559027876
+cmp 0 3
+jz op_shr
+imm 3 9380317535046854801
+cmp 0 3
+jz op_sar
+imm 3 569253561348275425
+cmp 0 3
+jz op_mul
+imm 3 14602985670603331720
+cmp 0 3
+jz op_div
+imm 3 2403468754648211274
+cmp 0 3
+jz op_not
+imm 3 2393915098112578145
+cmp 0 3
+jz op_neg
+imm 3 3143532439223462023
+cmp 0 3
+jz op_inc
+imm 3 14599006538021593011
+cmp 0 3
+jz op_dec
+imm 3 7818252312440358301
+cmp 0 3
+jz op_push
+imm 3 8618579177749032784
+cmp 0 3
+jz op_pop
+imm 3 4997696071990056320
+cmp 0 3
+jz op_jmp
+imm 3 13048751733142693033
+cmp 0 3
+jz op_call
+imm 3 630871217823597989
+cmp 0 3
+jz op_jz
+imm 3 5000805490874069353
+cmp 0 3
+jz op_jnz
+imm 3 630897606102675053
+cmp 0 3
+jz op_jb
+imm 3 5009259635781680707
+cmp 0 3
+jz op_jae
+imm 3 5012056793363281816
+cmp 0 3
+jz op_jbe
+imm 3 630894307567790420
+cmp 0 3
+jz op_ja
+imm 3 630882212939880099
+cmp 0 3
+jz op_jl
+imm 3 5007276116804766513
+cmp 0 3
+jz op_jge
+imm 3 4998814275315757682
+cmp 0 3
+jz op_jle
+imm 3 630892108544533998
+cmp 0 3
+jz op_jg
+imm 3 9937665476793771756
+cmp 0 3
+jz op_ret
+imm 3 6740575782527371194
+cmp 0 3
+jz op_syscall
+imm 3 13411088209811050828
+cmp 0 3
+jz op_cpuid
+imm 3 12642023439688440590
+cmp 0 3
+jz op_rdseed
+imm 3 6321164282429589122
+cmp 0 3
+jz op_qubits32
+imm 3 13338041450661475625
+cmp 0 3
+jz op_qgas
+imm 3 5281382091702064696
+cmp 0 3
+jz op_qrow
+imm 3 635669486568164668
+cmp 0 3
+jz op_qh
+imm 3 635663989010023613
+cmp 0 3
+jz op_qs
+imm 3 5845239142286666196
+cmp 0 3
+jz op_qsdg
+imm 3 8133853979031071279
+cmp 0 3
+jz op_qcx
+imm 3 635651894382113292
+cmp 0 3
+jz op_qx
+imm 3 635652993893741503
+cmp 0 3
+jz op_qy
+imm 3 635654093405369714
+cmp 0 3
+jz op_qz
+imm 3 329398524801677005
+cmp 0 3
+jz op_qentropy
+imm 3 10962069572265243468
+cmp 0 3
+jz op_vmcall
+imm 3 14648946031445773746
+cmp 0 3
+jz op_vmreturn
+imm 3 6306354970410247263
+cmp 0 3
+jz op_qhalt
+imm 3 3739302736822090246
+cmp 0 3
+jz op_qephase
+jmp refuse
+label pass_end
+imm 3 0
+cmp 14 3
+jz refuse
+addr 6 phase
+load 0 6
+test 0 0
+jnz finish
+imm 0 1
+store 6 0
+jmp pass_begin
+label finish
+addr 6 output_kind
+load 0 6
+test 0 0
+jnz finish_quantum
+addr 6 elf_template
+addr 7 output_buffer
+imm 1 232
+label copy_header
+load8 0 6
+store8 7 0
+inc 6
+inc 7
+dec 1
+jnz copy_header
+mov 0 14
+imm 3 4096
+add 0 3
+mov 8 0
+addr 6 output_buffer
+imm 3 96
+add 6 3
+store 6 0
+imm 3 8
+add 6 3
+store 6 0
+imm 3 4096
+cmp 15 3
+jae bss_size_ok
+mov 15 3
+label bss_size_ok
+addr 6 output_buffer
+imm 3 160
+add 6 3
+store 6 15
+addr 9 output_buffer
+label write_image
+imm 0 1
+imm 7 1
+mov 6 9
+mov 2 8
+syscall
+imm 3 -4
+cmp 0 3
+jz write_image
+imm 3 0
+cmp 0 3
+jle refuse
+add 9 0
+sub 8 0
+jnz write_image
+imm 0 60
+imm 7 0
+syscall
+label refuse
+imm 0 1
+imm 7 2
+addr 6 error_message
+imm 2 28
+syscall
+imm 0 60
+imm 7 74
+syscall
+# Lexer: ASCII tokens <=63 chars; # comments; refuses control/NUL bytes.
+label next_token
+label skip_token_space
+cmp 12 13
+jae token_eof
+load8 0 12
+inc 12
+imm 3 35
+cmp 0 3
+jz skip_comment
+imm 3 32
+cmp 0 3
+jz skip_token_space
+imm 3 9
+cmp 0 3
+jz skip_token_space
+imm 3 10
+cmp 0 3
+jz skip_token_space
+imm 3 13
+cmp 0 3
+jz skip_token_space
+imm 3 33
+cmp 0 3
+jb refuse
+imm 3 126
+cmp 0 3
+ja refuse
+addr 6 token
+imm 1 0
+label copy_token_char
+store8 6 0
+inc 6
+inc 1
+imm 3 63
+cmp 1 3
+ja refuse
+cmp 12 13
+jae token_done
+load8 0 12
+imm 3 35
+cmp 0 3
+jz token_done
+imm 3 32
+cmp 0 3
+jbe token_done
+imm 3 126
+cmp 0 3
+ja refuse
+inc 12
+jmp copy_token_char
+label token_done
+imm 0 0
+store8 6 0
+imm 0 1
+ret
+label skip_comment
+cmp 12 13
+jae token_eof
+load8 0 12
+inc 12
+imm 3 10
+cmp 0 3
+jnz skip_comment
+jmp skip_token_space
+label token_eof
+imm 0 0
+ret
+label token_hash
+addr 6 token
+imm 0 14695981039346656037
+imm 1 1099511628211
+label hash_char
+load8 2 6
+test 2 2
+jz hash_done
+xor 0 2
+mul 0 1
+inc 6
+jmp hash_char
+label hash_done
+ret
+# Unsigned 64-bit decimal or signed negative with explicit overflow refusal.
+label number
+call next_token
+test 0 0
+jz refuse
+addr 6 token
+imm 8 0
+imm 9 0
+load8 0 6
+imm 3 45
+cmp 0 3
+jnz number_first
+imm 9 1
+inc 6
+label number_first
+load8 0 6
+test 0 0
+jz refuse
+label number_digit
+imm 3 48
+sub 0 3
+imm 3 9
+cmp 0 3
+ja refuse
+imm 3 1844674407370955161
+cmp 8 3
+ja refuse
+jb number_accumulate
+imm 3 5
+cmp 0 3
+ja refuse
+label number_accumulate
+imm 3 10
+mul 8 3
+add 8 0
+inc 6
+load8 0 6
+test 0 0
+jnz number_digit
+test 9 9
+jz number_done
+imm 3 9223372036854775808
+cmp 8 3
+ja refuse
+neg 8
+label number_done
+mov 0 8
+ret
+label register_number
+call number
+imm 3 15
+cmp 0 3
+ja refuse
+ret
+label two_registers
+call register_number
+addr 6 argument_a
+store 6 0
+call register_number
+mov 9 0
+addr 6 argument_a
+load 8 6
+ret
+# Output helpers preserve R8/R9; emit_word clobbers RBX/RCX.
+label emit_byte
+addr 6 output_kind
+load 7 6
+test 7 7
+jz emit_byte_kind_ok
+addr 6 q_emitting
+load 7 6
+test 7 7
+jz refuse
+label emit_byte_kind_ok
+addr 6 section
+load 7 6
+test 7 7
+jnz refuse
+imm 7 1044480
+cmp 14 7
+jae refuse
+addr 6 output_buffer
+imm 7 4096
+add 6 7
+addr 7 output_kind
+load 7 7
+shl 7 6
+add 6 7
+add 6 14
+store8 6 0
+inc 14
+ret
+label emit32
+imm 1 4
+jmp emit_word
+label emit64
+imm 1 8
+label emit_word
+mov 3 0
+label emit_word_loop
+mov 0 3
+call emit_byte
+shr 3 8
+dec 1
+jnz emit_word_loop
+ret
+# Exact-name symbol lookup: hashes accelerate, names resolve collisions.
+label lookup
+call token_hash
+mov 8 0
+addr 6 symbol_count
+load 10 6
+imm 9 0
+label lookup_next
+cmp 9 10
+jae lookup_missing
+mov 11 9
+imm 3 80
+mul 11 3
+addr 6 symbols
+add 11 6
+load 0 11
+cmp 0 8
+jnz lookup_advance
+mov 6 11
+imm 3 16
+add 6 3
+addr 7 token
+label compare_name
+load8 0 6
+load8 2 7
+cmp 0 2
+jnz lookup_advance
+test 0 0
+jz lookup_found
+inc 6
+inc 7
+jmp compare_name
+label lookup_advance
+inc 9
+jmp lookup_next
+label lookup_found
+mov 6 11
+imm 3 8
+add 6 3
+load 0 6
+imm 2 1
+ret
+label lookup_missing
+imm 0 0
+imm 2 0
+ret
+label resolve
+call next_token
+test 0 0
+jz refuse
+call lookup
+test 2 2
+jnz resolve_done
+addr 6 phase
+load 3 6
+test 3 3
+jnz refuse
+label resolve_done
+ret
+label op_label
+call next_token
+test 0 0
+jz refuse
+call lookup
+addr 6 section
+load 3 6
+test 3 3
+jz label_code_address
+mov 9 15
+imm 3 8388608
+add 9 3
+jmp label_address_ready
+label label_code_address
+mov 9 14
+imm 3 4198400
+add 9 3
+label label_address_ready
+addr 6 phase
+load 3 6
+test 3 3
+jz define_label
+test 2 2
+jz refuse
+cmp 0 9
+jnz refuse
+jmp compile_next
+label define_label
+test 2 2
+jnz refuse
+addr 6 symbol_count
+load 10 6
+imm 3 4096
+cmp 10 3
+jae refuse
+mov 11 10
+imm 3 80
+mul 11 3
+addr 6 symbols
+add 11 6
+call token_hash
+store 11 0
+mov 7 11
+imm 3 8
+add 7 3
+store 7 9
+imm 3 8
+add 7 3
+addr 6 token
+label copy_symbol_name
+load8 0 6
+store8 7 0
+inc 6
+inc 7
+test 0 0
+jnz copy_symbol_name
+inc 10
+addr 6 symbol_count
+store 6 10
+jmp compile_next
+label op_code
+imm 0 0
+jmp set_section
+label op_bss
+imm 0 1
+label set_section
+addr 6 section
+store 6 0
+jmp compile_next
+label op_space
+call number
+addr 6 section
+load 3 6
+imm 7 1
+cmp 3 7
+jnz refuse
+imm 3 8388608
+cmp 0 3
+ja refuse
+add 15 0
+cmp 15 3
+ja refuse
+jmp compile_next
+label op_db
+call number
+imm 3 255
+cmp 0 3
+ja refuse
+call emit_byte
+jmp compile_next
+label op_dq
+call number
+call emit64
+jmp compile_next
+label op_imm
+call register_number
+addr 6 argument_a
+store 6 0
+call number
+jmp emit_immediate
+label op_addr
+call register_number
+addr 6 argument_a
+store 6 0
+call resolve
+label emit_immediate
+addr 6 immediate_value
+store 6 0
+addr 6 argument_a
+load 8 6
+mov 0 8
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 184
+add 0 3
+call emit_byte
+addr 6 immediate_value
+load 0 6
+call emit64
+jmp compile_next
+label op_mov
+imm 0 137
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_add
+imm 0 1
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_sub
+imm 0 41
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_xor
+imm 0 49
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_and
+imm 0 33
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_or
+imm 0 9
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_cmp
+imm 0 57
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_test
+imm 0 133
+addr 6 machine_opcode
+store 6 0
+call two_registers
+call binary_prefix
+addr 6 machine_opcode
+load 0 6
+call emit_byte
+call register_modrm
+jmp compile_next
+label binary_prefix
+mov 0 9
+shr 0 3
+shl 0 2
+mov 10 8
+shr 10 3
+or 0 10
+imm 10 72
+or 0 10
+call emit_byte
+ret
+label register_modrm
+mov 0 9
+imm 10 7
+and 0 10
+shl 0 3
+mov 10 8
+imm 2 7
+and 10 2
+or 0 10
+imm 10 192
+or 0 10
+call emit_byte
+ret
+label op_mul
+call two_registers
+mov 10 8
+mov 8 9
+mov 9 10
+call binary_prefix
+imm 0 15
+call emit_byte
+imm 0 175
+call emit_byte
+call register_modrm
+jmp compile_next
+label op_load
+call two_registers
+mov 10 8
+mov 8 9
+mov 9 10
+call binary_prefix
+imm 0 139
+call emit_byte
+jmp memory_modrm
+label op_load8
+call two_registers
+mov 10 8
+mov 8 9
+mov 9 10
+call binary_prefix
+imm 0 15
+call emit_byte
+imm 0 182
+call emit_byte
+jmp memory_modrm
+label op_store
+call two_registers
+call binary_prefix
+imm 0 137
+call emit_byte
+jmp memory_modrm
+label op_store8
+call two_registers
+call binary_prefix
+imm 0 136
+call emit_byte
+jmp memory_modrm
+label memory_modrm
+mov 0 9
+imm 10 7
+and 0 10
+shl 0 3
+mov 10 8
+imm 2 7
+and 10 2
+or 0 10
+imm 10 128
+or 0 10
+call emit_byte
+mov 0 8
+imm 10 7
+and 0 10
+imm 10 4
+cmp 0 10
+jnz memory_displacement
+imm 0 36
+call emit_byte
+label memory_displacement
+imm 0 0
+call emit32
+jmp compile_next
+label op_shl
+imm 0 4
+addr 6 machine_opcode
+store 6 0
+jmp shift_instruction
+label op_shr
+imm 0 5
+addr 6 machine_opcode
+store 6 0
+jmp shift_instruction
+label op_sar
+imm 0 7
+addr 6 machine_opcode
+store 6 0
+jmp shift_instruction
+label shift_instruction
+call register_number
+addr 6 argument_a
+store 6 0
+call number
+imm 3 63
+cmp 0 3
+ja refuse
+addr 6 argument_b
+store 6 0
+addr 6 argument_a
+load 8 6
+mov 0 8
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 193
+call emit_byte
+addr 6 machine_opcode
+load 0 6
+shl 0 3
+mov 10 8
+imm 3 7
+and 10 3
+or 0 10
+imm 10 192
+or 0 10
+call emit_byte
+addr 6 argument_b
+load 0 6
+call emit_byte
+jmp compile_next
+label op_div
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 247
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 240
+or 0 3
+call emit_byte
+jmp compile_next
+label op_not
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 247
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 208
+or 0 3
+call emit_byte
+jmp compile_next
+label op_neg
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 247
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 216
+or 0 3
+call emit_byte
+jmp compile_next
+label op_inc
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 255
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 192
+or 0 3
+call emit_byte
+jmp compile_next
+label op_dec
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 255
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 200
+or 0 3
+call emit_byte
+jmp compile_next
+label op_rdseed
+call register_number
+mov 8 0
+shr 0 3
+imm 3 72
+or 0 3
+call emit_byte
+imm 0 15
+call emit_byte
+imm 0 199
+call emit_byte
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 248
+or 0 3
+call emit_byte
+jmp compile_next
+label op_push
+call register_number
+mov 8 0
+imm 3 8
+cmp 0 3
+jb push_low
+imm 0 65
+call emit_byte
+label push_low
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 80
+add 0 3
+call emit_byte
+jmp compile_next
+label op_pop
+call register_number
+mov 8 0
+imm 3 8
+cmp 0 3
+jb pop_low
+imm 0 65
+call emit_byte
+label pop_low
+mov 0 8
+imm 3 7
+and 0 3
+imm 3 88
+add 0 3
+call emit_byte
+jmp compile_next
+label op_jmp
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 233
+call emit_byte
+jmp branch_displacement
+label op_call
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 232
+call emit_byte
+jmp branch_displacement
+label op_jz
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 132
+call emit_byte
+jmp branch_displacement
+label op_jnz
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 133
+call emit_byte
+jmp branch_displacement
+label op_jb
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 130
+call emit_byte
+jmp branch_displacement
+label op_jae
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 131
+call emit_byte
+jmp branch_displacement
+label op_jbe
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 134
+call emit_byte
+jmp branch_displacement
+label op_ja
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 135
+call emit_byte
+jmp branch_displacement
+label op_jl
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 140
+call emit_byte
+jmp branch_displacement
+label op_jge
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 141
+call emit_byte
+jmp branch_displacement
+label op_jle
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 142
+call emit_byte
+jmp branch_displacement
+label op_jg
+call resolve
+addr 6 branch_target
+store 6 0
+imm 0 15
+call emit_byte
+imm 0 143
+call emit_byte
+jmp branch_displacement
+label branch_displacement
+addr 6 branch_target
+load 0 6
+mov 3 14
+imm 2 4198404
+add 3 2
+sub 0 3
+call emit32
+jmp compile_next
+label op_ret
+imm 0 195
+call emit_byte
+jmp compile_next
+label op_syscall
+imm 0 15
+call emit_byte
+imm 0 5
+call emit_byte
+jmp compile_next
+label op_cpuid
+imm 0 15
+call emit_byte
+imm 0 162
+call emit_byte
+jmp compile_next
+label error_message
+db 65
+db 78
+db 70
+db 54
+db 52
+db 32
+db 99
+db 111
+db 109
+db 112
+db 105
+db 108
+db 101
+db 114
+db 32
+db 114
+db 101
+db 102
+db 117
+db 115
+db 101
+db 100
+db 32
+db 105
+db 110
+db 112
+db 117
+db 116
+db 10
+label elf_template
+db 127
+db 69
+db 76
+db 70
+db 2
+db 1
+db 1
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 2
+db 0
+db 62
+db 0
+db 1
+db 0
+db 0
+db 0
+db 0
+db 16
+db 64
+db 0
+db 0
+db 0
+db 0
+db 0
+db 64
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 64
+db 0
+db 56
+db 0
+db 3
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 1
+db 0
+db 0
+db 0
+db 5
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 64
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 64
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 16
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 1
+db 0
+db 0
+db 0
+db 6
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 128
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 128
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 16
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 16
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 81
+db 229
+db 116
+db 100
+db 6
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 16
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+db 0
+bss
+label phase
+space 8
+label section
+space 8
+label symbol_count
+space 8
+label argument_a
+space 8
+label argument_b
+space 8
+label immediate_value
+space 8
+label machine_opcode
+space 8
+label branch_target
+space 8
+label token
+space 64
+label input_buffer
+space 262145
+label symbols
+space 327680
+label output_buffer
+space 1048576
+
+code
+label require_quantum
+addr 6 output_kind
+load 0 6
+imm 3 1
+cmp 0 3
+jnz refuse
+ret
+label op_qubits32
+addr 6 output_kind
+load 0 6
+test 0 0
+jnz refuse
+test 14 14
+jnz refuse
+imm 0 1
+store 6 0
+addr 6 output_buffer
+imm 1 4160
+imm 0 0
+label clear_quantum_header
+store8 6 0
+inc 6
+dec 1
+jnz clear_quantum_header
+# Canonical 32-qubit Pauli bank, 64 rows of three u64 words.
+addr 8 output_buffer
+imm 3 1088
+add 8 3
+imm 9 1
+imm 10 32
+label initialize_qrows
+store 8 9
+mov 6 8
+imm 3 776
+add 6 3
+store 6 9
+imm 3 24
+add 8 3
+shl 9 1
+dec 10
+jnz initialize_qrows
+jmp compile_next
+label op_qgas
+call require_quantum
+call number
+imm 3 1
+cmp 0 3
+jb refuse
+imm 3 1024
+cmp 0 3
+ja refuse
+addr 6 quantum_gas
+store 6 0
+jmp compile_next
+label op_qrow
+call require_quantum
+call number
+imm 3 63
+cmp 0 3
+ja refuse
+mov 11 0
+imm 3 24
+mul 11 3
+addr 6 output_buffer
+imm 3 1088
+add 11 6
+add 11 3
+call number
+imm 3 4294967295
+cmp 0 3
+ja refuse
+store 11 0
+imm 3 8
+add 11 3
+call number
+imm 3 4294967295
+cmp 0 3
+ja refuse
+store 11 0
+imm 3 8
+add 11 3
+call number
+imm 3 3
+cmp 0 3
+ja refuse
+store 11 0
+imm 3 8
+add 11 3
+jmp compile_next
+label op_qh
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 1
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qs
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 2
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qsdg
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 3
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qcx
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 4
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_b
+store 6 0
+addr 6 argument_a
+load 3 6
+cmp 0 3
+jz refuse
+jmp emit_qrecord
+label op_qx
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 5
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qy
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 6
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qz
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 7
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord
+label op_qentropy
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 8
+store 6 0
+jmp emit_qrecord
+label op_vmcall
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 16
+store 6 0
+call number
+imm 3 1
+cmp 0 3
+jb refuse
+imm 3 255
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+call number
+imm 3 1023
+cmp 0 3
+ja refuse
+addr 6 argument_b
+store 6 0
+call number
+imm 3 1
+cmp 0 3
+jb refuse
+imm 3 1024
+cmp 0 3
+ja refuse
+addr 6 argument_c
+store 6 0
+jmp emit_qrecord
+label op_vmreturn
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 17
+store 6 0
+jmp emit_qrecord
+label op_qhalt
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 0
+store 6 0
+jmp emit_qrecord
+label emit_qrecord
+addr 6 q_emitting
+imm 0 1
+store 6 0
+addr 6 machine_opcode
+load 0 6
+call emit64
+addr 6 argument_a
+load 0 6
+call emit64
+addr 6 argument_b
+load 0 6
+call emit64
+addr 6 argument_c
+load 0 6
+call emit64
+addr 6 q_emitting
+imm 0 0
+store 6 0
+jmp compile_next
+label finish_quantum
+mov 0 14
+imm 3 31
+and 0 3
+jnz refuse
+mov 8 14
+shr 8 5
+imm 3 1
+cmp 8 3
+jb refuse
+imm 3 1024
+cmp 8 3
+ja refuse
+addr 6 output_buffer
+imm 3 0
+add 6 3
+imm 0 13846482089236545
+store 6 0
+addr 6 output_buffer
+imm 3 8
+add 6 3
+imm 0 1
+store 6 0
+addr 6 output_buffer
+imm 3 16
+add 6 3
+imm 0 32
+store 6 0
+addr 6 output_buffer
+imm 3 24
+add 6 3
+store 6 8
+addr 6 quantum_gas
+load 0 6
+addr 6 output_buffer
+imm 3 32
+add 6 3
+store 6 0
+addr 6 output_buffer
+imm 3 64
+add 6 3
+mov 1 14
+imm 3 4096
+add 1 3
+imm 0 14695981039346656037
+imm 3 1099511628211
+label hash_quantum_payload
+load8 2 6
+xor 0 2
+mul 0 3
+inc 6
+dec 1
+jnz hash_quantum_payload
+addr 6 output_buffer
+imm 3 40
+add 6 3
+store 6 0
+mov 8 14
+imm 3 4160
+add 8 3
+addr 9 output_buffer
+jmp write_image
+bss
+label output_kind
+space 8
+label q_emitting
+space 8
+label quantum_gas
+space 8
+label argument_c
+space 8
+
+code
+label op_qephase
+call require_quantum
+addr 6 argument_a
+imm 0 0
+store 6 0
+addr 6 argument_b
+imm 0 0
+store 6 0
+addr 6 argument_c
+imm 0 0
+store 6 0
+addr 6 machine_opcode
+imm 0 9
+store 6 0
+call number
+imm 3 31
+cmp 0 3
+ja refuse
+addr 6 argument_a
+store 6 0
+jmp emit_qrecord

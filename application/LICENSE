@@ -1,0 +1,12 @@
+Copyright (c) 2026 Alexandru Moraru. All rights reserved.
+
+No license to use, copy, modify, redistribute, sublicense, or sell this software
+is granted by this distribution. Any permission must be obtained separately
+from the copyright holder. This notice applies to the first-party AXIOM code,
+examples, and documentation in this package.
+
+External build tools and system libraries are separate dependencies and retain
+their own terms. No external project source is relicensed by this notice.
+
+Exception: unchanged historical reference files under tests/reference/closed_routine/
+retain their accompanying LICENSE and NOTICE. This file does not replace those terms.

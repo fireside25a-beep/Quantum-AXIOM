@@ -1,0 +1,62 @@
+{
+  "release": "AXIOM Native Fabric G11 native quantum machine",
+  "components": {
+    "native_compiler_source": "native/selfhost/compiler.anf",
+    "independent_initial_constructor": "native/selfhost/bootstrap_anf.py",
+    "native_source_self_compilation": "evidence/native_self_hosting.json",
+    "native_quantum_core": "native/machine/quantum_core.anf",
+    "native_guest_machine": "native/machine/quantum_machine.anf",
+    "native_history_engine": "native/machine/reverse_history.anf",
+    "canonical_machine_abi": "docs/MACHINE_ABI.md",
+    "recorded_guest_history": "evidence/nested_machine.history",
+    "recorded_inverse_history": "evidence/nested_machine.reversed.history",
+    "independent_machine_acceptance": "tests/native_machine_acceptance.py",
+    "new_seed_generation_chain": "evidence/seed_generations",
+    "legacy_clifford_compiler": "native/clifford/native_clifford_compiler.py",
+    "legacy_dense_compiler": "native/dense/source/native_q_compile.S",
+    "legacy_dense_executor": "native/dense/source/native_q_execute.S",
+    "legacy_packet_sdk": "native/dense/sdk/axiom_qvu.h"
+  },
+  "native_machine_builds": [
+    {
+      "target": "native/machine/quantum_machine.x86_64",
+      "source_parts": [
+        "native/machine/quantum_machine.anf",
+        "native/machine/quantum_core.anf"
+      ],
+      "combined_source_sha256": "56a27bcb5cec78ad7e6338d4bb4be7b2cef48c8b391f976cff0dc04258bbb69d",
+      "image_sha256": "e58c328e6a8fed488df66492342a3047a9a3e0572d10431f9f5a1b3d80182b9d"
+    },
+    {
+      "target": "native/machine/reverse_history.x86_64",
+      "source_parts": [
+        "native/machine/reverse_history.anf",
+        "native/machine/quantum_core.anf"
+      ],
+      "combined_source_sha256": "09a079e5b30ff76dadb7548cd6bd7a0c9efd0f3625faa93232508edc9e200825",
+      "image_sha256": "fbf625dfd6768deb858c59e179f7da426826d3c954a16900ce3daf96793508a2"
+    }
+  ],
+  "native_compiler_generations": [
+    {
+      "generation": 1,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    },
+    {
+      "generation": 2,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    },
+    {
+      "generation": 3,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    }
+  ],
+  "os_guest_virtualization_used": false,
+  "physical_electrical_schematic_included": false
+}

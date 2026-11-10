@@ -1,0 +1,63 @@
+{
+  "release": "AXIOM Native Fabric G11 native quantum machine",
+  "implemented_scope_status": "PASS",
+  "counts": {
+    "dense_random_programs": 110,
+    "dense_random_operations": 2123,
+    "dense_measurement_events": 235,
+    "release_regression_tests": 13,
+    "direct_random_programs": 35,
+    "direct_inverse_checks": 6,
+    "single_bit_repairs": 18432,
+    "two_lane_refusals": 768,
+    "payload_bit_refusals": 1408,
+    "example_source_compiles": 13,
+    "basis_cases": 16,
+    "clean_rebuilt_outputs": 61,
+    "seed_generations": 24,
+    "complex_oracle_programs": 48,
+    "dense_inverse_programs": 48,
+    "native_compiler_generations": 3,
+    "native_machine_quantum_programs": 51,
+    "native_machine_frames_compared": 728,
+    "maximum_native_guest_depth": 16,
+    "native_journal_roundtrips": 51,
+    "native_seed_generation_restorations": 12
+  },
+  "limits": {
+    "physical_coherent_qubits_demonstrated": 0,
+    "native_source_self_hosting": true,
+    "compiler_source_language": "ANF64 native/quantum assembly",
+    "dense_site_limit": 20,
+    "clifford_sites": 32,
+    "windows_arm64_tested": false,
+    "machine_level_nesting_tested": true,
+    "uses_os_guest_virtualization": false,
+    "history_requirement": "complete retained journal including original seed and every canonical preimage",
+    "machine_gas_limit": 1024,
+    "machine_nested_guest_limit": 16
+  },
+  "release_readiness": {
+    "requested_compiler_history_nesting_additions_implemented": true,
+    "classification": "VERIFIED_NATIVE_QUANTUM_MACHINE",
+    "remaining_research_boundaries": [
+      "physical coherent-qubit behavior not demonstrated",
+      "bootstrap from exact latest previously saved trained/live SNN checkpoint not established",
+      "cross-platform backends not executed",
+      "dense Q30 engine remains a separate mathematical execution profile"
+    ],
+    "reference_sanitizer_result": {
+      "status": "BLOCKED_LEAKSANITIZER_HOST_PTRACE",
+      "exit_code": 1,
+      "cases": 195,
+      "real_snn_feedback_spikes": 195,
+      "transactional_refusals": 195,
+      "exported_state_sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0",
+      "stderr": "CLOSED_ROUTINE_PASS cases=195 feedback_spikes=195 transactional_refusals=195\n==23680==LeakSanitizer has encountered a fatal error.\n==23680==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==23680==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n",
+      "sanitizers_disabled": false,
+      "sanitizer_validation_complete": false
+    }
+  },
+  "evidence": "evidence/VERIFICATION_SUMMARY.json",
+  "evidence_sha256": "f1e8cd0176a62bd4d5d10e5e3189c0c4a0ed52dcba94fc43768f0340ad274e98"
+}

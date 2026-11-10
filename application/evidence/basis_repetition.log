@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "basis_weight_0_or_1_corrected": 8,
+  "weight_2_or_3_rejected_by_majority": 8,
+  "fidelity_model": {
+    "0.001": {
+      "uncoded_basis_fidelity": 0.999,
+      "repetition_majority_basis_fidelity": 0.999997002,
+      "independent_bitflip_assumption": true
+    },
+    "0.01": {
+      "uncoded_basis_fidelity": 0.99,
+      "repetition_majority_basis_fidelity": 0.999702,
+      "independent_bitflip_assumption": true
+    },
+    "0.05": {
+      "uncoded_basis_fidelity": 0.95,
+      "repetition_majority_basis_fidelity": 0.99275,
+      "independent_bitflip_assumption": true
+    },
+    "0.1": {
+      "uncoded_basis_fidelity": 0.9,
+      "repetition_majority_basis_fidelity": 0.972,
+      "independent_bitflip_assumption": true
+    },
+    "0.2": {
+      "uncoded_basis_fidelity": 0.8,
+      "repetition_majority_basis_fidelity": 0.896,
+      "independent_bitflip_assumption": true
+    }
+  },
+  "no_physical_coherence_claim": true
+}

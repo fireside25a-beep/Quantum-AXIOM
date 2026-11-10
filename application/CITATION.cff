@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite this software if you use the implementation or its results."
+title: "AXIOM Native Fabric"
+version: "G11"
+date-released: "2026-11-10"
+authors:
+  - family-names: "Moraru"
+    given-names: "Alexandru"

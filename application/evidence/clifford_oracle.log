@@ -1,0 +1,96 @@
+self emitter PASS
+example bell_pair
+example coherent_ring
+example cross_register
+example error_syndrome_unitary
+example ghz_32
+example phase_echo
+example phase_inverse
+randomized 0
+randomized 5
+randomized 10
+randomized 15
+randomized 20
+randomized 25
+randomized 30
+randomized done
+start fault injections
+{
+  "status": "PASS",
+  "suite": "native code generation + independent symplectic oracle + physical CPU execution",
+  "platform": "Linux x86_64",
+  "examples": {
+    "bell_pair": {
+      "native_compilation": true,
+      "gates": 2,
+      "input_sha256": "2ec4574edcadc590d2fe5d293ecd6cf3fbb7c078f10ec859259176092aa86f03",
+      "generation1_sha256": "d32fa503223745cd670c157cbc6339c19e09a75f41c11169686aa44ed540d01e",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "coherent_ring": {
+      "native_compilation": true,
+      "gates": 8,
+      "input_sha256": "05781e4372262448edba45d262502e0eaeef81e4520939aa42db3e06d3ffb8f4",
+      "generation1_sha256": "2869e3643b5db57598c9816f4cd3ebb552b40e0bd79e77299a62c4ad1a0bf850",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "cross_register": {
+      "native_compilation": true,
+      "gates": 7,
+      "input_sha256": "1496e967ebdd0bc51b100972f72d4c6333fb64fb69244813d9a8a6d128026daa",
+      "generation1_sha256": "551bb0982606fc6dcbfd2370bb3486499d3b79ef9a902fc61f7813184878eb89",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "error_syndrome_unitary": {
+      "native_compilation": true,
+      "gates": 5,
+      "input_sha256": "43e48147a979a92b072c4b2fa88cfab7aceed23fdea1f84c7e54af623c4033dd",
+      "generation1_sha256": "58a0f0846cc465ed278794460a04cd46a046918b46812a6f5f913adc8f9347b5",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "ghz_32": {
+      "native_compilation": true,
+      "gates": 32,
+      "input_sha256": "66d86ed762f8220454fb23ab427fa300a9c5c10b0b1d85b77b5d2a112136b1ed",
+      "generation1_sha256": "9445226a28e79a59a075e3c9ff209a80c85bf98d905bfabdc2aaca0a5a0873df",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "phase_echo": {
+      "native_compilation": true,
+      "gates": 6,
+      "input_sha256": "bc4cff9edac583ccf252375ff41212a812b5ad13db43df26e6ec0fd64a2c87af",
+      "generation1_sha256": "792e61893a5cf461ac8a26da202d6838e436cea05a4d1bab5be0f0eaa5e3af8e",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    },
+    "phase_inverse": {
+      "native_compilation": true,
+      "gates": 6,
+      "input_sha256": "e1ec5b69e01be4756fe1c601eb775538fa268abd0c15697e19d5ec785dd4f4d0",
+      "generation1_sha256": "c02fea7263f50504c39a194e1d43b43dc793a265052f8352edeff1cee79ddf47",
+      "complete_tableau_oracle": true,
+      "symplectic_pair_invariants": true,
+      "emitter_roundtrip": true
+    }
+  },
+  "failures": [],
+  "native_emitter_self_compilation": true,
+  "randomized_programs": 35,
+  "reversal_proofs": 6,
+  "single_replica_injections": 30,
+  "double_replica_refusals": 5,
+  "parser_refusals": 8,
+  "hostile_syscall_killed": true,
+  "elapsed_seconds": 3.183
+}

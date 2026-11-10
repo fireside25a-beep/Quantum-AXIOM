@@ -1,0 +1,48 @@
+name: Verify application and downloads
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    container: debian:13
+    timeout-minutes: 30
+    steps:
+      - name: Install declared build dependencies
+        run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git build-essential binutils python3 graphviz openssl
+      - uses: actions/checkout@v4
+      - name: Verify the sealed application
+        run: bash application/security/VERIFY_RELEASE.sh
+      - name: Execute the full suite in a disposable working copy
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/axiom-verified"
+          cp -a application/. "$RUNNER_TEMP/axiom-verified/"
+          bash "$RUNNER_TEMP/axiom-verified/scripts/RUN_VERIFICATION.sh"
+      - name: Confirm generated README panels are current
+        run: |
+          python3 -B presentation/build_readme_art.py
+          git diff --exit-code -- presentation/
+      - name: Package and test extracted downloads
+        shell: bash
+        run: |
+          python3 -B maintainer/package_release.py
+          python3 -B maintainer/check_release.py --verified-application "$RUNNER_TEMP/axiom-verified"
+      - name: Retain verified downloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: axiom-distribution
+          path: dist/
+          if-no-files-found: error
+      - name: Retain actual execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: axiom-execution-evidence
+          path: ${{ runner.temp }}/axiom-verified/evidence/
+          if-no-files-found: warn

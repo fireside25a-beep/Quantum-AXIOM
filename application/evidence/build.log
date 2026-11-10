@@ -1,0 +1,123 @@
+as --fatal-warnings -o native/seed/native_seed_emitter.o native/seed/native_seed_emitter.S
+ld --build-id=none -T native/seed/emitter.ld -o native/seed/native_seed_emitter.x86_64 native/seed/native_seed_emitter.o
+python3 native/seed/encode_bitseed.py native/seed/native_seed_emitter.x86_64 native/seed/compiler_self_seed.bits
+python3 native/clifford/native_clifford_compiler.py native/seed/nucleus.qcl native/seed/genesis.x86_64 evidence/nucleus.lowering.json
+machine instruction region 3984
+{"source_file": "nucleus.qcl", "source_sha256": "e5989e6279b4eafaee5e9e396ee8b4f047bf6f8ae2844bae73ca148ef7a4e632", "native_image_sha256": "4e5cf6764c2d79aa8877ba91fe638b8bc04d804b6166315f7e976a73fb364127", "code_region_length": 2218, "executable_size": 10624, "lowered_gate_count": 38, "gate_trace": [["H", 0], ["CX", 0, 1], ["CX", 1, 2], ["CX", 2, 3], ["CX", 3, 4], ["CX", 4, 5], ["CX", 5, 6], ["CX", 6, 7], ["CX", 7, 8], ["CX", 8, 9], ["CX", 9, 10], ["CX", 10, 11], ["CX", 11, 12], ["CX", 12, 13], ["CX", 13, 14], ["CX", 14, 15], ["CX", 15, 16], ["CX", 16, 17], ["CX", 17, 18], ["CX", 18, 19], ["CX", 19, 20], ["CX", 20, 21], ["CX", 21, 22], ["CX", 22, 23], ["CX", 23, 24], ["CX", 24, 25], ["CX", 25, 26], ["CX", 26, 27], ["CX", 27, 28], ["CX", 28, 29], ["CX", 29, 30], ["CX", 30, 31], ["S", 7], ["H", 23], ["CX", 23, 11], ["S", 31], ["H", 0], ["CX", 31, 0]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+python3 native/clifford/native_clifford_compiler.py native/seed/nucleus.qcl native/seed/closed_routine_seed.x86_64 evidence/closed_routine.lowering.json examples/States/closed_routine.qstate.json
+machine instruction region 3984
+{"source_file": "nucleus.qcl", "source_sha256": "e5989e6279b4eafaee5e9e396ee8b4f047bf6f8ae2844bae73ca148ef7a4e632", "native_image_sha256": "ba78fe60b32e38974b8d6cbcac47915b0846d7b5002e17ded787744932eef5a7", "code_region_length": 2218, "executable_size": 10624, "lowered_gate_count": 38, "gate_trace": [["H", 0], ["CX", 0, 1], ["CX", 1, 2], ["CX", 2, 3], ["CX", 3, 4], ["CX", 4, 5], ["CX", 5, 6], ["CX", 6, 7], ["CX", 7, 8], ["CX", 8, 9], ["CX", 9, 10], ["CX", 10, 11], ["CX", 11, 12], ["CX", 12, 13], ["CX", 13, 14], ["CX", 14, 15], ["CX", 15, 16], ["CX", 16, 17], ["CX", 17, 18], ["CX", 18, 19], ["CX", 19, 20], ["CX", 20, 21], ["CX", 21, 22], ["CX", 22, 23], ["CX", 23, 24], ["CX", 24, 25], ["CX", 25, 26], ["CX", 26, 27], ["CX", 27, 28], ["CX", 28, 29], ["CX", 29, 30], ["CX", 30, 31], ["S", 7], ["H", 23], ["CX", 23, 11], ["S", 31], ["H", 0], ["CX", 31, 0]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": {"format": "AXIOM_TABLEAU_STATE_1", "source_file": "closed_routine.qstate.json", "sha256": "259efb1ee884b119caf7cf600c792d22e007996674c6d1778a3acd11a5c368c0", "source_sites": 5, "extension_sites": 27, "validation": "bounded canonical JSON, integer bounds, Hermiticity, all symplectic pairs"}}
+machine instruction region 3984
+{"source_file": "bell_pair.qcl", "source_sha256": "78c58c08b538f902bca17887e35c0bf90c9f060e8dc246083f5edbed80b131cb", "native_image_sha256": "2ec4574edcadc590d2fe5d293ecd6cf3fbb7c078f10ec859259176092aa86f03", "code_region_length": 946, "executable_size": 10624, "lowered_gate_count": 2, "gate_trace": [["H", 0], ["CX", 0, 1]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "coherent_ring.qcl", "source_sha256": "001c920987f458c6491a266ea7f290b6af1b5fb164eb41fb8fef0840dd163fbc", "native_image_sha256": "05781e4372262448edba45d262502e0eaeef81e4520939aa42db3e06d3ffb8f4", "code_region_length": 1174, "executable_size": 10624, "lowered_gate_count": 8, "gate_trace": [["H", 0], ["H", 7], ["CX", 0, 7], ["CX", 7, 16], ["CX", 16, 31], ["S", 31], ["CX", 7, 16], ["CX", 0, 7]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "cross_register.qcl", "source_sha256": "566d413de347b3ade276e030b9827ef227575cb2abc872be921af927d98da4a4", "native_image_sha256": "1496e967ebdd0bc51b100972f72d4c6333fb64fb69244813d9a8a6d128026daa", "code_region_length": 1140, "executable_size": 10624, "lowered_gate_count": 7, "gate_trace": [["H", 31], ["CX", 31, 0], ["CX", 31, 15], ["CX", 0, 30], ["S", 15], ["H", 30], ["CX", 31, 0]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "error_syndrome_unitary.qcl", "source_sha256": "5b6f933fc4dff51605264ccc9dc009d8b3b27432aa9cd239c9e9d35441c8a02e", "native_image_sha256": "43e48147a979a92b072c4b2fa88cfab7aceed23fdea1f84c7e54af623c4033dd", "code_region_length": 1066, "executable_size": 10624, "lowered_gate_count": 5, "gate_trace": [["H", 28], ["CX", 3, 28], ["CX", 11, 28], ["CX", 19, 28], ["H", 28]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "ghz_32.qcl", "source_sha256": "297baefaf5552bd102d6b113e470db0df94d7e140ea51740bab0d76987d2cb0d", "native_image_sha256": "66d86ed762f8220454fb23ab427fa300a9c5c10b0b1d85b77b5d2a112136b1ed", "code_region_length": 1966, "executable_size": 10624, "lowered_gate_count": 32, "gate_trace": [["H", 0], ["CX", 0, 1], ["CX", 1, 2], ["CX", 2, 3], ["CX", 3, 4], ["CX", 4, 5], ["CX", 5, 6], ["CX", 6, 7], ["CX", 7, 8], ["CX", 8, 9], ["CX", 9, 10], ["CX", 10, 11], ["CX", 11, 12], ["CX", 12, 13], ["CX", 13, 14], ["CX", 14, 15], ["CX", 15, 16], ["CX", 16, 17], ["CX", 17, 18], ["CX", 18, 19], ["CX", 19, 20], ["CX", 20, 21], ["CX", 21, 22], ["CX", 22, 23], ["CX", 23, 24], ["CX", 24, 25], ["CX", 25, 26], ["CX", 26, 27], ["CX", 27, 28], ["CX", 28, 29], ["CX", 29, 30], ["CX", 30, 31]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "phase_echo.qcl", "source_sha256": "ef163f84bf97eb36101ef6733e7ae020ee904072fe571fcf2672ed75898daf54", "native_image_sha256": "bc4cff9edac583ccf252375ff41212a812b5ad13db43df26e6ec0fd64a2c87af", "code_region_length": 1124, "executable_size": 10624, "lowered_gate_count": 6, "gate_trace": [["H", 4], ["S", 4], ["S", 4], ["S", 4], ["S", 4], ["H", 4]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+machine instruction region 3984
+{"source_file": "phase_inverse.qcl", "source_sha256": "a39076d81e2a494367c0ce47f55404a40bfa69666def427723e99ac2dd0e1bcb", "native_image_sha256": "e1ec5b69e01be4756fe1c601eb775538fa268abd0c15697e19d5ec785dd4f4d0", "code_region_length": 1124, "executable_size": 10624, "lowered_gate_count": 6, "gate_trace": [["H", 12], ["S", 12], ["S", 12], ["S", 12], ["S", 12], ["H", 12]], "format": "ELF64 x86-64, native instruction plane, RX text / RW state; self-emitting via write syscall", "initial_tableau_import": null}
+make -C native/dense all
+make[1]: Entering directory '/workspace/scratch/89797ab6974c/AXIOM_G11_WORK/native/dense'
+mkdir -p sdk
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_entropy_seed.o source/native_entropy_seed.S
+mkdir -p bin
+cc -nostdlib -no-pie -Wl,-z,noexecstack -o bin/native_q_seed sdk/native_entropy_seed.o
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_q_compile.o source/native_q_compile.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_packet_abi.o source/native_packet_abi.S
+ar rcs sdk/libnative_quantum_abi.a sdk/native_packet_abi.o
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_compile sdk/native_q_compile.o sdk/libnative_quantum_abi.a
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_q_execute.o source/native_q_execute.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_execute sdk/native_q_execute.o
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_packet_inspect.o source/native_packet_inspect.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_inspect sdk/native_packet_inspect.o sdk/libnative_quantum_abi.a
+cc -shared -Wl,-z,noexecstack -o sdk/libnative_quantum_abi.so sdk/native_packet_abi.o
+make[1]: Leaving directory '/workspace/scratch/89797ab6974c/AXIOM_G11_WORK/native/dense'
+as --fatal-warnings --defsym SECURITY_PROBE=1 -o native/seed/native_emitter_probe.o native/seed/native_seed_emitter.S
+ld --build-id=none -T native/seed/emitter.ld -o security/native_emitter_probe.x86_64 native/seed/native_emitter_probe.o
+cc -c -Wall -Wextra -Werror -Wa,--fatal-warnings,--defsym,SECURITY_PROBE=1 -o security/native_q_execute_bpf_probe.o native/dense/source/native_q_execute.S
+cc -no-pie -Wl,-z,noexecstack -o security/native_q_execute_bpf_probe.x86_64 security/native_q_execute_bpf_probe.o
+cc -c -Wall -Wextra -Werror -Wa,--fatal-warnings,--defsym,SECURITY_PROBE=1 -o security/native_q_compile_bpf_probe.o native/dense/source/native_q_compile.S
+cc -no-pie -Wl,-z,noexecstack -o security/native_q_compile_bpf_probe.x86_64 security/native_q_compile_bpf_probe.o native/dense/sdk/libnative_quantum_abi.a
+python3 scripts/build_packets.py
+NATIVE EXAMPLE PACKETS REBUILT
+python3 native/selfhost/build_selfhost.py
+{
+  "status": "PASS",
+  "native_source_self_hosting": true,
+  "native_generations": [
+    {
+      "generation": 1,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    },
+    {
+      "generation": 2,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    },
+    {
+      "generation": 3,
+      "image_sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "source_sha256": "e455318210aea078e980e685fb9860455e5372be300b65733dd4adcce7046729",
+      "byte_identical_to_independent_constructor": true
+    }
+  ],
+  "bootstrap_constructor": "native/selfhost/bootstrap_anf.py (initial construction only)",
+  "native_seed_emitter_sha256": "28bc84107206bbab4f94142c8409dd0a97a009bece49e8622af8f46f985e8d92",
+  "encoded_compiler_seed_sha256": "cb2fd943fc8a3cb906329ae8b6481dd22323e031d58837f7f14a7f99b88e0b13",
+  "compiler_image_bytes": 13998,
+  "machine_targets_built_by_native_compiler": [
+    {
+      "target": "native/machine/quantum_machine.x86_64",
+      "source_parts": [
+        "native/machine/quantum_machine.anf",
+        "native/machine/quantum_core.anf"
+      ],
+      "combined_source_sha256": "56a27bcb5cec78ad7e6338d4bb4be7b2cef48c8b391f976cff0dc04258bbb69d",
+      "image_sha256": "e58c328e6a8fed488df66492342a3047a9a3e0572d10431f9f5a1b3d80182b9d"
+    },
+    {
+      "target": "native/machine/reverse_history.x86_64",
+      "source_parts": [
+        "native/machine/reverse_history.anf",
+        "native/machine/quantum_core.anf"
+      ],
+      "combined_source_sha256": "09a079e5b30ff76dadb7548cd6bd7a0c9efd0f3625faa93232508edc9e200825",
+      "image_sha256": "fbf625dfd6768deb858c59e179f7da426826d3c954a16900ce3daf96793508a2"
+    }
+  ],
+  "uses_kvm_or_os_guest_virtualization": false,
+  "quantum_examples_compiled_natively": [
+    {
+      "source": "examples/Machine/entropy_seed_loop.anf",
+      "seed": "examples/Machine/entropy_seed_loop.seed",
+      "source_sha256": "b1259fc169088eadb395b96dbc5d814b9daf18515e320b5a1f32379c117655e2",
+      "seed_sha256": "dea8b8c9fee55090b26d17ed68cc0c4793b2defcc9fc41e0e4822d0d5e9939b5"
+    },
+    {
+      "source": "examples/Machine/inverse_ghz32.anf",
+      "seed": "examples/Machine/inverse_ghz32.seed",
+      "source_sha256": "0124ec99af34abba9d223144ad8d4283e34c8fa338a0be8e6cec71a866286f5d",
+      "seed_sha256": "d38973fff7df4fbfbd892b82df14eccb5b29a3feec222570491f4914e730b699"
+    },
+    {
+      "source": "examples/Machine/nested_quantum.anf",
+      "seed": "examples/Machine/nested_quantum.seed",
+      "source_sha256": "0d4acdb80fa7c50f3f95c6c66cc8b733fd669189d427c58ff0ac0f7f69305348",
+      "seed_sha256": "80844a7dbe3e8f852518a7dd8c24d25b6d0d704ecc06354b4de6eb23609f693b"
+    },
+    {
+      "source": "examples/States/closed_routine_machine.anf",
+      "seed": "examples/States/closed_routine_machine.seed",
+      "source_sha256": "2d8e13b558148cadd39f15c8d32cc042defd72258054d38109500a0e3b06f0d4",
+      "seed_sha256": "609b6031b9af57ac93a8e86b0792b545db276f3be7f9c00079cca1c9edcb6a03"
+    }
+  ]
+}

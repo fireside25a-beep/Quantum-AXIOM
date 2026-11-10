@@ -1,0 +1,14 @@
+AXIOM Native Fabric G11
+Author: Alexandru Moraru
+Release date: 2026-11-10
+
+This distribution contains first-party sources and generated artifacts. GNU
+build tools, Python, Graphviz, OpenSSL and the host libc are external build,
+verification or runtime dependencies; their sources/binaries are not vendored.
+The linked system library dependency is disclosed in docs/DEPENDENCIES.md.
+The package-verification public key establishes consistency of this snapshot,
+not a separately authenticated author identity.
+
+The selected historical SNN/quantum reference files in tests/reference/closed_routine/
+retain their original license, notices, filenames and SHA-256 provenance. They
+are used only by compatibility tests; their parent framework is not vendored.

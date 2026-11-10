@@ -1,0 +1,18 @@
+test_large_input_reads_are_bounded (__main__.ReleaseRegressions.test_large_input_reads_are_bounded) ... ok
+test_native_emitter_full_capacity_and_streamed_pipe (__main__.ReleaseRegressions.test_native_emitter_full_capacity_and_streamed_pipe) ... ok
+test_native_emitter_repairs_and_refuses_invalid_input (__main__.ReleaseRegressions.test_native_emitter_repairs_and_refuses_invalid_input) ... ok
+test_nul_non_ascii_and_long_lines_refused (__main__.ReleaseRegressions.test_nul_non_ascii_and_long_lines_refused) ... ok
+test_optimized_clifford_compiler_rejects_invalid_sites (__main__.ReleaseRegressions.test_optimized_clifford_compiler_rejects_invalid_sites) ... ok
+test_parser_missing_if_operands_refused_without_crash (__main__.ReleaseRegressions.test_parser_missing_if_operands_refused_without_crash) ... ok
+test_rebuild_all_from_sources_only_byte_exact (__main__.ReleaseRegressions.test_rebuild_all_from_sources_only_byte_exact) ... ok
+test_resident_header_corruption_refused (__main__.ReleaseRegressions.test_resident_header_corruption_refused) ... ok
+test_runtime_failure_unwinds_nested_frame (__main__.ReleaseRegressions.test_runtime_failure_unwinds_nested_frame) ... ok
+test_rz_parameter_consistency_across_three_native_interfaces (__main__.ReleaseRegressions.test_rz_parameter_consistency_across_three_native_interfaces) ... ok
+test_sdk_header_compiles_and_links_native_library (__main__.ReleaseRegressions.test_sdk_header_compiles_and_links_native_library) ... ok
+test_seed_flags_consistent_with_sdk (__main__.ReleaseRegressions.test_seed_flags_consistent_with_sdk) ... ok
+test_seed_generations_independent_full_state (__main__.ReleaseRegressions.test_seed_generations_independent_full_state) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.125s
+
+OK

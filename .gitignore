@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.o
+core
+core.*
+*.private.pem
+*.key
+dist/
+build/
+.packaging-*/
+
+# macOS finder metadata
+.DS_Store
+._*

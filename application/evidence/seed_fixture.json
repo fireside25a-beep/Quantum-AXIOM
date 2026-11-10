@@ -1,0 +1,8 @@
+{
+  "old_fixture_sha256": "cec7397521cdc467bf368d666a5803e9a7c5db48f3abc8ff9f94ffa82a8476d3",
+  "new_fixture_sha256": "4e154ff2a3928b5735d1becc8843dbcebba60d8c3e8d672b3071aa6b3afafca5",
+  "cpu_vendor": "AuthenticAMD",
+  "flags": 7,
+  "source": "freshly executed native_q_seed; fixed 12-byte CPUID vendor preservation",
+  "nonsecret_replay_fixture": true
+}

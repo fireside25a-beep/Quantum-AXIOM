@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "basis_cases": [
+    {
+      "name": "logical0_errors000",
+      "logical": 0,
+      "fault_count": 0,
+      "classical_output": 0,
+      "majority": 0,
+      "restored": true
+    },
+    {
+      "name": "logical0_errors001",
+      "logical": 0,
+      "fault_count": 1,
+      "classical_output": 1,
+      "majority": 0,
+      "restored": true
+    },
+    {
+      "name": "logical0_errors010",
+      "logical": 0,
+      "fault_count": 1,
+      "classical_output": 2,
+      "majority": 0,
+      "restored": true
+    },
+    {
+      "name": "logical0_errors011",
+      "logical": 0,
+      "fault_count": 2,
+      "classical_output": 3,
+      "majority": 1,
+      "restored": false
+    },
+    {
+      "name": "logical0_errors100",
+      "logical": 0,
+      "fault_count": 1,
+      "classical_output": 4,
+      "majority": 0,
+      "restored": true
+    },
+    {
+      "name": "logical0_errors101",
+      "logical": 0,
+      "fault_count": 2,
+      "classical_output": 5,
+      "majority": 1,
+      "restored": false
+    },
+    {
+      "name": "logical0_errors110",
+      "logical": 0,
+      "fault_count": 2,
+      "classical_output": 6,
+      "majority": 1,
+      "restored": false
+    },
+    {
+      "name": "logical0_errors111",
+      "logical": 0,
+      "fault_count": 3,
+      "classical_output": 7,
+      "majority": 1,
+      "restored": false
+    },
+    {
+      "name": "logical1_errors000",
+      "logical": 1,
+      "fault_count": 0,
+      "classical_output": 7,
+      "majority": 1,
+      "restored": true
+    },
+    {
+      "name": "logical1_errors001",
+      "logical": 1,
+      "fault_count": 1,
+      "classical_output": 6,
+      "majority": 1,
+      "restored": true
+    },
+    {
+      "name": "logical1_errors010",
+      "logical": 1,
+      "fault_count": 1,
+      "classical_output": 5,
+      "majority": 1,
+      "restored": true
+    },
+    {
+      "name": "logical1_errors011",
+      "logical": 1,
+      "fault_count": 2,
+      "classical_output": 4,
+      "majority": 0,
+      "restored": false
+    },
+    {
+      "name": "logical1_errors100",
+      "logical": 1,
+      "fault_count": 1,
+      "classical_output": 3,
+      "majority": 1,
+      "restored": true
+    },
+    {
+      "name": "logical1_errors101",
+      "logical": 1,
+      "fault_count": 2,
+      "classical_output": 2,
+      "majority": 0,
+      "restored": false
+    },
+    {
+      "name": "logical1_errors110",
+      "logical": 1,
+      "fault_count": 2,
+      "classical_output": 1,
+      "majority": 0,
+      "restored": false
+    },
+    {
+      "name": "logical1_errors111",
+      "logical": 1,
+      "fault_count": 3,
+      "classical_output": 0,
+      "majority": 0,
+      "restored": false
+    }
+  ],
+  "basis_weight_0_or_1_corrected": 8,
+  "weight_2_or_3_rejected_by_majority": 8,
+  "fidelity_model": {
+    "0.001": {
+      "uncoded_basis_fidelity": 0.999,
+      "repetition_majority_basis_fidelity": 0.999997002,
+      "independent_bitflip_assumption": true
+    },
+    "0.01": {
+      "uncoded_basis_fidelity": 0.99,
+      "repetition_majority_basis_fidelity": 0.999702,
+      "independent_bitflip_assumption": true
+    },
+    "0.05": {
+      "uncoded_basis_fidelity": 0.95,
+      "repetition_majority_basis_fidelity": 0.99275,
+      "independent_bitflip_assumption": true
+    },
+    "0.1": {
+      "uncoded_basis_fidelity": 0.9,
+      "repetition_majority_basis_fidelity": 0.972,
+      "independent_bitflip_assumption": true
+    },
+    "0.2": {
+      "uncoded_basis_fidelity": 0.8,
+      "repetition_majority_basis_fidelity": 0.896,
+      "independent_bitflip_assumption": true
+    }
+  },
+  "no_physical_coherence_claim": true
+}

@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "platform": "Linux x86_64",
+  "bins": {
+    "native_self_emitter": {
+      "sha256": "28bc84107206bbab4f94142c8409dd0a97a009bece49e8622af8f46f985e8d92",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/seed/native_seed_emitter.x86_64"
+    },
+    "native_closed_seed": {
+      "sha256": "4e5cf6764c2d79aa8877ba91fe638b8bc04d804b6166315f7e976a73fb364127",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/seed/genesis.x86_64"
+    },
+    "clifford32_direct": {
+      "sha256": "66d86ed762f8220454fb23ab427fa300a9c5c10b0b1d85b77b5d2a112136b1ed",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/clifford/ghz_32.x86_64"
+    },
+    "native_dense_assembly": {
+      "sha256": "39866c5e780e8501dedd5469521b51c58fb06f2c7e34500f16a2ffabed97aee3",
+      "elf_program_headers": 4,
+      "wx_separation": "PASS",
+      "needs_libc_so": true,
+      "path": "native/dense/bin/native_q_execute"
+    },
+    "native_text_compiler_assembly": {
+      "sha256": "a466c84be83902bfb1b8012ed2bb657fcc470839cfd5ee077861f1de9345a283",
+      "elf_program_headers": 4,
+      "wx_separation": "PASS",
+      "needs_libc_so": true,
+      "path": "native/dense/bin/native_q_compile"
+    },
+    "self_hosted_native_compiler": {
+      "sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/selfhost/anf_stage3.x86_64"
+    },
+    "native_quantum_guest_machine": {
+      "sha256": "e58c328e6a8fed488df66492342a3047a9a3e0572d10431f9f5a1b3d80182b9d",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/machine/quantum_machine.x86_64"
+    },
+    "native_quantum_history_reverser": {
+      "sha256": "fbf625dfd6768deb858c59e179f7da426826d3c954a16900ce3daf96793508a2",
+      "elf_program_headers": 2,
+      "wx_separation": "PASS",
+      "needs_libc_so": false,
+      "path": "native/machine/reverse_history.x86_64"
+    }
+  },
+  "security_probe": {
+    "test": "deliberate getpid syscall after native seccomp BPF; success path only when kernel returned -EPERM",
+    "result": "PASS",
+    "probe_sha256": "7b0e5eaa66b96ab6cd914e8519ea8b7dea42b13a180f1e91e640e094431044c5",
+    "exit_code": 0,
+    "seccomp_source": "native/dense/source/native_q_execute.S"
+  },
+  "virtualization": {},
+  "bytecode_vm_required": false,
+  "compiler_probe": {
+    "result": "PASS",
+    "forbidden_getpid_errno": "EPERM",
+    "binary_sha256": "d2a458cea532e53af2659e60c8e69e222bf28c4ffe48a52f45915b5b51ddd76b"
+  },
+  "machine_virtualization": {
+    "implementation": "native AXIOM quantum guest contexts",
+    "evidence": "evidence/native_machine_acceptance.json",
+    "uses_os_guest_virtualization": false,
+    "pe64_execution": "NOT_RUN",
+    "arm64_execution": "NOT_RUN"
+  },
+  "constraints": [
+    "unprivileged sandbox not proof against compromised kernel or hypervisor",
+    "native_dense_executor uses libc for I/O, glibc dynamic linkage is disclosed",
+    "cryptographic manifest signature is distribution layer, not runtime CPU attestation"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "original_zip_sha256": "bd977fdec50c32901c31b11d6beb38eca11ba2e56e3f1f5cbaffafda92083fbb",
+  "original_nucleus_sha256": "5cf6d22a376aa9df808c4e9372b13ad9a37382b48aa7adfb6f57beba7f3fbc44",
+  "nucleus_source_recovery": "Gate list recovered from distributed machine instructions. Original unmodified G8 lowerer reproduces entire original image byte for byte. Current lowerer replaces incompatible strict seccomp with a stackable restrictive BPF filter.",
+  "original_nucleus_byte_exact_reconstruction": true,
+  "emitter_source": "New readable native assembly implementation of the shipped BSTBIT01 decoder ABI; fixes short reads and full 16384-byte capacity. Not claimed to be recovered historical source.",
+  "external_project_source_dependencies": []
+}

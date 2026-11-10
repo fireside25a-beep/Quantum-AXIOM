@@ -1,0 +1,136 @@
+code
+label quantum_apply
+mov 0 9
+call bit_mask
+addr 6 mask_a
+store 6 0
+mov 0 10
+call bit_mask
+addr 6 mask_b
+store 6 0
+addr 15 state
+imm 3 1024
+add 15 3
+imm 12 64
+label apply_row
+load 9 15
+mov 6 15
+imm 3 8
+add 6 3
+load 10 6
+add 6 3
+load 11 6
+addr 6 mask_a
+load 1 6
+addr 6 mask_b
+load 2 6
+imm 3 1
+cmp 8 3
+jz gate_h
+imm 3 2
+cmp 8 3
+jz gate_s
+imm 3 3
+cmp 8 3
+jz gate_sdg
+imm 3 4
+cmp 8 3
+jz gate_cx
+imm 3 5
+cmp 8 3
+jz gate_x
+imm 3 6
+cmp 8 3
+jz gate_y
+imm 3 7
+cmp 8 3
+jz gate_z
+jmp refuse
+label gate_h
+mov 0 9
+and 0 10
+and 0 1
+test 0 0
+jz h_swap
+imm 3 2
+add 11 3
+label h_swap
+mov 0 9
+xor 0 10
+and 0 1
+xor 9 0
+xor 10 0
+jmp commit_row
+label gate_s
+mov 0 9
+and 0 1
+test 0 0
+jz commit_row
+inc 11
+xor 10 0
+jmp commit_row
+label gate_sdg
+mov 0 9
+and 0 1
+test 0 0
+jz commit_row
+imm 3 3
+add 11 3
+xor 10 0
+jmp commit_row
+label gate_cx
+mov 0 9
+and 0 1
+test 0 0
+jz cx_z
+xor 9 2
+label cx_z
+mov 0 10
+and 0 2
+test 0 0
+jz commit_row
+xor 10 1
+jmp commit_row
+label gate_x
+mov 0 10
+jmp pauli_phase
+label gate_y
+mov 0 9
+xor 0 10
+jmp pauli_phase
+label gate_z
+mov 0 9
+label pauli_phase
+and 0 1
+test 0 0
+jz commit_row
+imm 3 3
+add 11 3
+# Two-phase sign change: previous line's +3 is corrected to +2.
+dec 11
+label commit_row
+imm 3 3
+and 11 3
+store 15 9
+mov 6 15
+imm 3 8
+add 6 3
+store 6 10
+add 6 3
+store 6 11
+imm 3 24
+add 15 3
+dec 12
+jnz apply_row
+ret
+label bit_mask
+mov 1 0
+imm 0 1
+label mask_loop
+test 1 1
+jz mask_done
+shl 0 1
+dec 1
+jmp mask_loop
+label mask_done
+ret

@@ -1,0 +1,15 @@
+qubits 12
+cbits 1
+H 0
+CX 0 1
+CX 1 2
+CX 2 3
+CX 3 4
+CX 4 5
+CX 5 6
+CX 6 7
+CX 7 8
+CX 8 9
+CX 9 10
+CX 10 11
+MEASURE 11 0

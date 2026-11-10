@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "unitary_programs": 48,
+  "inverse_programs": 48,
+  "born_boundary_cases": 4,
+  "max_complex_amplitude_error": 4.394518255419699e-09,
+  "max_absolute_probability_norm_error": 1.2261161641546892e-08,
+  "measurement_reversible_claim": false,
+  "physical_quantum_claim": false
+}

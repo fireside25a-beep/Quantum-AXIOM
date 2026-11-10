@@ -1,0 +1,10 @@
+Quantum AXIOM g11.1 distribution
+Author: Alexandru Moraru
+
+The complete G11 application is under application/. The root LICENSE and
+LICENSING.md grant Apache-2.0 rights for first-party contents, including the
+unchanged signed application snapshot. The older application/LICENSE records
+its historical sealing terms; see LICENSING.md. Repository presentation,
+launcher and packaging tools are first-party distribution material.
+Required historical reference notices remain under application/tests/reference/closed_routine/.
+No HX89 code or unrelated parent project checkout is included.

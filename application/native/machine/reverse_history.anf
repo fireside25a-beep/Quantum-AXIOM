@@ -1,0 +1,670 @@
+# Native reversible history transport. No OS virtualization or external helpers.
+code
+label start
+mov 5 4
+load 0 5
+imm 3 1
+cmp 0 3
+jz read_start
+imm 3 2
+cmp 0 3
+jnz refuse
+mov 6 5
+imm 3 16
+add 6 3
+load 6 6
+load8 0 6
+imm 3 110
+cmp 0 3
+jz next_argument
+imm 3 115
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 101
+cmp 0 3
+jz seed_argument
+imm 3 116
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 97
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 116
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 101
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+test 0 0
+jnz refuse
+imm 0 2
+jmp set_mode
+label seed_argument
+inc 6
+load8 0 6
+imm 3 101
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 100
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+test 0 0
+jnz refuse
+imm 0 1
+label set_mode
+addr 6 mode
+store 6 0
+label read_start
+imm 12 0
+label read_more
+imm 0 0
+imm 7 0
+addr 6 input
+add 6 12
+imm 2 4235393
+sub 2 12
+syscall
+imm 3 -4
+cmp 0 3
+jz read_more
+imm 3 0
+cmp 0 3
+jl refuse
+jz read_done
+add 12 0
+imm 3 4235392
+cmp 12 3
+ja refuse
+jmp read_more
+label read_done
+imm 3 64
+cmp 12 3
+jbe refuse
+addr 6 input
+imm 3 0
+add 6 3
+load 0 6
+imm 3 13846512103086145
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 8
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 24
+add 6 3
+load 0 6
+imm 3 4096
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 56
+add 6 3
+load 0 6
+imm 3 0
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 16
+add 6 3
+load 13 6
+imm 3 2
+cmp 13 3
+jb refuse
+imm 3 1025
+cmp 13 3
+ja refuse
+addr 6 input
+imm 3 32
+add 6 3
+load 14 6
+imm 3 4192
+cmp 14 3
+jb refuse
+imm 3 36928
+cmp 14 3
+ja refuse
+addr 6 input
+imm 3 48
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+ja refuse
+addr 6 direction
+store 6 0
+mov 0 13
+shl 0 12
+add 0 14
+imm 3 64
+add 0 3
+cmp 0 12
+jnz refuse
+addr 6 input
+imm 3 64
+add 6 3
+mov 1 12
+sub 1 3
+call hash_start
+mov 8 0
+addr 6 input
+imm 3 40
+add 6 3
+load 0 6
+cmp 0 8
+jnz refuse
+addr 6 input
+imm 3 64
+add 6 3
+load 0 6
+imm 3 13846482089236545
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 72
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 80
+add 6 3
+load 0 6
+imm 3 32
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 112
+add 6 3
+load 0 6
+imm 3 0
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 120
+add 6 3
+load 0 6
+imm 3 0
+cmp 0 3
+jnz refuse
+addr 6 input
+imm 3 88
+add 6 3
+load 0 6
+imm 3 1
+cmp 0 3
+jb refuse
+imm 3 1024
+cmp 0 3
+ja refuse
+shl 0 5
+imm 3 4160
+add 0 3
+cmp 0 14
+jnz refuse
+addr 6 input
+imm 3 128
+add 6 3
+mov 1 14
+imm 3 64
+sub 1 3
+call hash_start
+mov 8 0
+addr 6 input
+imm 3 104
+add 6 3
+load 0 6
+cmp 0 8
+jnz refuse
+# Every frame is present, in exact epoch order (forward or backward).
+addr 15 input
+imm 3 64
+add 15 3
+add 15 14
+imm 8 0
+label frame_check
+addr 6 direction
+load 0 6
+test 0 0
+jz expected_forward
+mov 0 13
+dec 0
+sub 0 8
+jmp expected_epoch
+label expected_forward
+mov 0 8
+label expected_epoch
+load 3 15
+cmp 0 3
+jnz refuse
+imm 3 4096
+add 15 3
+inc 8
+cmp 8 13
+jb frame_check
+# Prove each predecessor by executing inverse quantum operations natively.
+# Irreversible control/entropy fields are retained in the complete preimages.
+imm 0 1
+addr 6 proof_index
+store 6 0
+label prove_predecessor
+addr 6 proof_index
+load 8 6
+cmp 8 13
+jae predecessor_proofs_done
+addr 15 input
+imm 3 64
+add 15 3
+add 15 14
+mov 0 8
+shl 0 12
+add 15 0
+addr 6 direction
+load 0 6
+test 0 0
+jz forward_pair
+mov 9 15
+imm 3 4096
+sub 15 3
+jmp pair_addresses
+label forward_pair
+mov 9 15
+imm 3 4096
+sub 9 3
+label pair_addresses
+addr 6 predecessor_pointer
+store 6 9
+# Bind each transition's opcode/operands to its actual seed-program PC.
+mov 6 9
+imm 3 8
+add 6 3
+load 0 6
+addr 6 input
+imm 3 88
+add 6 3
+load 3 6
+cmp 0 3
+jae refuse
+shl 0 5
+addr 6 input
+imm 3 4224
+add 6 3
+add 6 0
+mov 7 15
+imm 3 40
+add 7 3
+imm 1 24
+call equal_bytes
+mov 6 15
+addr 7 state
+imm 1 4096
+call copy_bytes
+addr 6 state
+imm 3 40
+add 6 3
+load 8 6
+imm 3 8
+add 6 3
+load 9 6
+add 6 3
+load 10 6
+imm 3 0
+cmp 8 3
+jz compare_predecessor
+imm 3 8
+cmp 8 3
+jz compare_predecessor
+imm 3 16
+cmp 8 3
+jz compare_predecessor
+imm 3 17
+cmp 8 3
+jz compare_predecessor
+imm 3 1
+cmp 8 3
+jb refuse
+imm 3 9
+cmp 8 3
+ja refuse
+imm 3 32
+cmp 9 3
+jae refuse
+imm 3 4
+cmp 8 3
+jz inverse_cx
+imm 3 0
+cmp 10 3
+jnz refuse
+jmp inverse_kind
+label inverse_cx
+imm 3 32
+cmp 10 3
+jae refuse
+cmp 9 10
+jz refuse
+label inverse_kind
+imm 3 9
+cmp 8 3
+jnz inverse_ordinary
+mov 0 9
+call bit_mask
+addr 6 state
+imm 3 32
+add 6 3
+load 11 6
+and 0 11
+test 0 0
+jz inverse_entropy_s
+imm 8 3
+jmp apply_inverse
+label inverse_entropy_s
+imm 8 2
+jmp apply_inverse
+label inverse_ordinary
+imm 3 2
+cmp 8 3
+jnz inverse_sdg
+imm 8 3
+jmp apply_inverse
+label inverse_sdg
+imm 3 3
+cmp 8 3
+jnz apply_inverse
+imm 8 2
+label apply_inverse
+call quantum_apply
+label compare_predecessor
+addr 6 state
+imm 3 1024
+add 6 3
+addr 7 predecessor_pointer
+load 7 7
+add 7 3
+imm 1 1536
+call equal_bytes
+addr 6 proof_index
+load 0 6
+inc 0
+store 6 0
+jmp prove_predecessor
+label predecessor_proofs_done
+# Anchor the entire reversible quantum chain to the admitted seed bank.
+addr 7 input
+imm 3 64
+add 7 3
+add 7 14
+addr 6 direction
+load 0 6
+test 0 0
+jz anchor_ready
+mov 0 13
+dec 0
+shl 0 12
+add 7 0
+label anchor_ready
+imm 3 1024
+add 7 3
+addr 6 input
+imm 3 1152
+add 6 3
+imm 1 1536
+call equal_bytes
+addr 6 mode
+load 0 6
+imm 3 3
+cmp 0 3
+jz output_next_seed
+addr 6 mode
+load 0 6
+imm 3 1
+cmp 0 3
+jz output_seed
+imm 3 2
+cmp 0 3
+jz output_initial_state
+# Rehash immutable seed followed by all snapshots in reversed order.
+addr 6 input
+imm 3 64
+add 6 3
+mov 1 14
+call hash_start
+call last_frame
+mov 8 13
+label reverse_hash
+mov 6 15
+imm 1 4096
+call hash_continue
+imm 3 4096
+sub 15 3
+dec 8
+jnz reverse_hash
+addr 6 reverse_hash_value
+store 6 0
+addr 6 input
+addr 7 output_header
+imm 1 64
+call copy_bytes
+addr 6 reverse_hash_value
+load 0 6
+addr 6 output_header
+imm 3 40
+add 6 3
+store 6 0
+addr 6 direction
+load 0 6
+imm 3 1
+xor 0 3
+addr 6 output_header
+imm 3 48
+add 6 3
+store 6 0
+addr 6 output_header
+imm 2 64
+call write_bytes
+addr 6 input
+imm 3 64
+add 6 3
+mov 2 14
+call write_bytes
+call last_frame
+mov 8 13
+label reverse_output
+mov 6 15
+imm 2 4096
+call write_bytes
+imm 3 4096
+sub 15 3
+dec 8
+jnz reverse_output
+jmp success
+label output_seed
+addr 6 input
+imm 3 64
+add 6 3
+mov 2 14
+call write_bytes
+jmp success
+label output_initial_state
+addr 15 input
+imm 3 64
+add 15 3
+add 15 14
+addr 6 direction
+load 0 6
+test 0 0
+jz initial_state_ready
+call last_frame
+label initial_state_ready
+mov 6 15
+imm 2 4096
+call write_bytes
+jmp success
+label last_frame
+addr 15 input
+imm 3 64
+add 15 3
+add 15 14
+mov 3 13
+dec 3
+shl 3 12
+add 15 3
+ret
+label hash_start
+imm 0 14695981039346656037
+label hash_continue
+imm 3 1099511628211
+label hash_loop
+load8 2 6
+xor 0 2
+mul 0 3
+inc 6
+dec 1
+jnz hash_loop
+ret
+label copy_bytes
+load8 0 6
+store8 7 0
+inc 6
+inc 7
+dec 1
+jnz copy_bytes
+ret
+label write_bytes
+imm 0 1
+imm 7 1
+syscall
+imm 3 -4
+cmp 0 3
+jz write_bytes
+imm 3 0
+cmp 0 3
+jle refuse
+add 6 0
+sub 2 0
+jnz write_bytes
+ret
+label equal_bytes
+load8 0 6
+load8 2 7
+cmp 0 2
+jnz refuse
+inc 6
+inc 7
+dec 1
+jnz equal_bytes
+ret
+label success
+imm 0 60
+imm 7 0
+syscall
+label refuse
+imm 0 60
+imm 7 74
+syscall
+bss
+label mode
+space 8
+label direction
+space 8
+label reverse_hash_value
+space 8
+label output_header
+space 64
+label input
+space 4235393
+
+label proof_index
+space 8
+label predecessor_pointer
+space 8
+label mask_a
+space 8
+label mask_b
+space 8
+label state
+space 4096
+
+code
+label next_argument
+inc 6
+load8 0 6
+imm 3 101
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 120
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+imm 3 116
+cmp 0 3
+jnz refuse
+inc 6
+load8 0 6
+test 0 0
+jnz refuse
+imm 0 3
+jmp set_mode
+label output_next_seed
+# Select the final state from either forward or reversed complete history.
+addr 6 direction
+load 0 6
+test 0 0
+jz next_from_forward
+addr 15 input
+imm 3 64
+add 15 3
+add 15 14
+jmp next_final_ready
+label next_from_forward
+call last_frame
+label next_final_ready
+mov 6 15
+imm 3 32
+add 6 3
+load 0 6
+addr 7 input
+imm 3 160
+add 7 3
+store 7 0
+mov 6 15
+imm 3 1024
+add 6 3
+addr 7 input
+imm 3 1152
+add 7 3
+imm 1 1536
+call copy_bytes
+addr 6 input
+imm 3 128
+add 6 3
+mov 1 14
+imm 3 64
+sub 1 3
+call hash_start
+addr 6 input
+imm 3 104
+add 6 3
+store 6 0
+jmp output_seed

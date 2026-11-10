@@ -1,0 +1,12 @@
+test_01_seed_provenance_exclusive_create (__main__.NativeNativeQuantum.test_01_seed_provenance_exclusive_create) ... ok
+test_02_comptime_repeat_and_resource_guards (__main__.NativeNativeQuantum.test_02_comptime_repeat_and_resource_guards) ... ok
+test_03_native_assembly_packet_ir_mutations (__main__.NativeNativeQuantum.test_03_native_assembly_packet_ir_mutations) ... ok
+test_04_capacity_target_separation (__main__.NativeNativeQuantum.test_04_capacity_target_separation) ... ok
+test_05_entropic_replay_and_exhaustion (__main__.NativeNativeQuantum.test_05_entropic_replay_and_exhaustion) ... ok
+test_06_randomized_independent_q30_oracle (__main__.NativeNativeQuantum.test_06_randomized_independent_q30_oracle) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.415s
+
+OK
+QVU_INDEPENDENT_ORACLE_PASS programs=110 operations=2123 measurement_events=235

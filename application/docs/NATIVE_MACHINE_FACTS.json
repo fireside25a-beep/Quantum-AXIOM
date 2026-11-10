@@ -1,0 +1,90 @@
+{
+  "release": "G11",
+  "native_binaries": {
+    "source_compiler": {
+      "path": "native/selfhost/anf_stage3.x86_64",
+      "sha256": "a7abb2690dc7d1216443a89cbbe46696566ed68629959e4facb9db0d41fb7c9f",
+      "bytes": 13998,
+      "entry": 4198400,
+      "load_segments": [
+        {
+          "flags": 5,
+          "offset": 0,
+          "virtual_address": 4194304,
+          "file_bytes": 13998,
+          "memory_bytes": 13998,
+          "alignment": 4096
+        },
+        {
+          "flags": 6,
+          "offset": 0,
+          "virtual_address": 8388608,
+          "file_bytes": 0,
+          "memory_bytes": 1638561,
+          "alignment": 4096
+        }
+      ]
+    },
+    "quantum_machine": {
+      "path": "native/machine/quantum_machine.x86_64",
+      "sha256": "e58c328e6a8fed488df66492342a3047a9a3e0572d10431f9f5a1b3d80182b9d",
+      "bytes": 9620,
+      "entry": 4198400,
+      "load_segments": [
+        {
+          "flags": 5,
+          "offset": 0,
+          "virtual_address": 4194304,
+          "file_bytes": 9620,
+          "memory_bytes": 9620,
+          "alignment": 4096
+        },
+        {
+          "flags": 6,
+          "offset": 0,
+          "virtual_address": 8388608,
+          "file_bytes": 0,
+          "memory_bytes": 4239513,
+          "alignment": 4096
+        }
+      ]
+    },
+    "history_reverser": {
+      "path": "native/machine/reverse_history.x86_64",
+      "sha256": "fbf625dfd6768deb858c59e179f7da426826d3c954a16900ce3daf96793508a2",
+      "bytes": 8464,
+      "entry": 4198400,
+      "load_segments": [
+        {
+          "flags": 5,
+          "offset": 0,
+          "virtual_address": 4194304,
+          "file_bytes": 8464,
+          "memory_bytes": 8464,
+          "alignment": 4096
+        },
+        {
+          "flags": 6,
+          "offset": 0,
+          "virtual_address": 8388608,
+          "file_bytes": 0,
+          "memory_bytes": 4239609,
+          "alignment": 4096
+        }
+      ]
+    }
+  },
+  "native_source_generations": 3,
+  "virtual_stabilizer_qubits": 32,
+  "canonical_state_bytes": 4096,
+  "witness_history_frames": 11,
+  "tested_nested_guest_depth": 16,
+  "seed_generations_restored": 12,
+  "tableau_rows": 64,
+  "tableau_row_bytes": 24,
+  "tableau_state_offset": 1024,
+  "frame_slots": 16,
+  "guest_frame_bytes": 32,
+  "os_guest_virtualization_used": false,
+  "physical_coherent_qubits_demonstrated": 0
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "basis": "Read-only audit of the sealed G11 input, followed by a separate distribution candidate",
+  "input_archive_sha256": "09f8323cddf5cb9997c046b84c363cd61914969c28cf77dfd212679c1877ee57",
+  "input_application_files": 311,
+  "distribution_application_files": 308,
+  "repository_metadata_relocated": [
+    ".github/workflows/verify.yml",
+    ".gitattributes",
+    ".gitignore"
+  ],
+  "application_bytes_changed": [
+    "security/MANIFEST_SHA256.txt",
+    "security/release_manifest.ed25519.sig"
+  ],
+  "engine_sources_changed": 0,
+  "generated_outputs_checked_byte_identical": 61,
+  "exact_complete_payload_checked": "dist/DELIVERY_CHECK.json",
+  "physical_quantum_claim_added": false,
+  "github_remote_status": "not created: connector requires reauthentication and GitHub CLI has no authenticated host"
+}

@@ -1,0 +1,181 @@
+AXIOM: rebuild all x86-64 assembly compiler, runtime and ABI from full sources
+make: Entering directory '/workspace/scratch/89797ab6974c/AXIOM/03_DENSE_QUANTUM'
+cc -Wa,--fatal-warnings -nostdlib -no-pie -Wl,-z,noexecstack -o bin/native_q_seed source/native_entropy_seed.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_compile source/native_q_compile.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_execute source/native_q_execute.S
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fPIC -c -o sdk/native_packet_abi.o source/native_packet_abi.S
+ar rcs sdk/libnative_quantum_abi.a sdk/native_packet_abi.o
+cc -Wall -Wextra -Werror -Wa,--fatal-warnings -fno-pie -no-pie -Wl,-z,noexecstack -o bin/native_q_inspect source/native_packet_inspect.S sdk/libnative_quantum_abi.a
+cc -shared -Wl,-z,noexecstack -o sdk/libnative_quantum_abi.so sdk/native_packet_abi.o
+make: Leaving directory '/workspace/scratch/89797ab6974c/AXIOM/03_DENSE_QUANTUM'
+AXIOM: derive current ABI, native instruction disassembly and software schematics
+ABI SOURCE-DERIVED PASS, witness operations: 14 graph and ELF disassemblies generated
+SVG generated from facts and ELF; four diagrams
+AXIOM: independent assembly dense mathematical oracle with 110 randomized cases
+test_01_seed_provenance_exclusive_create (__main__.NativeNativeQuantum.test_01_seed_provenance_exclusive_create) ... ok
+test_02_comptime_repeat_and_resource_guards (__main__.NativeNativeQuantum.test_02_comptime_repeat_and_resource_guards) ... ok
+test_03_native_assembly_packet_ir_mutations (__main__.NativeNativeQuantum.test_03_native_assembly_packet_ir_mutations) ... ok
+test_04_capacity_target_separation (__main__.NativeNativeQuantum.test_04_capacity_target_separation) ... ok
+test_05_entropic_replay_and_exhaustion (__main__.NativeNativeQuantum.test_05_entropic_replay_and_exhaustion) ... ok
+test_06_randomized_independent_q30_oracle (__main__.NativeNativeQuantum.test_06_randomized_independent_q30_oracle) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.970s
+
+OK
+QVU_INDEPENDENT_ORACLE_PASS programs=110 operations=2123 measurement_events=235
+AXIOM: all release .ql programs, packet validation, independent amplitudes and replays
+{
+  "status": "PASS",
+  "independent_dense_program_verification": {
+    "bell_measure": {
+      "qubits": 2,
+      "operations": 4,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "cd642aee8867a7c88d636fbdf7b7230660bb7cf6d595619589cb58a1f75d5bf3",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "bernstein_vazirani_4": {
+      "qubits": 5,
+      "operations": 16,
+      "measurement_events": 4,
+      "native_runtime_exit": 0,
+      "packet_sha256": "0e2930e885785b58ab12406da520576d64bccc0d780c27b8669143afc806df3c",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "comptime_unroll": {
+      "qubits": 7,
+      "operations": 10,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "packet_sha256": "e96868e79ec0750dfca056bca9dc3665a4cd51cd2700a4593bb41c1b0632075f",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "ghz_12": {
+      "qubits": 12,
+      "operations": 13,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "packet_sha256": "83e4a949810a51d85b8d9472bebd2159fb7c40d8dd5c3383fe5cc28db7455359",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "ghz_16": {
+      "qubits": 16,
+      "operations": 18,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "b0a6f892aad2386c7c17ff05da9f1e58e61790691f29a9a709e309b6a5f3af38",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "grover_2": {
+      "qubits": 2,
+      "operations": 14,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "98eafb3fe44db5b0caeceed4d1c641fff7389ad80d52c10fb2392d59772d9d87",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "inverse_12": {
+      "qubits": 12,
+      "operations": 16,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "8442d05185a748d44d13f4ecaaf035b573a949f44d4ad029dca22f836be3d95c",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "phase_kickback": {
+      "qubits": 6,
+      "operations": 8,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "0abb726b067d7aae49f2a8cf7218cdc62df1525778681ae3ae68ebc1dff99ce1",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "reversible_echo": {
+      "qubits": 8,
+      "operations": 9,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "packet_sha256": "4b905dcd97cc9ee7009e92a348b83ee92d4201e803687aee08add34806b135d3",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "t_interference": {
+      "qubits": 5,
+      "operations": 10,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "3770de64b69590988ad31dcace7c58d638c8f7a58e87b5b03551f31361c627dc",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "teleport_plus": {
+      "qubits": 3,
+      "operations": 9,
+      "measurement_events": 2,
+      "native_runtime_exit": 0,
+      "packet_sha256": "8f7db07e8507813fc5fff760f76f8c48512128d9dd8568cbe6fb68361705517d",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true,
+      "teleport_plus_infidelity_upper_bound": 1e-10,
+      "teleport_plus_actual_numerator": 25,
+      "teleport_plus_actual_denominator": 2305843006213062026,
+      "teleport_plus_feedforward_verified": true
+    },
+    "teleport_verified": {
+      "qubits": 3,
+      "operations": 11,
+      "measurement_events": 3,
+      "native_runtime_exit": 0,
+      "packet_sha256": "be52c5d0cdcf732df7d2419d70ed43be4aea00b78e351da92acdfb85f2ba242f",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": true
+    },
+    "wide20": {
+      "qubits": 20,
+      "operations": 5,
+      "measurement_events": 1,
+      "native_runtime_exit": 0,
+      "packet_sha256": "abc4b8e68fd1f1bbfbd3e17d9c5a05e10c0fef5da2510780687c803a982c9a8f",
+      "replay_match": true,
+      "independent_full_amplitude_oracle": false,
+      "analytic_sparse_20_site_check": true
+    }
+  },
+  "physical_qubits_demonstrated": 0,
+  "measured_programs": 13,
+  "native_programs": 13,
+  "exact_replays": 13,
+  "native_compiler_machine_isa": "x86-64",
+  "note": "Q30 fixed-point mathematical statevector; not physical coherence",
+  "elapsed_seconds": 5.302
+}
+AXIOM: direct x86-64 instruction images / randomized Clifford32 / exact reverses
+self emitter PASS
+example bell_pair
+{
+  "status": "FAIL",
+  "suite": "native code generation + independent symplectic oracle + physical CPU execution",
+  "platform": "Linux x86_64",
+  "examples": {},
+  "failures": [
+    "Traceback (most recent call last):\n  File \"/workspace/scratch/89797ab6974c/AXIOM/05_TESTS/native_clifford_independent.py\", line 159, in main\n    new=validate(path,compiled,ops,tmp)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/89797ab6974c/AXIOM/05_TESTS/native_clifford_independent.py\", line 121, in validate\n    assert rc==0 and len(new)==len(image),(rc,len(new))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (74, 0)\n"
+  ],
+  "native_emitter_self_compilation": true,
+  "randomized_programs": 0,
+  "reversal_proofs": 0,
+  "single_replica_injections": 0,
+  "double_replica_refusals": 0,
+  "parser_refusals": 0,
+  "hostile_syscall_killed": false,
+  "elapsed_seconds": 0.008
+}

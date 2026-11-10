@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "archive_crc_and_all_payload_bytes_verified": true,
+  "pristine_signature_and_inventory_verified": true,
+  "tested_source_inventory_sha256": "9bdd4f72dd58df71ba8ab6533c82f19f32ea0c52f1018402da51ba955c73febf",
+  "cold_source_only_rebuilt_outputs": 61,
+  "all_rebuilt_outputs_byte_identical": true,
+  "native_seed_reconstruction_verified": true,
+  "fresh_native_self_compilations": 3,
+  "executed_examples": [
+    {
+      "source": "examples/Machine/entropy_seed_loop.anf",
+      "canonical_frames": 6,
+      "seed_sha256": "dea8b8c9fee55090b26d17ed68cc0c4793b2defcc9fc41e0e4822d0d5e9939b5"
+    },
+    {
+      "source": "examples/Machine/inverse_ghz32.anf",
+      "canonical_frames": 68,
+      "seed_sha256": "d38973fff7df4fbfbd892b82df14eccb5b29a3feec222570491f4914e730b699"
+    },
+    {
+      "source": "examples/Machine/nested_quantum.anf",
+      "canonical_frames": 13,
+      "seed_sha256": "80844a7dbe3e8f852518a7dd8c24d25b6d0d704ecc06354b4de6eb23609f693b"
+    },
+    {
+      "source": "examples/States/closed_routine_machine.anf",
+      "canonical_frames": 5,
+      "seed_sha256": "609b6031b9af57ac93a8e86b0792b545db276f3be7f9c00079cca1c9edcb6a03"
+    }
+  ],
+  "independent_canonical_frames_compared": 92,
+  "fresh_hardware_entropy_seed_generations_restored": 12,
+  "uses_kvm": false,
+  "uses_os_guests": false,
+  "scope": "Native x86-64 software quantum machine; exact stabilizer representation; retained canonical journal reversal"
+}

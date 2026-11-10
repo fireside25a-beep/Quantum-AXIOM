@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.seed binary
+*.history binary
+*.qvb binary
+*.qseed binary
+*.bits binary
+*.x86_64 binary
+*.a binary
+*.so binary
+*.sig binary
+application/native/dense/bin/* binary

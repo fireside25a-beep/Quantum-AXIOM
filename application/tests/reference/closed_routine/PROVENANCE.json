@@ -1,0 +1,56 @@
+{
+  "source_volume_sha256": "cf1a836bf848f408594ec09f6d590e296276f2035dfe3aa55c74a93393fa0c5d",
+  "source_manifest_verified_entries": 193,
+  "selected_files": [
+    {
+      "source_path_in_preserved_bf13": "BF05_RICH/src/neuro_mantle.c",
+      "release_path": "tests/reference/closed_routine/neuro_mantle.c",
+      "sha256": "e595e964c4d787905a198c12b7b2936f89782db1406f61d7e0abb31ad2ff5d8a",
+      "bytes": 8787
+    },
+    {
+      "source_path_in_preserved_bf13": "BF05_RICH/src/neuro_mantle.h",
+      "release_path": "tests/reference/closed_routine/neuro_mantle.h",
+      "sha256": "049f68d502a9bdd04506a2ba165281dac848739c0ea7ab234a647821f7913759",
+      "bytes": 2599
+    },
+    {
+      "source_path_in_preserved_bf13": "BF05_RICH/src/neuro_world.h",
+      "release_path": "tests/reference/closed_routine/neuro_world.h",
+      "sha256": "5591579fefdaa2cd88229a73e90f98f6f0d0b3e84d1ff543e42a2147bf159350",
+      "bytes": 2181
+    },
+    {
+      "source_path_in_preserved_bf13": "BF05_RICH/src/primitiveq.h",
+      "release_path": "tests/reference/closed_routine/primitiveq.h",
+      "sha256": "c0dcc8b9dc2258cf163460fe6888a4975dc43a8c83e3a334361807545186b3d8",
+      "bytes": 2820
+    },
+    {
+      "source_path_in_preserved_bf13": "NEUROMANTLE_BASELINE/core/neuro_world.c",
+      "release_path": "tests/reference/closed_routine/neuro_world.c",
+      "sha256": "b6a8ea886eb3746af357f43d8a0f352b089703045c16df186d5ee2ea9d00e2ce",
+      "bytes": 6985
+    },
+    {
+      "source_path_in_preserved_bf13": "NEUROMANTLE_BASELINE/core/primitiveq.c",
+      "release_path": "tests/reference/closed_routine/primitiveq.c",
+      "sha256": "56312f25fbfa59bff5d14cb876bc81ca0127650dec7ea4ddaa1f5a146e53a1de",
+      "bytes": 11400
+    },
+    {
+      "source_path_in_preserved_bf13": "NEUROMANTLE_BASELINE/LICENSE",
+      "release_path": "tests/reference/closed_routine/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "source_path_in_preserved_bf13": "NEUROMANTLE_BASELINE/NOTICE",
+      "release_path": "tests/reference/closed_routine/NOTICE",
+      "sha256": "af562639e683e8d073d3663445b8c3f106ee850a5f321c76de8cd1aff007ab32",
+      "bytes": 387
+    }
+  ],
+  "purpose": "test-only execution of original SNN/closed-tableau path; no parent project checkout is required",
+  "source_bytes_unchanged": true
+}
