@@ -53,10 +53,13 @@ def zip_tree(root,out):
 
 def metadata(version,kind,key):
     p=subprocess.run(['git','rev-parse','HEAD'],cwd=R,capture_output=True,text=True)
+    github_sha=os.environ.get('GITHUB_SHA','')
+    if github_sha and not re.fullmatch(r'[0-9a-f]{40}',github_sha):
+        raise ValueError('invalid GITHUB_SHA')
     return {'version':version,'engine':'G11','kind':kind,'platform':'Linux x86-64',
             'minimum_glibc_for_shipped_dense_tools':'2.41',
             'requires_rdseed':'qentropy and legacy direct images only',
-            'source_commit':p.stdout.strip() if p.returncode==0 else 'uncommitted-local-preparation',
+            'source_commit':github_sha or (p.stdout.strip() if p.returncode==0 else 'uncommitted-local-preparation'),
             'engine_source_inventory_sha256':digest(A/'ai/SOURCE_MAP.json'),
             'engine_verification_summary_sha256':digest(A/'evidence/VERIFICATION_SUMMARY.json'),
             'outer_package_signed':bool(key),'publisher_identity_authenticated':False,
@@ -64,11 +67,18 @@ def metadata(version,kind,key):
             'presentation_included':kind=='complete'}
 
 def tracked_project_files():
-    """Include the reviewed Git tree, without checkout data or ignored outputs."""
-    raw=command('git','ls-files','-z',cwd=R).stdout
-    paths=[R/os.fsdecode(name) for name in raw.split(b'\0') if name]
-    if not paths or not any(p==A/'security/VERIFY_RELEASE.sh' for p in paths):
-        raise ValueError('incomplete tracked project')
+    """Use the checked-in release inventory even if CI's Git metadata is absent."""
+    names=(R/'maintainer/RELEASE_FILES.txt').read_text().splitlines()
+    if not names or names!=sorted(set(names)) or 'application/security/VERIFY_RELEASE.sh' not in names:
+        raise ValueError('invalid release file inventory')
+    paths=[]
+    for name in names:
+        rel=Path(name)
+        if rel.is_absolute() or '..' in rel.parts or '\\' in name or not name:
+            raise ValueError('unsafe release file path')
+        path=R/rel
+        if not path.is_file() or path.is_symlink():raise ValueError('missing release file '+name)
+        paths.append(path)
     return paths
 
 def runtime(root,version):

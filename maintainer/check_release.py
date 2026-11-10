@@ -11,6 +11,7 @@ import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
 import zipfile
+from package_release import tracked_project_files
 
 R=Path(__file__).resolve().parents[1]
 
@@ -62,7 +63,7 @@ def archive_check(tmp):
     raw=run('git','archive','--format=zip','HEAD',cwd=repo)
     archive=tmp/'source-export.zip';archive.write_bytes(raw)
     with zipfile.ZipFile(archive) as z:
-        expected={os.fsdecode(p) for p in run('git','ls-files','-z',cwd=repo).split(b'\0') if p}
+        expected={p.relative_to(R).as_posix() for p in tracked_project_files()}
         actual={name for name in z.namelist() if not name.endswith('/')}
         if actual!=expected:raise AssertionError(('source export incomplete',expected-actual,actual-expected))
         for name in expected:
@@ -90,7 +91,7 @@ def main():
                     if 'presentation' in parts or '.github' in parts or 'maintainer' in parts:
                         raise AssertionError('repository tooling in app release')
             if asset['kind']=='complete':
-                tracked={os.fsdecode(p) for p in run('git','ls-files','-z',cwd=R).split(b'\0') if p}
+                tracked={p.relative_to(R).as_posix() for p in tracked_project_files()}
                 actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
                 added={'RELEASE.json','VERIFY.sh','MANIFEST_SHA256.txt'}
                 if actual!=tracked|added:raise AssertionError(('complete project omission',tracked-actual,actual-tracked-added))

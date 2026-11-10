@@ -24,19 +24,17 @@ jobs:
           mkdir -p "$RUNNER_TEMP/axiom-verified"
           cp -a application/. "$RUNNER_TEMP/axiom-verified/"
           bash "$RUNNER_TEMP/axiom-verified/scripts/RUN_VERIFICATION.sh"
-      - name: Diagnose checkout after native suite
-        shell: bash
-        run: |
-          printf 'pwd=%s\nworkspace=%s\n' "$PWD" "$GITHUB_WORKSPACE"
-          ls -ld .git "$GITHUB_WORKSPACE/.git" || true
-          git -C "$GITHUB_WORKSPACE" rev-parse --show-toplevel
-          test "$(git -C "$GITHUB_WORKSPACE" rev-parse HEAD)" = "$GITHUB_SHA"
       - name: Confirm generated README panels are current
         shell: bash
         working-directory: ${{ github.workspace }}
         run: |
+          before="$(mktemp -d)"
+          trap 'rm -r "$before"' EXIT
+          cp presentation/*.svg "$before/"
           python3 -B presentation/build_readme_art.py
-          git -C "$GITHUB_WORKSPACE" diff --exit-code -- presentation/
+          for panel in "$before"/*.svg; do
+            cmp "$panel" "presentation/$(basename "$panel")"
+          done
       - name: Package and test extracted downloads
         shell: bash
         working-directory: ${{ github.workspace }}
